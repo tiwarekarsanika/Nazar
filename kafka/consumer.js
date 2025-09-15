@@ -1,19 +1,25 @@
-// import kafkaClient from './config'
+import kafkaClient from './config.js'
+// const redisConsumer = kafkaClient.consumer({ groupId: 'redis-group' })
 
-const kafkaConsumer = async (kafkaClient) => {
-    const consumer = kafkaClient.consumer({ groupId: 'test-group' })
+//test-group
+export const kafkaConsumer = async (kafkaClient) => {
+    const consumer = kafkaClient.consumer({ groupId: 'test-group', fromBeginning: true })
 
     await consumer.connect()
-    await consumer.subscribe({ topic: 'quickstart-events', fromBeginning: true })
+    await consumer.subscribe({ topic: 'nazar-user-events'})
 
     await consumer.run({
+        autoCommitThreshold: 100,
         eachMessage: async ({ topic, partition, message }) => {
             console.log({
                 value: message.value.toString(),
+                // offset: message.offset,
             })
-        },
+        }
     })
-
+   
 }
 
-export default kafkaConsumer 
+// export default redisConsumer 
+
+kafkaConsumer(kafkaClient);
