@@ -1,5 +1,6 @@
 import kafkaClient from './config.js'
-// const redisConsumer = kafkaClient.consumer({ groupId: 'redis-group' })
+
+export const redisConsumer = kafkaClient.consumer({ groupId: 'redis-group' })
 
 //test-group
 export const kafkaConsumer = async (kafkaClient) => {

@@ -1,6 +1,7 @@
 import app from './app.js';
 import redisClient from './redis/config.js'
 import kafkaProducer from './kafka/producer.js'
+import redisConsumerAPI from './controllers/redisConsumer.js';
 
 const port = process.env.EXPRESS_PORT || 5000;
 
@@ -13,6 +14,9 @@ const port = process.env.EXPRESS_PORT || 5000;
         console.log("Connected to redis successfully: ", result);
         
         await kafkaProducer.connect()
+        redisConsumerAPI(redisClient)
+        // await redisConsumer.connect()
+        // await redisConsumer.subscribe({ topic: 'nazar-user-events'})
         
         const server = app.listen(port, () => {
             console.log(`Express server running on port ${port}`)
