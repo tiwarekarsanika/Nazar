@@ -36,6 +36,7 @@ const redisConsumerAPI = async (redisClient) => {
                     );
                     await redisClient.sAdd(`orders:${event.userID}`, event.orderID);
                 }
+                
 
             } catch (err) {
                 console.log("Failed to process Kafka message:", err);
