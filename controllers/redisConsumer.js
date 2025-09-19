@@ -22,22 +22,26 @@ const redisConsumerAPI = async (redisClient) => {
                         '*',
                         { productID: event.productID, ts: event.timestamp }
                     );
+                    await redisClient.zIncrBy("leaderboard:views", 1, event.productID);
+                    await redisClient.zIncrBy("perUser:views", 1, event.userID);
                 }
                 else if (event.eventType === "wishlist") {
                     await redisClient.zAdd(
                         `wishlist:${event.userID}`,
                         [{ score: Date.parse(event.timestamp) , value: event.productID }]
                     );
+                    await redisClient.zIncrBy("leaderboard:wishlist", 1, event.productID);
+                    await redisClient.zIncrBy("perUser:wishlist", 1, event.userID);
                 }
                 else if (event.eventType === "purchase") {
                     await redisClient.hSet(
-                        `order:${event.orderID}`,
+                        `purchase:${event.orderID}`,
                         { productID: event.productID, ts: event.timestamp }
                     );
                     await redisClient.sAdd(`orders:${event.userID}`, event.orderID);
+                    await redisClient.zIncrBy("leaderboard:purchase", 1, event.productID);
+                    await redisClient.zIncrBy("perUser:purchases", 1, event.userID);
                 }
-                
-
             } catch (err) {
                 console.log("Failed to process Kafka message:", err);
             }

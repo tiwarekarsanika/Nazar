@@ -11,10 +11,14 @@ scrape_configs:
     static_configs:
       - targets: ['cadvisor:8080']
 
-  - job_name: 'kafka'
+  - job_name: 'kafka-exporter'
     static_configs:
       - targets: ['kafka-exporter:9308']
 
   - job_name: 'redis'
     static_configs:
       - targets: ['redis-exporter:9121']
+
+  - job_name: 'kafka'
+    static_configs:
+      - targets: ['kafka:9404'] 
