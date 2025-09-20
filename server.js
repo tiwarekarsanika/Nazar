@@ -1,7 +1,7 @@
 import app from './app.js';
 import redisClient from './redis/config.js'
 import kafkaProducer from './kafka/producer.js'
-import redisConsumerAPI from './controllers/redisConsumer.js';
+import redisConsumerAPI from './redis/redisConsumer.js';
 
 const port = process.env.EXPRESS_PORT || 5000;
 

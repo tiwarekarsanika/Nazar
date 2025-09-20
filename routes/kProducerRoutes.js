@@ -1,4 +1,4 @@
-import kProducer from "../controllers/kproducerAPI.js"
+import kProducer from "../kafka/kproducerAPI.js"
 import express from 'express'
 
 const router = express.Router()

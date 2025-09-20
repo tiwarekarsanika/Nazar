@@ -1,4 +1,4 @@
-import producer from '../kafka/producer.js'
+import producer from './producer.js'
 
 class kProducers {
     static addUserWishlist = async (req, res) => {

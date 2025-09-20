@@ -1,4 +1,4 @@
-import redisClient from '../redis/config.js'
+import redisClient from './config.js'
 
 class seedRedis {
     static async sendProductData(req, res) {

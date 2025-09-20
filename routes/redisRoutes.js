@@ -1,4 +1,4 @@
-import seedRedis from "../controllers/redisAPI.js";
+import seedRedis from "../redis/redisAPI.js";
 import express from 'express'
 
 const router = express.Router()
