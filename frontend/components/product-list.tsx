@@ -15,6 +15,37 @@ import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useProductStore } from "./store";
+import { useCart } from "@/context/CartContext";
+import { useRouter } from "next/navigation";
+
+type ProductButtonProps = {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+};
+
+export function AddToCartButton({ id, title, price, image }: ProductButtonProps) {
+  const { addToCart } = useCart();
+  const router = useRouter();
+  const [added, setAdded] = useState(false);
+
+  const handleClick = () => {
+    addToCart({ id, title, price, quantity: 1, image });
+    setAdded(true);
+
+    setTimeout(() => {
+      router.push("/checkout-cart"); // navigate after short delay
+    }, 800);
+  };
+
+  return (
+    <Button className="flex-1" size="sm" onClick={handleClick}>
+      <ShoppingCart className="mr-1 h-4 w-4 sm:mr-2" />
+      <span>{added ? "Added !" : "Add to cart"}</span>
+    </Button>
+  );
+}
 
 const categories = [
   { id: "all", label: "All", icon: "🏪" },
@@ -341,12 +372,6 @@ export default function ProductList() {
                           New
                         </Badge>
                       )}
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="absolute top-2 right-2 h-8 w-8 opacity-0 transition-opacity group-hover:opacity-100">
-                        <Heart className="h-4 w-4" />
-                      </Button>
                     </div>
 
                     <div className="space-y-2">
@@ -402,11 +427,12 @@ export default function ProductList() {
                       </div>
 
                       <div className="flex gap-2 pt-2">
-                        <Button className="flex-1" size="sm">
+                        {/* <Button className="flex-1" size="sm">
                           <ShoppingCart className="mr-1 h-4 w-4 sm:mr-2" />
                           <span className="xs:inline hidden">Add to cart</span>
                           <span className="xs:hidden">Add</span>
-                        </Button>
+                        </Button> */}
+                        <AddToCartButton id={product.id} title={product.title} price={product.price} image={product.image} />
                         <Button variant="outline" size="sm" className="bg-transparent px-2 sm:px-3">
                           <Heart className="h-4 w-4" />
                         </Button>

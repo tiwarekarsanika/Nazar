@@ -53,7 +53,7 @@ const sampleProducts: Product[] = [
     orders: 234,
     seller: "Apple Store Official",
     image: "https://m.media-amazon.com/images/I/61iSZ61xAgL._SL1500_.jpg",
-    isNew: true,
+    isNew: false,
     category: "phones",
     brand: "apple",
     colors: ["black", "white"],

@@ -2,7 +2,7 @@ var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/checkout-ca
 R.c("server/chunks/ssr/33a3b_104931f6._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__e8a2741f._.js")
 R.c("server/chunks/ssr/OneDrive_Desktop_Projects_Nazar_frontend_app_e3ac641d._.js")
-R.c("server/chunks/ssr/[root-of-the-server]__5a71588d._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__655cb65e._.js")
 R.c("server/chunks/ssr/33a3b_next_dist_client_components_aced6030._.js")
 R.c("server/chunks/ssr/33a3b_next_dist_client_components_builtin_forbidden_7b77621b.js")
 R.c("server/chunks/ssr/33a3b_next_dist_client_components_builtin_unauthorized_6f904af2.js")

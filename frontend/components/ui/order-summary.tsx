@@ -14,8 +14,8 @@ export const OrderSummary = ({ subtotal, discount, delivery, tax }: OrderSummary
 
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <span className="text-muted-foreground">Discount</span>
-          <span className="font-medium">${discount.toFixed(2)}</span>
+          <span className="text-muted-foreground">Subtotal</span>
+          <span className="font-medium">${subtotal.toFixed(2)}</span>
         </div>
 
         <div className="flex items-center justify-between">
