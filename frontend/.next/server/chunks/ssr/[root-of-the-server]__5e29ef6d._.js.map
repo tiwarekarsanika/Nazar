@@ -2,6 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/tiwar/OneDrive/Desktop/Projects/Nazar/frontend/app/page.tsx"],"sourcesContent":["import Image from \"next/image\";\n\nexport default function Home() {\n  return (\n    <div className=\"font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20\">\n      <main className=\"flex flex-col gap-[32px] row-start-2 items-center sm:items-start\">\n        Welcome to next appp\n      </main>\n      <footer className=\"row-start-3 flex gap-[24px] flex-wrap items-center justify-center\">\n        footer\n      </footer>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAEe,SAAS;IACtB,qBACE,sSAAC;QAAI,WAAU;;0BACb,sSAAC;gBAAK,WAAU;0BAAmE;;;;;;0BAGnF,sSAAC;gBAAO,WAAU;0BAAoE;;;;;;;;;;;;AAK5F","debugId":null}}]
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}}]
 }
