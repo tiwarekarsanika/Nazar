@@ -15,6 +15,7 @@ export interface Product {
   brand: string;
   colors: string[];
   deliveryDays: number;
+  productDetails: string;
 }
 
 interface ProductStore {
@@ -51,12 +52,14 @@ const sampleProducts: Product[] = [
     rating: 4.8,
     orders: 234,
     seller: "Apple Store Official",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/61iSZ61xAgL._SL1500_.jpg",
     isNew: true,
     category: "phones",
     brand: "apple",
     colors: ["black", "white"],
-    deliveryDays: 1
+    deliveryDays: 1,
+    productDetails:
+      "6.7-inch Super Retina XDR OLED display with ProMotion. A16 Bionic chip for unmatched performance. 256GB storage capacity. Advanced triple-camera system with 48MP main lens and cinematic video recording. iOS 16 with Face ID, 5G connectivity, and all-day battery life."
   },
   {
     id: 2,
@@ -67,28 +70,32 @@ const sampleProducts: Product[] = [
     rating: 4.7,
     orders: 189,
     seller: "Samsung Official",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/71rs4Aer71L._SL1500_.jpg",
     isNew: true,
     category: "phones",
     brand: "samsung",
     colors: ["black", "purple"],
-    deliveryDays: 2
+    deliveryDays: 2,
+    productDetails:
+      "6.8-inch Dynamic AMOLED 2X display with 120Hz refresh rate. Snapdragon 8 Gen 2 processor with 512GB storage. Quad-camera setup with 200MP main sensor, 100x Space Zoom, and 8K video recording. S Pen support, 5G connectivity, and 5000mAh battery with fast charging."
   },
   {
     id: 3,
-    title: "Huawei P50 Pro 128GB Golden",
+    title: "OnePlus Nord 5",
     price: 699.0,
     originalPrice: 899.0,
     discount: 22,
     rating: 4.5,
     orders: 154,
-    seller: "Huawei Technology Ltd",
-    image: "https://placehold.co/600x400?text=Image",
+    seller: "OnePlus Ltd",
+    image: "https://m.media-amazon.com/images/I/61OtOTTpzxL._SL1500_.jpg",
     isNew: false,
     category: "phones",
     brand: "huawei",
     colors: ["orange", "black"],
-    deliveryDays: 3
+    deliveryDays: 3,
+    productDetails:
+      "6.6-inch OLED display with 120Hz refresh rate. Kirin 9000/Qualcomm Snapdragon chipset with 128GB storage. Leica quad-camera setup with 50MP True-Chroma sensor. IP68 water and dust resistance, HarmonyOS support, and 4360mAh battery with 66W fast charging."
   },
   {
     id: 4,
@@ -99,12 +106,14 @@ const sampleProducts: Product[] = [
     rating: 4.9,
     orders: 456,
     seller: "Sony Electronics",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/51KGPDttQhL._SL1500_.jpg",
     isNew: true,
     category: "headsets",
     brand: "sony",
     colors: ["black", "white"],
-    deliveryDays: 1
+    deliveryDays: 1,
+    productDetails:
+      "Industry-leading active noise cancellation with dual processors. Crystal-clear audio with 30mm drivers. Up to 30 hours of battery life with quick charging. Lightweight, comfortable design with touch controls. Bluetooth 5.2 and multipoint connectivity support."
   },
   {
     id: 5,
@@ -113,12 +122,14 @@ const sampleProducts: Product[] = [
     rating: 4.6,
     orders: 321,
     seller: "Bose Official Store",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/51f7KKP25PL._SL1000_.jpg",
     isNew: false,
     category: "headsets",
     brand: "bose",
     colors: ["black", "white"],
-    deliveryDays: 2
+    deliveryDays: 2,
+    productDetails:
+      "Acclaimed noise-cancelling technology with Aware Mode. High-fidelity audio with balanced sound. Lightweight over-ear design for long-term comfort. Up to 24 hours of battery life. Bluetooth 5.1 with multipoint pairing and USB-C fast charging."
   },
   {
     id: 6,
@@ -129,12 +140,14 @@ const sampleProducts: Product[] = [
     rating: 4.8,
     orders: 89,
     seller: "Apple Store Official",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/61eA9PkZ07L._SL1500_.jpg",
     isNew: true,
     category: "laptops",
     brand: "apple",
     colors: ["gray", "white"],
-    deliveryDays: 3
+    deliveryDays: 3,
+    productDetails:
+      "16.2-inch Liquid Retina XDR display with ProMotion. Apple M2 Pro chip with up to 12-core CPU and 19-core GPU. 16GB unified memory and 512GB storage. macOS Ventura with optimized workflows for creators. All-day battery life with advanced thermal design."
   },
   {
     id: 7,
@@ -145,12 +158,14 @@ const sampleProducts: Product[] = [
     rating: 4.4,
     orders: 167,
     seller: "Dell Technologies",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/71UcgypoOKL._SL1500_.jpg",
     isNew: false,
     category: "laptops",
     brand: "dell",
     colors: ["gray", "black"],
-    deliveryDays: 5
+    deliveryDays: 5,
+    productDetails:
+      "13.4-inch InfinityEdge OLED display with ultra-thin bezels. Intel Core i7 12th Gen processor with 16GB RAM. 512GB SSD storage. Sleek aluminum design with zero-lattice keyboard. Windows 11 pre-installed with long battery life and fast charging support."
   },
   {
     id: 8,
@@ -159,12 +174,14 @@ const sampleProducts: Product[] = [
     rating: 4.3,
     orders: 134,
     seller: "Microsoft Store",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/61n0igkrg3L._SL1500_.jpg",
     isNew: false,
     category: "laptops",
     brand: "microsoft",
     colors: ["blue", "gray"],
-    deliveryDays: 4
+    deliveryDays: 4,
+    productDetails:
+      "13.5-inch PixelSense touchscreen display with Dolby Vision IQ. Intel Evo 12th Gen Core i5/i7 processor. 8GB RAM with 256GB SSD. Slim, lightweight design with premium Alcantara finish. All-day battery with fast charging and Windows 11 integration."
   },
   {
     id: 9,
@@ -175,12 +192,14 @@ const sampleProducts: Product[] = [
     rating: 4.6,
     orders: 78,
     seller: "Samsung Electronics",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/81xXKE7n11L._SL1500_.jpg",
     isNew: true,
     category: "tv",
     brand: "samsung",
     colors: ["black"],
-    deliveryDays: 7
+    deliveryDays: 7,
+    productDetails:
+      "65-inch Quantum Dot 4K QLED display with HDR10+. 120Hz refresh rate for smooth motion. AI-powered upscaling for enhanced picture quality. Dolby Atmos sound and Object Tracking Sound+. Smart TV features with Tizen OS and voice assistant integration."
   },
   {
     id: 10,
@@ -191,12 +210,14 @@ const sampleProducts: Product[] = [
     rating: 4.7,
     orders: 92,
     seller: "LG Electronics",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/81bg-K6Fv-L._SL1500_.jpg",
     isNew: true,
     category: "tv",
     brand: "lg",
     colors: ["black"],
-    deliveryDays: 6
+    deliveryDays: 6,
+    productDetails:
+      "55-inch OLED display with perfect blacks and infinite contrast. α9 Gen 6 AI Processor for optimized picture and sound. Dolby Vision IQ and Dolby Atmos support. 120Hz refresh rate with NVIDIA G-SYNC and AMD FreeSync compatibility. WebOS smart platform with ThinQ AI."
   },
   {
     id: 11,
@@ -207,12 +228,14 @@ const sampleProducts: Product[] = [
     rating: 4.5,
     orders: 267,
     seller: "JBL Official",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/71N8si9jomL._SL1500_.jpg",
     isNew: false,
     category: "sound",
     brand: "jbl",
     colors: ["blue", "red", "black"],
-    deliveryDays: 2
+    deliveryDays: 2,
+    productDetails:
+      "Powerful portable speaker with JBL Original Pro Sound. Long-lasting 20-hour battery life. IP67 waterproof and dustproof design. Built-in powerbank for charging devices. Bluetooth 5.1 connectivity with PartyBoost for stereo pairing."
   },
   {
     id: 12,
@@ -223,12 +246,14 @@ const sampleProducts: Product[] = [
     rating: 4.8,
     orders: 345,
     seller: "Apple Store Official",
-    image: "https://placehold.co/600x400?text=Image",
+    image: "https://m.media-amazon.com/images/I/7162zT9RKRL._SL1500_.jpg",
     isNew: true,
     category: "watches",
     brand: "apple",
     colors: ["black", "white", "red"],
-    deliveryDays: 1
+    deliveryDays: 1,
+    productDetails:
+      "45mm Retina Always-On display with up to 2000 nits brightness. S9 SiP chip with faster performance and precision dual-frequency GPS. Advanced health features including ECG, blood oxygen, and heart rate monitoring. Crash detection and 18-hour all-day battery life. WatchOS 10 with enhanced fitness tracking."
   }
 ];
 

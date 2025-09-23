@@ -15,6 +15,8 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { ShoppingCart, Heart, LogOut } from 'lucide-react';
 
 // Simple logo component for the navbar
 const Logo = (props: React.SVGAttributes<SVGElement>) => {
@@ -93,10 +95,10 @@ export interface Navbar01Props extends React.HTMLAttributes<HTMLElement> {
 
 // Default navigation links
 const defaultNavigationLinks: Navbar01NavLink[] = [
-  { href: '#', label: 'Home', active: true },
-  { href: '#features', label: 'Features' },
-  { href: '#pricing', label: 'Pricing' },
-  { href: '#about', label: 'About' },
+  // { href: '#', label: 'Home', active: true },
+  // { href: '#features', label: 'Features' },
+  // { href: '#pricing', label: 'Pricing' },
+  // { href: '#about', label: 'About' },
 ];
 
 export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
@@ -153,7 +155,7 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
       <header
         ref={combinedRef}
         className={cn(
-          'sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 md:px-6 [&_*]:no-underline',
+          'sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-10 md:px-14 [&_*]:no-underline',
           className
         )}
         {...props}
@@ -174,31 +176,31 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent align="start" className="w-48 p-2">
-                <NavigationMenu className="max-w-none">
-                  <NavigationMenuList className="flex-col items-start gap-1">
-                    {navigationLinks.map((link, index) => (
-                      <NavigationMenuItem key={index} className="w-full">
-                        <button
-                          onClick={(e) => e.preventDefault()}
-                          className={cn(
-                            "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer no-underline",
-                            link.active 
-                              ? "bg-accent text-accent-foreground" 
-                              : "text-foreground/80"
-                          )}
-                        >
-                          {link.label}
-                        </button>
-                      </NavigationMenuItem>
-                    ))}
-                  </NavigationMenuList>
-                </NavigationMenu>
+                  <NavigationMenu className="max-w-none">
+                    <NavigationMenuList className="flex-col items-start gap-1">
+                      {navigationLinks.map((link, index) => (
+                        <NavigationMenuItem key={index} className="w-full">
+                          <button
+                            onClick={(e) => e.preventDefault()}
+                            className={cn(
+                              "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer no-underline",
+                              link.active
+                                ? "bg-accent text-accent-foreground"
+                                : "text-foreground/80"
+                            )}
+                          >
+                            {link.label}
+                          </button>
+                        </NavigationMenuItem>
+                      ))}
+                    </NavigationMenuList>
+                  </NavigationMenu>
                 </PopoverContent>
               </Popover>
             )}
             {/* Main nav */}
             <div className="flex items-center gap-6">
-              <button 
+              <button
                 onClick={(e) => e.preventDefault()}
                 className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
               >
@@ -210,30 +212,30 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
               {/* Navigation menu */}
               {!isMobile && (
                 <NavigationMenu className="flex">
-                <NavigationMenuList className="gap-1">
-                  {navigationLinks.map((link, index) => (
-                    <NavigationMenuItem key={index}>
-                      <button
-                        onClick={(e) => e.preventDefault()}
-                        className={cn(
-                          "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline",
-                          link.active 
-                            ? "bg-accent text-accent-foreground" 
-                            : "text-foreground/80 hover:text-foreground"
-                        )}
-                      >
-                        {link.label}
-                      </button>
-                    </NavigationMenuItem>
-                  ))}
-                </NavigationMenuList>
+                  <NavigationMenuList className="gap-1">
+                    {navigationLinks.map((link, index) => (
+                      <NavigationMenuItem key={index}>
+                        <button
+                          onClick={(e) => e.preventDefault()}
+                          className={cn(
+                            "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline",
+                            link.active
+                              ? "bg-accent text-accent-foreground"
+                              : "text-foreground/80 hover:text-foreground"
+                          )}
+                        >
+                          {link.label}
+                        </button>
+                      </NavigationMenuItem>
+                    ))}
+                  </NavigationMenuList>
                 </NavigationMenu>
               )}
             </div>
           </div>
           {/* Right side */}
-          <div className="flex items-center gap-3">
-            <Button
+          <div className="flex items-center gap-5">
+            {/* <Button
               variant="ghost"
               size="sm"
               className="text-sm font-medium hover:bg-accent hover:text-accent-foreground"
@@ -253,7 +255,32 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
               }}
             >
               {ctaText}
-            </Button>
+            </Button> */}
+            <Heart className="cursor-pointer" />
+            <ShoppingCart className="cursor-pointer" />
+            {/* <Popover>
+              <PopoverTrigger>
+                <Avatar className="cursor-pointer" >
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+              </PopoverTrigger>
+              <PopoverContent>
+                <span> < LogOut /> </span><span>Logout </span>
+              </PopoverContent>
+            </Popover> */}
+            <Popover>
+              <PopoverTrigger>
+                <Avatar className="cursor-pointer">
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+              </PopoverTrigger>
+              <PopoverContent className="flex items-center gap-2 cursor-pointer" onClick={() => signOut()}>
+                <LogOut className="w-4 h-4" />
+                <span>Logout</span>
+              </PopoverContent>
+            </Popover>
           </div>
         </div>
       </header>
