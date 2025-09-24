@@ -75,7 +75,7 @@ export default function Cart() {
   const tax = (subtotal * 18) / 100;
 
   return (
-    <div className="bg-background min-h-screen p-4 lg:p-8">
+    <div className="bg-background">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">

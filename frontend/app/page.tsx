@@ -1,4 +1,3 @@
-import { Navbar } from '@/components/navbar'
 import ProductList from "@/components/product-list";
 
 export default function Home() {

@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         {!hideLayout && <Navbar />}
 
-        <main className="min-h-screen px-10 py-10">
+        <main className="px-10 py-10">
           {children}
         </main>
 

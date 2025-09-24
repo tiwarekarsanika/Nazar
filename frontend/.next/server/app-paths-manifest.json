@@ -4,6 +4,7 @@
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/order-confirmation/page": "app/order-confirmation/page.js",
   "/page": "app/page.js",
+  "/product-details/page": "app/product-details/page.js",
   "/product-list/page": "app/product-list/page.js",
   "/wishlist/page": "app/wishlist/page.js"
 }
