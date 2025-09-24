@@ -223,11 +223,7 @@ function Button({ className, variant, size, asChild = false, ...props }) {
 "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/**
- * v0 by Vercel.
- * @see https://v0.app/t/PWucQ4H5mKs
- * Documentation: https://v0.app/docs#integrating-generated-code-into-your-nextjs-app
- */ __turbopack_context__.s([
+__turbopack_context__.s([
     "default",
     ()=>Component
 ]);
@@ -243,9 +239,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Proje
 ;
 function Component() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex flex-col items-center justify-center min-h-screen bg-muted/40 p-4 sm:p-6",
+        className: "flex flex-col items-center justify-center min-h-screen p-4 sm:p-6",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Card"], {
-            className: "w-full max-w-xl",
+            className: "w-full max-w-xl py-0",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CardHeader"], {
                     className: "bg-primary text-primary-foreground p-6 rounded-t-lg",
@@ -259,7 +255,7 @@ function Component() {
                                         children: "Order Confirmed"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                        lineNumber: 18,
+                                        lineNumber: 13,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -267,35 +263,35 @@ function Component() {
                                         children: "Thank you for your purchase!"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                        lineNumber: 19,
+                                        lineNumber: 14,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                lineNumber: 17,
+                                lineNumber: 12,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(CircleCheckIcon, {
                                 className: "w-10 h-10"
                             }, void 0, false, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                lineNumber: 21,
+                                lineNumber: 16,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                        lineNumber: 16,
+                        lineNumber: 11,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                    lineNumber: 15,
+                    lineNumber: 10,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CardContent"], {
-                    className: "p-6",
+                    className: "px-6",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid gap-6",
                         children: [
@@ -307,7 +303,7 @@ function Component() {
                                         children: "Order Details"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                        lineNumber: 27,
+                                        lineNumber: 22,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -321,20 +317,20 @@ function Component() {
                                                         children: "Order #"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 30,
+                                                        lineNumber: 25,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "123456789"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 31,
+                                                        lineNumber: 26,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                lineNumber: 29,
+                                                lineNumber: 24,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -345,61 +341,37 @@ function Component() {
                                                         children: "Date"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 34,
+                                                        lineNumber: 29,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "June 15, 2023"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 35,
+                                                        lineNumber: 30,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                lineNumber: 33,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center justify-between",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-muted-foreground",
-                                                        children: "Payment Method"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 38,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        children: "Visa ending in 1234"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 39,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                lineNumber: 37,
+                                                lineNumber: 28,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                        lineNumber: 28,
+                                        lineNumber: 23,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                lineNumber: 26,
+                                lineNumber: 21,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                lineNumber: 43,
+                                lineNumber: 38,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -410,7 +382,7 @@ function Component() {
                                         children: "Items Purchased"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                        lineNumber: 45,
+                                        lineNumber: 40,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -434,7 +406,7 @@ function Component() {
                                                                 }
                                                             }, void 0, false, {
                                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                                lineNumber: 49,
+                                                                lineNumber: 44,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -444,7 +416,7 @@ function Component() {
                                                                         children: "Acme Widgets"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                                        lineNumber: 58,
+                                                                        lineNumber: 53,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -452,19 +424,19 @@ function Component() {
                                                                         children: "Quantity: 2"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                                        lineNumber: 59,
+                                                                        lineNumber: 54,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                                lineNumber: 57,
+                                                                lineNumber: 52,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 48,
+                                                        lineNumber: 43,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -472,13 +444,13 @@ function Component() {
                                                         children: "$99.98"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 62,
+                                                        lineNumber: 57,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                lineNumber: 47,
+                                                lineNumber: 42,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -499,7 +471,7 @@ function Component() {
                                                                 }
                                                             }, void 0, false, {
                                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                                lineNumber: 66,
+                                                                lineNumber: 61,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -509,7 +481,7 @@ function Component() {
                                                                         children: "Acme Gizmos"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                                        lineNumber: 75,
+                                                                        lineNumber: 70,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -517,19 +489,19 @@ function Component() {
                                                                         children: "Quantity: 1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                                        lineNumber: 76,
+                                                                        lineNumber: 71,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                                lineNumber: 74,
+                                                                lineNumber: 69,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 65,
+                                                        lineNumber: 60,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -537,30 +509,30 @@ function Component() {
                                                         children: "$49.99"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 79,
+                                                        lineNumber: 74,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                lineNumber: 64,
+                                                lineNumber: 59,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                        lineNumber: 46,
+                                        lineNumber: 41,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                lineNumber: 44,
+                                lineNumber: 39,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                lineNumber: 83,
+                                lineNumber: 78,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -571,7 +543,7 @@ function Component() {
                                         children: "Order Summary"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                        lineNumber: 85,
+                                        lineNumber: 80,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -585,20 +557,20 @@ function Component() {
                                                         children: "Subtotal"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 88,
+                                                        lineNumber: 83,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "$149.97"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 89,
+                                                        lineNumber: 84,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                lineNumber: 87,
+                                                lineNumber: 82,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -606,23 +578,23 @@ function Component() {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "text-muted-foreground",
-                                                        children: "Shipping"
+                                                        children: "Delivery"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 92,
+                                                        lineNumber: 87,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "$5.00"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 93,
+                                                        lineNumber: 88,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                lineNumber: 91,
+                                                lineNumber: 86,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -633,20 +605,20 @@ function Component() {
                                                         children: "Tax"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 96,
+                                                        lineNumber: 91,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "$12.00"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 97,
+                                                        lineNumber: 92,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                lineNumber: 95,
+                                                lineNumber: 90,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -656,82 +628,71 @@ function Component() {
                                                         children: "Total"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 100,
+                                                        lineNumber: 95,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "$166.97"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                        lineNumber: 101,
+                                                        lineNumber: 96,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                                lineNumber: 99,
+                                                lineNumber: 94,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                        lineNumber: 86,
+                                        lineNumber: 81,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                                lineNumber: 84,
+                                lineNumber: 79,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                        lineNumber: 25,
+                        lineNumber: 20,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                    lineNumber: 24,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CardFooter"], {
                     className: "flex justify-end gap-2 bg-muted/50 p-6 rounded-b-lg",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                            href: "#",
-                            className: "inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus:outline-none focus:ring-1 focus:ring-primary/50",
-                            prefetch: false,
-                            children: "Return to Home"
-                        }, void 0, false, {
-                            fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                            lineNumber: 108,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
-                            variant: "outline",
-                            size: "sm",
-                            children: "Print Receipt"
-                        }, void 0, false, {
-                            fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                            lineNumber: 115,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                        href: "/product-list",
+                        className: "inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus:outline-none focus:ring-1 focus:ring-primary/50",
+                        prefetch: false,
+                        children: "Return to Home"
+                    }, void 0, false, {
+                        fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
+                        lineNumber: 103,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                    lineNumber: 107,
+                    lineNumber: 102,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-            lineNumber: 14,
+            lineNumber: 9,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-        lineNumber: 13,
+        lineNumber: 8,
         columnNumber: 5
     }, this);
 }
@@ -754,20 +715,20 @@ function CircleCheckIcon(props) {
                 r: "10"
             }, void 0, false, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                lineNumber: 138,
+                lineNumber: 130,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                 d: "m9 12 2 2 4-4"
             }, void 0, false, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-                lineNumber: 139,
+                lineNumber: 131,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/order-confirmation/page.jsx",
-        lineNumber: 126,
+        lineNumber: 118,
         columnNumber: 5
     }, this);
 }

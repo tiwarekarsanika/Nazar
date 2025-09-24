@@ -1,8 +1,3 @@
-/**
- * v0 by Vercel.
- * @see https://v0.app/t/PWucQ4H5mKs
- * Documentation: https://v0.app/docs#integrating-generated-code-into-your-nextjs-app
- */
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
@@ -10,8 +5,8 @@ import { Button } from "@/components/ui/button"
 
 export default function Component() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-muted/40 p-4 sm:p-6">
-      <Card className="w-full max-w-xl">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6">
+      <Card className="w-full max-w-xl py-0">
         <CardHeader className="bg-primary text-primary-foreground p-6 rounded-t-lg">
           <div className="flex items-center justify-between">
             <div>
@@ -21,7 +16,7 @@ export default function Component() {
             <CircleCheckIcon className="w-10 h-10" />
           </div>
         </CardHeader>
-        <CardContent className="p-6">
+        <CardContent className="px-6">
           <div className="grid gap-6">
             <div className="grid gap-2">
               <div className="font-medium">Order Details</div>
@@ -34,10 +29,10 @@ export default function Component() {
                   <span className="text-muted-foreground">Date</span>
                   <span>June 15, 2023</span>
                 </div>
-                <div className="flex items-center justify-between">
+                {/* <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">Payment Method</span>
                   <span>Visa ending in 1234</span>
-                </div>
+                </div> */}
               </div>
             </div>
             <Separator />
@@ -89,7 +84,7 @@ export default function Component() {
                   <span>$149.97</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Shipping</span>
+                  <span className="text-muted-foreground">Delivery</span>
                   <span>$5.00</span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -106,15 +101,12 @@ export default function Component() {
         </CardContent>
         <CardFooter className="flex justify-end gap-2 bg-muted/50 p-6 rounded-b-lg">
           <Link
-            href="#"
+            href="/product-list"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus:outline-none focus:ring-1 focus:ring-primary/50"
             prefetch={false}
           >
             Return to Home
           </Link>
-          <Button variant="outline" size="sm">
-            Print Receipt
-          </Button>
         </CardFooter>
       </Card>
     </div>

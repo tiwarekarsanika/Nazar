@@ -60,7 +60,7 @@ export default function Component() {
             <CardContent>
               <div className="grid gap-2">
                 <h3 className="font-semibold">{item.title}</h3>
-                <p className="text-2xl font-bold">${item.price.toFixed(2)}</p>
+                <p className="text-xl font-bold">${item.price.toFixed(2)}</p>
               </div>
             </CardContent>
             <CardFooter>

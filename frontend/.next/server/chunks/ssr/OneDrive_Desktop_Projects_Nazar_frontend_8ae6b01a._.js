@@ -321,11 +321,11 @@ __turbopack_context__.s([
     ()=>Cart
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$cart$2d$item$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/ui/cart-item.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$order$2d$summary$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/ui/order-summary.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$context$2f$CartContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/context/CartContext.tsx [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
@@ -333,8 +333,63 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Proje
 ;
 ;
 ;
+const cartData = [
+    {
+        id: "1",
+        name: "Samsung Galaxy S23 Ultra S918B/DS 256GB",
+        color: "Phantom Black",
+        price: 1049.99,
+        quantity: 2,
+        image: "https://bundui-images.netlify.app/products/01.jpeg"
+    },
+    {
+        id: "2",
+        name: "JBL Charge 3 Waterproof Portable Bluetooth Speaker",
+        color: "Black",
+        price: 109.99,
+        quantity: 1,
+        image: "https://bundui-images.netlify.app/products/02.jpeg"
+    },
+    {
+        id: "3",
+        name: "GARMIN Fenix 7X 010-02541-11 Exclusive Version",
+        color: "Black",
+        price: 349.99,
+        quantity: 1,
+        image: "https://bundui-images.netlify.app/products/03.jpeg"
+    },
+    {
+        id: "4",
+        name: "Beats Fit Pro - True Wireless Noise Cancelling Earbuds",
+        color: "Phantom Black",
+        price: 199.99,
+        quantity: 1,
+        image: "https://bundui-images.netlify.app/products/04.jpeg"
+    },
+    {
+        id: "5",
+        name: "JLab Epic Air Sport ANC True Wireless Earbuds",
+        color: "Black",
+        price: 99.99,
+        quantity: 1,
+        image: "https://bundui-images.netlify.app/products/06.jpeg"
+    }
+];
 function Cart() {
-    const { cartItems, updateQuantity, removeItem } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$context$2f$CartContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCart"])();
+    const [cartItems, setCartItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(cartData);
+    const updateQuantity = (id, quantity)=>{
+        setCartItems((items)=>items.map((item)=>item.id === id ? {
+                    ...item,
+                    quantity
+                } : item));
+    };
+    const removeItem = (id)=>{
+        setCartItems((items)=>items.filter((item)=>item.id !== id));
+    };
+    const handleApplyCoupon = (code)=>{
+        console.log("Applying coupon:", code);
+    // Implement coupon logic here
+    };
     const subtotal = cartItems.reduce((sum, item)=>sum + item.price * item.quantity, 0);
     const discount = 0;
     const delivery = 29.99;
@@ -356,41 +411,34 @@ function Cart() {
                                     children: "Shopping Cart"
                                 }, void 0, false, {
                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                                    lineNumber: 24,
+                                    lineNumber: 83,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "space-y-4",
-                                    children: cartItems.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-muted-foreground",
-                                        children: "Your cart is empty."
-                                    }, void 0, false, {
-                                        fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                                        lineNumber: 28,
-                                        columnNumber: 19
-                                    }, this) : cartItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$cart$2d$item$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CartItem"], {
+                                    children: cartItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$cart$2d$item$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CartItem"], {
                                             ...item,
                                             onUpdateQuantity: updateQuantity,
                                             onRemove: removeItem
                                         }, item.id, false, {
                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                                            lineNumber: 31,
-                                            columnNumber: 21
+                                            lineNumber: 86,
+                                            columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                                    lineNumber: 26,
+                                    lineNumber: 84,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                            lineNumber: 23,
+                            lineNumber: 82,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                        lineNumber: 22,
+                        lineNumber: 81,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -403,7 +451,7 @@ function Cart() {
                                 tax: tax
                             }, void 0, false, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                                lineNumber: 44,
+                                lineNumber: 97,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -416,12 +464,12 @@ function Cart() {
                                             children: "Purchase"
                                         }, void 0, false, {
                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                                            lineNumber: 47,
+                                            lineNumber: 100,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 99,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -430,35 +478,35 @@ function Cart() {
                                         children: "Cancel Order"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                                        lineNumber: 51,
+                                        lineNumber: 104,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                                lineNumber: 45,
+                                lineNumber: 98,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                        lineNumber: 43,
+                        lineNumber: 96,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-                lineNumber: 21,
+                lineNumber: 80,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-            lineNumber: 20,
+            lineNumber: 79,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/cart.tsx",
-        lineNumber: 19,
+        lineNumber: 78,
         columnNumber: 5
     }, this);
 }

@@ -1,6 +1,33 @@
 {
   "pages": {
-    "/_app": []
+    "/_app": [
+      "static/chunks/33a3b_next_dist_compiled_next-devtools_index_0ddeccc8.js",
+      "static/chunks/33a3b_next_dist_compiled_c0601ac1._.js",
+      "static/chunks/33a3b_next_dist_shared_lib_a36c4859._.js",
+      "static/chunks/33a3b_next_dist_client_c7d7654f._.js",
+      "static/chunks/33a3b_next_dist_0a0fefe5._.js",
+      "static/chunks/33a3b_next_app_abb44736.js",
+      "static/chunks/[next]_entry_page-loader_ts_bf1cdd14._.js",
+      "static/chunks/33a3b_react-dom_57177882._.js",
+      "static/chunks/33a3b_e148efc0._.js",
+      "static/chunks/[root-of-the-server]__fc1d48e8._.js",
+      "static/chunks/OneDrive_Desktop_Projects_Nazar_frontend_pages__app_2da965e7._.js",
+      "static/chunks/turbopack-OneDrive_Desktop_Projects_Nazar_frontend_pages__app_9e08246f._.js"
+    ],
+    "/_error": [
+      "static/chunks/33a3b_next_dist_compiled_next-devtools_index_0ddeccc8.js",
+      "static/chunks/33a3b_next_dist_compiled_c0601ac1._.js",
+      "static/chunks/33a3b_next_dist_shared_lib_ef47c24a._.js",
+      "static/chunks/33a3b_next_dist_client_c7d7654f._.js",
+      "static/chunks/33a3b_next_dist_0ea06545._.js",
+      "static/chunks/33a3b_next_error_2e749545.js",
+      "static/chunks/[next]_entry_page-loader_ts_a46187ac._.js",
+      "static/chunks/33a3b_react-dom_57177882._.js",
+      "static/chunks/33a3b_e148efc0._.js",
+      "static/chunks/[root-of-the-server]__f6b628e6._.js",
+      "static/chunks/OneDrive_Desktop_Projects_Nazar_frontend_pages__error_2da965e7._.js",
+      "static/chunks/turbopack-OneDrive_Desktop_Projects_Nazar_frontend_pages__error_6a222dcb._.js"
+    ]
   },
   "devFiles": [],
   "ampDevFiles": [],

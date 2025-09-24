@@ -236,42 +236,12 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
           </div>
           {/* Right side */}
           <div className="flex items-center gap-5">
-            {/* <Button
-              variant="ghost"
-              size="sm"
-              className="text-sm font-medium hover:bg-accent hover:text-accent-foreground"
-              onClick={(e) => {
-                e.preventDefault();
-                if (onSignInClick) onSignInClick();
-              }}
-            >
-              {signInText}
-            </Button>
-            <Button
-              size="sm"
-              className="text-sm font-medium px-4 h-9 rounded-md shadow-sm"
-              onClick={(e) => {
-                e.preventDefault();
-                if (onCtaClick) onCtaClick();
-              }}
-            >
-              {ctaText}
-            </Button> */}
-            <Heart className="cursor-pointer" />
+            <Link href="/wishlist">
+              <Heart className="cursor-pointer" />
+            </Link>
             <Link href="/checkout-cart" >
               <ShoppingCart className="cursor-pointer" />
             </Link>
-            {/* <Popover>
-              <PopoverTrigger>
-                <Avatar className="cursor-pointer" >
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-              </PopoverTrigger>
-              <PopoverContent>
-                <span> < LogOut /> </span><span>Logout </span>
-              </PopoverContent>
-            </Popover> */}
             <Popover>
               <PopoverTrigger>
                 <Avatar className="cursor-pointer">

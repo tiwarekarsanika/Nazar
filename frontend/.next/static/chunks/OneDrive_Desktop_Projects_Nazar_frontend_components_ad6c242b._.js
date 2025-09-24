@@ -1294,7 +1294,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Proje
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/ui/sheet.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/ui/scroll-area.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$store$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/store.ts [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$context$2f$CartContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/context/CartContext.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive/Desktop/Projects/Nazar/frontend/node_modules/next/navigation.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature();
@@ -1315,21 +1314,12 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 ;
 ;
 ;
-;
 function AddToCartButton(param) {
     let { id, title, price, image } = param;
     _s();
-    const { addToCart } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$context$2f$CartContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCart"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const [added, setAdded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const handleClick = ()=>{
-        addToCart({
-            id,
-            title,
-            price,
-            quantity: 1,
-            image
-        });
         setAdded(true);
         setTimeout(()=>{
             router.push("/checkout-cart"); // navigate after short delay
@@ -1344,26 +1334,25 @@ function AddToCartButton(param) {
                 className: "mr-1 h-4 w-4 sm:mr-2"
             }, void 0, false, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 44,
+                lineNumber: 42,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                 children: added ? "Added !" : "Add to cart"
             }, void 0, false, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 45,
+                lineNumber: 43,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-        lineNumber: 43,
+        lineNumber: 41,
         columnNumber: 5
     }, this);
 }
-_s(AddToCartButton, "4kQTGU1yt69IdTN+u/l+BOr7esg=", false, function() {
+_s(AddToCartButton, "+LP1YhRzqUSf3haBco3DVBY7FoI=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$context$2f$CartContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCart"],
         __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
 });
@@ -1513,7 +1502,7 @@ function FilterSection() {
                         children: "Related categories"
                     }, void 0, false, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 104,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -1529,7 +1518,7 @@ function FilterSection() {
                                             id: "category-".concat(category.id)
                                         }, void 0, false, {
                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                            lineNumber: 109,
+                                            lineNumber: 107,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1538,34 +1527,34 @@ function FilterSection() {
                                             children: category.label
                                         }, void 0, false, {
                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 108,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, category.id, true, {
                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 106,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                            lineNumber: 106,
+                            lineNumber: 104,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 105,
+                        lineNumber: 103,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 103,
+                lineNumber: 101,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 121,
+                lineNumber: 119,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1575,7 +1564,7 @@ function FilterSection() {
                         children: "Brands"
                     }, void 0, false, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 125,
+                        lineNumber: 123,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1589,7 +1578,7 @@ function FilterSection() {
                                         onCheckedChange: ()=>toggleBrand(brand.id)
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 127,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1598,29 +1587,29 @@ function FilterSection() {
                                         children: brand.label
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 132,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, brand.id, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                lineNumber: 128,
+                                lineNumber: 126,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 126,
+                        lineNumber: 124,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 124,
+                lineNumber: 122,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 142,
+                lineNumber: 140,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1630,7 +1619,7 @@ function FilterSection() {
                         children: "Colors"
                     }, void 0, false, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 146,
+                        lineNumber: 144,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1644,14 +1633,14 @@ function FilterSection() {
                                         onCheckedChange: ()=>toggleColor(color.id)
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 148,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "h-4 w-4 rounded ".concat(color.color)
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 153,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1660,29 +1649,29 @@ function FilterSection() {
                                         children: color.label
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 154,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, color.id, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                lineNumber: 149,
+                                lineNumber: 147,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 147,
+                        lineNumber: 145,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 145,
+                lineNumber: 143,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 164,
+                lineNumber: 162,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1692,7 +1681,7 @@ function FilterSection() {
                         children: "Delivery date"
                     }, void 0, false, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 168,
+                        lineNumber: 166,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -1707,7 +1696,7 @@ function FilterSection() {
                                         id: "delivery-any"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 171,
+                                        lineNumber: 169,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1716,13 +1705,13 @@ function FilterSection() {
                                         children: "Any day"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 172,
+                                        lineNumber: 170,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                lineNumber: 170,
+                                lineNumber: 168,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1733,7 +1722,7 @@ function FilterSection() {
                                         id: "delivery-today"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 177,
+                                        lineNumber: 175,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1742,13 +1731,13 @@ function FilterSection() {
                                         children: "Today"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 176,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                lineNumber: 176,
+                                lineNumber: 174,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1759,7 +1748,7 @@ function FilterSection() {
                                         id: "delivery-tomorrow"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 181,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1768,13 +1757,13 @@ function FilterSection() {
                                         children: "Tomorrow"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 184,
+                                        lineNumber: 182,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                lineNumber: 182,
+                                lineNumber: 180,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1785,7 +1774,7 @@ function FilterSection() {
                                         id: "delivery-week"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 189,
+                                        lineNumber: 187,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1794,30 +1783,30 @@ function FilterSection() {
                                         children: "Within 7 days"
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 190,
+                                        lineNumber: 188,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                lineNumber: 188,
+                                lineNumber: 186,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 169,
+                        lineNumber: 167,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 167,
+                lineNumber: 165,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 197,
+                lineNumber: 195,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1827,7 +1816,7 @@ function FilterSection() {
                         children: "Price"
                     }, void 0, false, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 201,
+                        lineNumber: 199,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1841,7 +1830,7 @@ function FilterSection() {
                                 className: "w-full"
                             }, void 0, false, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                lineNumber: 203,
+                                lineNumber: 201,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1856,7 +1845,7 @@ function FilterSection() {
                                                 children: "From"
                                             }, void 0, false, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                lineNumber: 212,
+                                                lineNumber: 210,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1870,13 +1859,13 @@ function FilterSection() {
                                                 className: "h-8"
                                             }, void 0, false, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                lineNumber: 215,
+                                                lineNumber: 213,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 211,
+                                        lineNumber: 209,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1888,7 +1877,7 @@ function FilterSection() {
                                                 children: "To"
                                             }, void 0, false, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                lineNumber: 226,
+                                                lineNumber: 224,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1902,37 +1891,37 @@ function FilterSection() {
                                                 className: "h-8"
                                             }, void 0, false, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                lineNumber: 229,
+                                                lineNumber: 227,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 225,
+                                        lineNumber: 223,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                lineNumber: 210,
+                                lineNumber: 208,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 202,
+                        lineNumber: 200,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                lineNumber: 200,
+                lineNumber: 198,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-        lineNumber: 102,
+        lineNumber: 100,
         columnNumber: 5
     }, this);
 }
@@ -1962,12 +1951,12 @@ function ProductList() {
                     className: "hidden w-64 lg:block",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FilterSection, {}, void 0, false, {
                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                        lineNumber: 270,
+                        lineNumber: 268,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                    lineNumber: 269,
+                    lineNumber: 267,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1997,19 +1986,19 @@ function ProductList() {
                                                                         className: "mr-2 h-4 w-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                        lineNumber: 284,
+                                                                        lineNumber: 282,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "Filters"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                lineNumber: 283,
+                                                                lineNumber: 281,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                            lineNumber: 282,
+                                                            lineNumber: 280,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetContent"], {
@@ -2021,12 +2010,12 @@ function ProductList() {
                                                                         children: "Filters"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                        lineNumber: 290,
+                                                                        lineNumber: 288,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                    lineNumber: 289,
+                                                                    lineNumber: 287,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollArea"], {
@@ -2035,29 +2024,29 @@ function ProductList() {
                                                                         className: "py-4",
                                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FilterSection, {}, void 0, false, {
                                                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                            lineNumber: 294,
+                                                                            lineNumber: 292,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                        lineNumber: 293,
+                                                                        lineNumber: 291,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                    lineNumber: 292,
+                                                                    lineNumber: 290,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                            lineNumber: 288,
+                                                            lineNumber: 286,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                    lineNumber: 281,
+                                                    lineNumber: 279,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2068,13 +2057,13 @@ function ProductList() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                    lineNumber: 300,
+                                                    lineNumber: 298,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                            lineNumber: 279,
+                                            lineNumber: 277,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2091,12 +2080,12 @@ function ProductList() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                            lineNumber: 309,
+                                                            lineNumber: 307,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 308,
+                                                        lineNumber: 306,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$toggle$2d$group$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ToggleGroupItem"], {
@@ -2106,29 +2095,29 @@ function ProductList() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                            lineNumber: 312,
+                                                            lineNumber: 310,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 311,
+                                                        lineNumber: 309,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                lineNumber: 307,
+                                                lineNumber: 305,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                            lineNumber: 306,
+                                            lineNumber: 304,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                    lineNumber: 278,
+                                    lineNumber: 276,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2141,7 +2130,7 @@ function ProductList() {
                                                     className: "text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform"
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                    lineNumber: 321,
+                                                    lineNumber: 319,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -2151,13 +2140,13 @@ function ProductList() {
                                                     className: "w-full pl-10 sm:w-64"
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                    lineNumber: 322,
+                                                    lineNumber: 320,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                            lineNumber: 320,
+                                            lineNumber: 318,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2175,12 +2164,12 @@ function ProductList() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                            lineNumber: 334,
+                                                            lineNumber: 332,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 333,
+                                                        lineNumber: 331,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$toggle$2d$group$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ToggleGroupItem"], {
@@ -2191,35 +2180,35 @@ function ProductList() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                            lineNumber: 337,
+                                                            lineNumber: 335,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 336,
+                                                        lineNumber: 334,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                lineNumber: 332,
+                                                lineNumber: 330,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                            lineNumber: 331,
+                                            lineNumber: 329,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                    lineNumber: 319,
+                                    lineNumber: 317,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                            lineNumber: 276,
+                            lineNumber: 274,
                             columnNumber: 11
                         }, this),
                         filteredProducts.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2230,7 +2219,7 @@ function ProductList() {
                                     children: "No products found matching your filters."
                                 }, void 0, false, {
                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                    lineNumber: 347,
+                                    lineNumber: 345,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2238,13 +2227,13 @@ function ProductList() {
                                     children: "Try adjusting your search criteria."
                                 }, void 0, false, {
                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                    lineNumber: 350,
+                                    lineNumber: 348,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                            lineNumber: 346,
+                            lineNumber: 344,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "grid gap-4 sm:gap-6 ".concat(viewMode === "grid" ? "xs:grid-cols-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"),
@@ -2262,7 +2251,7 @@ function ProductList() {
                                                         className: "h-40 w-full rounded-md object-cover sm:h-48"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 365,
+                                                        lineNumber: 363,
                                                         columnNumber: 23
                                                     }, this),
                                                     product.isNew && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2270,13 +2259,13 @@ function ProductList() {
                                                         children: "New"
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 371,
+                                                        lineNumber: 369,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                lineNumber: 364,
+                                                lineNumber: 362,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2287,7 +2276,7 @@ function ProductList() {
                                                         children: product.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 378,
+                                                        lineNumber: 376,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2301,7 +2290,7 @@ function ProductList() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                lineNumber: 383,
+                                                                lineNumber: 381,
                                                                 columnNumber: 25
                                                             }, this),
                                                             product.originalPrice && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -2314,7 +2303,7 @@ function ProductList() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                        lineNumber: 388,
+                                                                        lineNumber: 386,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2327,7 +2316,7 @@ function ProductList() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                        lineNumber: 391,
+                                                                        lineNumber: 389,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
@@ -2335,7 +2324,7 @@ function ProductList() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 382,
+                                                        lineNumber: 380,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2349,12 +2338,12 @@ function ProductList() {
                                                                         className: "h-3 w-3 ".concat(i < Math.floor(product.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300")
                                                                     }, i, false, {
                                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                        lineNumber: 401,
+                                                                        lineNumber: 399,
                                                                         columnNumber: 29
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                lineNumber: 399,
+                                                                lineNumber: 397,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2362,13 +2351,13 @@ function ProductList() {
                                                                 children: product.rating
                                                             }, void 0, false, {
                                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                lineNumber: 411,
+                                                                lineNumber: 409,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 398,
+                                                        lineNumber: 396,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2379,7 +2368,7 @@ function ProductList() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 414,
+                                                        lineNumber: 412,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2390,7 +2379,7 @@ function ProductList() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 418,
+                                                        lineNumber: 416,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2402,7 +2391,7 @@ function ProductList() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 420,
+                                                        lineNumber: 418,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2415,7 +2404,7 @@ function ProductList() {
                                                                 image: product.image
                                                             }, void 0, false, {
                                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                lineNumber: 435,
+                                                                lineNumber: 433,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive$2f$Desktop$2f$Projects$2f$Nazar$2f$frontend$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2426,57 +2415,57 @@ function ProductList() {
                                                                     className: "h-4 w-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                    lineNumber: 437,
+                                                                    lineNumber: 435,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                                lineNumber: 436,
+                                                                lineNumber: 434,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                        lineNumber: 429,
+                                                        lineNumber: 427,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                                lineNumber: 377,
+                                                lineNumber: 375,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                        lineNumber: 363,
+                                        lineNumber: 361,
                                         columnNumber: 19
                                     }, this)
                                 }, product.id, false, {
                                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                                    lineNumber: 362,
+                                    lineNumber: 360,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                            lineNumber: 355,
+                            lineNumber: 353,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-                    lineNumber: 274,
+                    lineNumber: 272,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-            lineNumber: 267,
+            lineNumber: 265,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/OneDrive/Desktop/Projects/Nazar/frontend/components/product-list.tsx",
-        lineNumber: 266,
+        lineNumber: 264,
         columnNumber: 5
     }, this);
 }
