@@ -1,8 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 21, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/tiwar/OneDrive/Desktop/Projects/Nazar/frontend/app/checkout-cart/page.tsx"],"sourcesContent":["import Cart from \"@/components/cart\";\r\n\r\nexport default function Page() {\r\n  return <Cart />;\r\n}"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBAAO,sSAAC,sLAAI;;;;;AACd","debugId":null}}]
-}
