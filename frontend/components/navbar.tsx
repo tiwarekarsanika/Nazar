@@ -18,6 +18,8 @@ import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ShoppingCart, Heart, LogOut } from 'lucide-react';
 import Link from 'next/link';
+import { CurrentUserAvatar } from './current-user-avatar';
+import UserInfo from './user-info';
 
 // Simple logo component for the navbar
 const Logo = (props: React.SVGAttributes<SVGElement>) => {
@@ -242,18 +244,8 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
             <Link href="/checkout-cart" >
               <ShoppingCart className="cursor-pointer" />
             </Link>
-            <Popover>
-              <PopoverTrigger>
-                <Avatar className="cursor-pointer">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-              </PopoverTrigger>
-              <PopoverContent className="flex items-center gap-2 cursor-pointer" onClick={() => signOut()}>
-                <LogOut className="w-4 h-4" />
-                <span>Logout</span>
-              </PopoverContent>
-            </Popover>
+            <CurrentUserAvatar />
+            <UserInfo />
           </div>
         </div>
       </header>

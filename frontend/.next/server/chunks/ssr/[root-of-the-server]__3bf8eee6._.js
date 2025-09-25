@@ -183,7 +183,7 @@ function LoginForm({ className, ...props }) {
             const { error } = await supabase.auth.signInWithOAuth({
                 provider: 'google',
                 options: {
-                    redirectTo: `${window.location.origin}/auth/oauth?next=/protected`
+                    redirectTo: `${window.location.origin}/auth/oauth?next=/home`
                 }
             });
             if (error) throw error;

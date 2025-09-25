@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/tiwar/OneDrive/Desktop/Projects/Nazar/frontend/app/home/layout.tsx"],"sourcesContent":["\"use client\"\r\n\r\nimport { redirect } from \"next/navigation\"\r\nimport { createClient } from \"@/lib/client\"\r\n\r\nexport default async function HomeLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode\r\n}) {\r\n  const supabase = createClient()\r\n  const {\r\n    data: { session },\r\n  } = await supabase.auth.getSession()\r\n\r\n  if (!session) {\r\n    console.log(\"sesh is \", session)\r\n    redirect(\"/auth/login\")\r\n  }\r\n\r\n  return <>{children}</>\r\n}\r\n"],"names":[],"mappings":";;;;;AAEA;AACA;AAHA;;;;AAKe,eAAe,WAAW,EACvC,QAAQ,EAGT;IACC,MAAM,WAAW,IAAA,qLAAY;IAC7B,MAAM,EACJ,MAAM,EAAE,OAAO,EAAE,EAClB,GAAG,MAAM,SAAS,IAAI,CAAC,UAAU;IAElC,IAAI,CAAC,SAAS;QACZ,QAAQ,GAAG,CAAC,YAAY;QACxB,IAAA,sMAAQ,EAAC;IACX;IAEA,qBAAO;kBAAG;;AACZ","debugId":null}}]
+}

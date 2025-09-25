@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/tiwar/OneDrive/Desktop/Projects/Nazar/frontend/app/authentication/page.tsx"],"sourcesContent":["\"use client\"\r\n\r\nimport { createClient } from '@supabase/supabase-js'\r\nimport { Auth } from '@supabase/auth-ui-react'\r\nimport { ThemeSupa } from '@supabase/auth-ui-shared'\r\n\r\nconst supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_OR_ANON_KEY!)\r\n\r\nconst Login = () => (\r\n  <Auth\r\n    supabaseClient={supabase}\r\n    appearance={{ theme: ThemeSupa }}\r\n    providers={['google']}\r\n  />\r\n)\r\n\r\nexport default Login;"],"names":[],"mappings":";;;;;AAEA;AACA;AACA;AAJA;;;;;AAMA,MAAM,WAAW,IAAA,+PAAY;AAE7B,MAAM,QAAQ,kBACZ,sSAAC,wOAAI;QACH,gBAAgB;QAChB,YAAY;YAAE,OAAO,yOAAS;QAAC;QAC/B,WAAW;YAAC;SAAS;;;;;;uCAIV","debugId":null}}]
+}

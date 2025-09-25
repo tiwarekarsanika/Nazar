@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 import redisRoutes from './routes/redisRoutes.js'
 import kProducerRoutes from './routes/kProducerRoutes.js'
 import client from 'prom-client'
+import { verifySupabaseJWT } from './middleware/authMiddleware.js'
 
 const app = express()
 dotenv.config()
@@ -12,8 +13,8 @@ dotenv.config()
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.use('/redis', redisRoutes);
-app.use('/kafka', kProducerRoutes);
+app.use('/redis', verifySupabaseJWT, redisRoutes);
+app.use('/kafka', verifySupabaseJWT, kProducerRoutes);
 
 const register = new client.Registry();
 

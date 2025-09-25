@@ -1,0 +1,26 @@
+{
+  "pages": {
+    "/authentication/page": [
+      "static/chunks/33a3b_next_dist_703912be._.js",
+      "static/chunks/OneDrive_Desktop_Projects_Nazar_frontend_app_favicon_ico_mjs_ec319eb9._.js",
+      "static/chunks/33a3b_6b0f9529._.js",
+      "static/chunks/[root-of-the-server]__e7670c99._.js",
+      "static/chunks/[root-of-the-server]__9a5952bb._.css",
+      "static/chunks/OneDrive_Desktop_Projects_Nazar_frontend_app_layout_tsx_46b839df._.js",
+      "static/chunks/33a3b_next_dist_client_components_builtin_global-error_448e4d15.js",
+      "static/chunks/33a3b_@supabase_node-fetch_browser_04038755.js",
+      "static/chunks/33a3b_4eb3ac4b._.js",
+      "static/chunks/OneDrive_Desktop_Projects_Nazar_frontend_app_authentication_page_tsx_c87469e7._.js",
+      "static/chunks/OneDrive_Desktop_Projects_Nazar_frontend_app_authentication_page_tsx_448e4d15._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_80c4b4d3._.js",
+      "static/chunks/33a3b_next_dist_compiled_react-dom_dc9d1f05._.js",
+      "static/chunks/33a3b_next_dist_compiled_next-devtools_index_eac332f9.js",
+      "static/chunks/33a3b_next_dist_compiled_f69b1b02._.js",
+      "static/chunks/33a3b_next_dist_client_176e1b57._.js",
+      "static/chunks/33a3b_next_dist_84d67634._.js",
+      "static/chunks/33a3b_@swc_helpers_cjs_2e3f0f3b._.js",
+      "static/chunks/OneDrive_Desktop_Projects_Nazar_frontend_a0ff3932._.js",
+      "static/chunks/turbopack-OneDrive_Desktop_Projects_Nazar_frontend_4b860990._.js"
+    ]
+  }
+}
