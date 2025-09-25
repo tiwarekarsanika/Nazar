@@ -6,7 +6,6 @@ import { useEffect, useState, useRef } from 'react';
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
 import {
@@ -15,7 +14,6 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ShoppingCart, Heart, LogOut } from 'lucide-react';
 import Link from 'next/link';
 import { CurrentUserAvatar } from './current-user-avatar';
