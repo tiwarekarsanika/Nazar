@@ -2,6 +2,7 @@ import app from './app.js';
 import redisClient from './redis/config.js'
 import kafkaProducer from './kafka/producer.js'
 import redisConsumerAPI from './redis/redisConsumer.js';
+import supabase from './supabase/configure.js'
 
 const port = process.env.EXPRESS_PORT || 5000;
 
@@ -14,6 +15,11 @@ const port = process.env.EXPRESS_PORT || 5000;
         console.log("Connected to redis successfully: ", result);
         
         await kafkaProducer.connect()
+        
+        const { data, error } = await supabase
+        .from('your_table_name')
+        .select('*');
+
         redisConsumerAPI(redisClient)
         // await redisConsumer.connect()
         // await redisConsumer.subscribe({ topic: 'nazar-user-events'})

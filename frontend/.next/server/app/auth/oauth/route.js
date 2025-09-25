@@ -1,0 +1,10 @@
+var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/auth/oauth/route.js")
+R.c("server/chunks/33a3b_@supabase_node-fetch_lib_index_04d4cf8a.js")
+R.c("server/chunks/33a3b_next_70ae1441._.js")
+R.c("server/chunks/33a3b_tr46_a8662cd6._.js")
+R.c("server/chunks/33a3b_@supabase_auth-js_dist_module_1a17f0ce._.js")
+R.c("server/chunks/33a3b_04010749._.js")
+R.c("server/chunks/[root-of-the-server]__c57d3fc6._.js")
+R.m("[project]/OneDrive/Desktop/Projects/Nazar/frontend/.next-internal/server/app/auth/oauth/route/actions.js [app-rsc] (server actions loader, ecmascript)")
+R.m("[project]/OneDrive/Desktop/Projects/Nazar/frontend/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/auth/oauth/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/OneDrive/Desktop/Projects/Nazar/frontend/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/OneDrive/Desktop/Projects/Nazar/frontend/app/auth/oauth/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports

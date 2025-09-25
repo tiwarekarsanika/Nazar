@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from '@/components/navbar'
-import { CartProvider } from "@/context/CartContext";
 import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
@@ -30,7 +29,7 @@ export default function RootLayout({
 
   const pathname = usePathname();
 
-  const hideLayout = pathname === "/login" || pathname === "/signup";
+  const hideLayout = pathname === "/auth/login" || pathname === "/signup";
 
   return (
     <html lang="en">

@@ -1,6 +1,33 @@
 {
   "version": 3,
-  "middleware": {},
-  "sortedMiddleware": [],
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge/chunks/OneDrive_Desktop_Projects_Nazar_frontend_58462ad4._.js",
+        "server/edge/chunks/[root-of-the-server]__3c34dc14._.js",
+        "server/edge/chunks/turbopack-OneDrive_Desktop_Projects_Nazar_frontend_edge-wrapper_95a3e8b4.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/((?!_next\\/static|_next\\/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*))(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "tyhWUUY27qMEdl5z5eVvr/bhBUXU0E2fqmCxJE4U3TM=",
+        "__NEXT_PREVIEW_MODE_ID": "6519df2875740b03dbda1a9ea16df419",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "741b4eff4e45a31db9d0e6f60ea626da33ac38f2c76c5948e1ff4428cbf8f222",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "cd45df69d6a593b0f1745cd41ca4ab460976f3e35f4996f31072cd7615931a27"
+      }
+    }
+  },
+  "sortedMiddleware": [
+    "/"
+  ],
   "functions": {}
 }
