@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CartItem } from "./ui/cart-item";
 import { OrderSummary } from "./ui/order-summary";
 import Link from "next/link";
-import { PaymentMethods } from "./ui/payment-methods";
 
 const cartData = [
   {

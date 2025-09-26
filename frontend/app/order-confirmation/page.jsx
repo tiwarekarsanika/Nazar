@@ -1,9 +1,8 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 
-export default function Component() {
+export default function OrderConfirmation() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6">
       <Card className="w-full max-w-xl py-0">
