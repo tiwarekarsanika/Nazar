@@ -14,7 +14,7 @@ class OrdersRepo {
     }
 
     static addNewOrder = async(order, orderItems) => {
-        const { order, error1 } = await supabase
+        const { newOrder, error1 } = await supabase
                                 .from('orders')
                                 .insert(order)
                                 .select()
@@ -31,7 +31,7 @@ class OrdersRepo {
             console.log("Failed to add the item to the order ", error2)
         }
 
-        return { order, items}
+        return { newOrder, items}
     }
 }
 

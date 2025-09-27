@@ -14,7 +14,7 @@ class CartRepo {
     }
 
     static addNewCart = async(cart, cartItems) => {
-        const { cart, error1 } = await supabase
+        const { newCart, error1 } = await supabase
                                 .from('carts')
                                 .insert(cart)
                                 .select()

@@ -14,19 +14,23 @@ class WishlistRepo {
     }
 
     static addWishlist = async(wishList, wishItems) => {
-        const { error1 } = await supabase
+        const { data1, error1 } = await supabase
                         .from('wishlists')
                         .insert(wishList)
+                        .select()
         if (error1) {
             console.log("Failed to add the wishlist ", error1)
         }
 
-        const { error2 } = await supabase
+        const { data2, error2 } = await supabase
                         .from('wishlist_items')
                         .insert(wishItems)
+                        .select()
         if (error2) {
             console.log("Failed to add the wishlist ", error2)
         }
+
+        return { data1, data2 }
     }
 
     static removeItemFromWishlist = async(itemID) => {
