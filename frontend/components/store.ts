@@ -14,7 +14,6 @@ export interface Product {
   category: string;
   brand: string;
   colors: string[];
-  deliveryDays: number;
   productDetails: string;
 }
 
@@ -27,7 +26,6 @@ interface ProductStore {
   priceRange: [number, number];
   selectedBrands: string[];
   selectedColors: string[];
-  deliveryDate: string;
   viewMode: string;
 
   // Actions
@@ -36,7 +34,7 @@ interface ProductStore {
   setPriceRange: (range: [number, number]) => void;
   toggleBrand: (brand: string) => void;
   toggleColor: (color: string) => void;
-  setDeliveryDate: (date: string) => void;
+  // setDeliveryDate: (date: string) => void;
   setViewMode: (mode: string) => void;
   applyFilters: () => void;
 }
@@ -57,7 +55,6 @@ const sampleProducts: Product[] = [
     category: "phones",
     brand: "apple",
     colors: ["black", "white"],
-    deliveryDays: 1,
     productDetails:
       "6.7-inch Super Retina XDR OLED display with ProMotion. A16 Bionic chip for unmatched performance. 256GB storage capacity. Advanced triple-camera system with 48MP main lens and cinematic video recording. iOS 16 with Face ID, 5G connectivity, and all-day battery life."
   },
@@ -75,7 +72,6 @@ const sampleProducts: Product[] = [
     category: "phones",
     brand: "samsung",
     colors: ["black", "purple"],
-    deliveryDays: 2,
     productDetails:
       "6.8-inch Dynamic AMOLED 2X display with 120Hz refresh rate. Snapdragon 8 Gen 2 processor with 512GB storage. Quad-camera setup with 200MP main sensor, 100x Space Zoom, and 8K video recording. S Pen support, 5G connectivity, and 5000mAh battery with fast charging."
   },
@@ -93,7 +89,6 @@ const sampleProducts: Product[] = [
     category: "phones",
     brand: "huawei",
     colors: ["orange", "black"],
-    deliveryDays: 3,
     productDetails:
       "6.6-inch OLED display with 120Hz refresh rate. Kirin 9000/Qualcomm Snapdragon chipset with 128GB storage. Leica quad-camera setup with 50MP True-Chroma sensor. IP68 water and dust resistance, HarmonyOS support, and 4360mAh battery with 66W fast charging."
   },
@@ -111,7 +106,6 @@ const sampleProducts: Product[] = [
     category: "headsets",
     brand: "sony",
     colors: ["black", "white"],
-    deliveryDays: 1,
     productDetails:
       "Industry-leading active noise cancellation with dual processors. Crystal-clear audio with 30mm drivers. Up to 30 hours of battery life with quick charging. Lightweight, comfortable design with touch controls. Bluetooth 5.2 and multipoint connectivity support."
   },
@@ -127,7 +121,6 @@ const sampleProducts: Product[] = [
     category: "headsets",
     brand: "bose",
     colors: ["black", "white"],
-    deliveryDays: 2,
     productDetails:
       "Acclaimed noise-cancelling technology with Aware Mode. High-fidelity audio with balanced sound. Lightweight over-ear design for long-term comfort. Up to 24 hours of battery life. Bluetooth 5.1 with multipoint pairing and USB-C fast charging."
   },
@@ -145,7 +138,6 @@ const sampleProducts: Product[] = [
     category: "laptops",
     brand: "apple",
     colors: ["gray", "white"],
-    deliveryDays: 3,
     productDetails:
       "16.2-inch Liquid Retina XDR display with ProMotion. Apple M2 Pro chip with up to 12-core CPU and 19-core GPU. 16GB unified memory and 512GB storage. macOS Ventura with optimized workflows for creators. All-day battery life with advanced thermal design."
   },
@@ -163,7 +155,6 @@ const sampleProducts: Product[] = [
     category: "laptops",
     brand: "dell",
     colors: ["gray", "black"],
-    deliveryDays: 5,
     productDetails:
       "13.4-inch InfinityEdge OLED display with ultra-thin bezels. Intel Core i7 12th Gen processor with 16GB RAM. 512GB SSD storage. Sleek aluminum design with zero-lattice keyboard. Windows 11 pre-installed with long battery life and fast charging support."
   },
@@ -179,7 +170,6 @@ const sampleProducts: Product[] = [
     category: "laptops",
     brand: "microsoft",
     colors: ["blue", "gray"],
-    deliveryDays: 4,
     productDetails:
       "13.5-inch PixelSense touchscreen display with Dolby Vision IQ. Intel Evo 12th Gen Core i5/i7 processor. 8GB RAM with 256GB SSD. Slim, lightweight design with premium Alcantara finish. All-day battery with fast charging and Windows 11 integration."
   },
@@ -197,7 +187,6 @@ const sampleProducts: Product[] = [
     category: "tv",
     brand: "samsung",
     colors: ["black"],
-    deliveryDays: 7,
     productDetails:
       "65-inch Quantum Dot 4K QLED display with HDR10+. 120Hz refresh rate for smooth motion. AI-powered upscaling for enhanced picture quality. Dolby Atmos sound and Object Tracking Sound+. Smart TV features with Tizen OS and voice assistant integration."
   },
@@ -215,7 +204,6 @@ const sampleProducts: Product[] = [
     category: "tv",
     brand: "lg",
     colors: ["black"],
-    deliveryDays: 6,
     productDetails:
       "55-inch OLED display with perfect blacks and infinite contrast. α9 Gen 6 AI Processor for optimized picture and sound. Dolby Vision IQ and Dolby Atmos support. 120Hz refresh rate with NVIDIA G-SYNC and AMD FreeSync compatibility. WebOS smart platform with ThinQ AI."
   },
@@ -233,7 +221,6 @@ const sampleProducts: Product[] = [
     category: "sound",
     brand: "jbl",
     colors: ["blue", "red", "black"],
-    deliveryDays: 2,
     productDetails:
       "Powerful portable speaker with JBL Original Pro Sound. Long-lasting 20-hour battery life. IP67 waterproof and dustproof design. Built-in powerbank for charging devices. Bluetooth 5.1 connectivity with PartyBoost for stereo pairing."
   },
@@ -251,7 +238,6 @@ const sampleProducts: Product[] = [
     category: "watches",
     brand: "apple",
     colors: ["black", "white", "red"],
-    deliveryDays: 1,
     productDetails:
       "45mm Retina Always-On display with up to 2000 nits brightness. S9 SiP chip with faster performance and precision dual-frequency GPS. Advanced health features including ECG, blood oxygen, and heart rate monitoring. Crash detection and 18-hour all-day battery life. WatchOS 10 with enhanced fitness tracking."
   }
@@ -266,7 +252,7 @@ export const useProductStore = create<ProductStore>((set, get) => ({
   priceRange: [0, 3000],
   selectedBrands: [],
   selectedColors: [],
-  deliveryDate: "any",
+  // deliveryDate: "any",
   viewMode: "grid",
 
   // Actions
@@ -303,10 +289,10 @@ export const useProductStore = create<ProductStore>((set, get) => ({
     get().applyFilters();
   },
 
-  setDeliveryDate: (date) => {
-    set({ deliveryDate: date });
-    get().applyFilters();
-  },
+  // setDeliveryDate: (date) => {
+  //   set({ deliveryDate: date });
+  //   get().applyFilters();
+  // },
 
   setViewMode: (mode) => {
     set({ viewMode: mode });
@@ -320,7 +306,7 @@ export const useProductStore = create<ProductStore>((set, get) => ({
       priceRange,
       selectedBrands,
       selectedColors,
-      deliveryDate
+      // deliveryDate
     } = get();
 
     let filtered = products;
@@ -359,17 +345,17 @@ export const useProductStore = create<ProductStore>((set, get) => ({
     }
 
     // Delivery date filter
-    if (deliveryDate !== "any") {
-      const maxDays =
-        deliveryDate === "today"
-          ? 0
-          : deliveryDate === "tomorrow"
-            ? 1
-            : deliveryDate === "week"
-              ? 7
-              : 999;
-      filtered = filtered.filter((product) => product.deliveryDays <= maxDays);
-    }
+    // if (deliveryDate !== "any") {
+    //   const maxDays =
+    //     deliveryDate === "today"
+    //       ? 0
+    //       : deliveryDate === "tomorrow"
+    //         ? 1
+    //         : deliveryDate === "week"
+    //           ? 7
+    //           : 999;
+    //   filtered = filtered.filter((product) => product.deliveryDays <= maxDays);
+    // }
 
     set({ filteredProducts: filtered });
   }

@@ -1,4 +1,4 @@
-import UserService from "../service/userService";
+import UserService from "../service/userService.js";
 
 class UserController{
     static async fetchAllUsers(req, res){
@@ -12,7 +12,7 @@ class UserController{
 
     static async fetchUserByEmail(req, res){
         try {
-            const response = await UserService.fetchUserByEmail(req.body)
+            const response = await UserService.fetchUserByEmail(req.body.email)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });
@@ -21,7 +21,8 @@ class UserController{
 
     static async fetchUserById(req, res){
         try {
-            const response = await UserService.fetchUserById(req.body)
+            const id = req.params.id
+            const response = await UserService.fetchUserById(id)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });

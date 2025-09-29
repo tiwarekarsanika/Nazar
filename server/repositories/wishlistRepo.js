@@ -4,8 +4,8 @@ class WishlistRepo {
     static fetchWishlist = async(wishlistID) => {
         const { data, error } = await supabase
                                 .from('wishlist_items')
-                                .eq('wishlist_id', wishlistID)
                                 .select()
+                                .eq('wishlist_id', wishlistID)
         if (error) {
             console.log("Failed to fetch the wishlist ", error)
         }

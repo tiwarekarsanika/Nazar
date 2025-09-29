@@ -3,7 +3,8 @@ import WishlistService from "../service/wishlistService";
 class WishlistController {
     static async fetchWishlist(req, res){
         try {
-            const response = await WishlistService.fetchWishlist(req.body)
+            const id = req.params.id
+            const response = await WishlistService.fetchWishlist(id)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });
