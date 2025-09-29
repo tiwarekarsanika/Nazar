@@ -17,7 +17,8 @@ import { cn } from '@/lib/utils';
 import { ShoppingCart, Heart, LogOut } from 'lucide-react';
 import Link from 'next/link';
 import { CurrentUserAvatar } from './current-user-avatar';
-import UserInfo from './user-info';
+import { useUser } from "@/context/userContext";
+import { LogoutButton } from './logout-button';
 
 // Simple logo component for the navbar
 const Logo = (props: React.SVGAttributes<SVGElement>) => {
@@ -152,6 +153,8 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
       }
     }, [ref]);
 
+    const user = useUser();
+
     return (
       <header
         ref={combinedRef}
@@ -243,7 +246,9 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
               <ShoppingCart className="cursor-pointer" />
             </Link>
             <CurrentUserAvatar />
-            <UserInfo />
+            {
+              user ? <LogoutButton /> : <span> Please Log In </span>
+            }
           </div>
         </div>
       </header>
