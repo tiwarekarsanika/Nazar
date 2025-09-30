@@ -16,9 +16,11 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useProductStore } from "./store";
 import { useRouter } from "next/navigation";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getAllProducts } from "@/utils/apis/productsAPI";
 import { Progress } from "@/components/ui/progress"
+import { addWishlist } from "@/utils/apis/wishlistAPI";
+import { useUser } from "@/context/userContext";
 
 type ProductButtonProps = {
   id: number;
@@ -276,6 +278,23 @@ export default function ProductList() {
     applyFilters();
   }, [applyFilters]);
 
+  const user = useUser();
+  console.log("User is ", user)
+  const queryClient = useQueryClient();
+
+  // Mutation hook
+  const addToWishlistMutation = useMutation({
+    mutationFn: (productId: number) => addWishlist(user?.user.id, productId),
+    onSuccess: () => {
+      console.log("Item added to wishlist ");
+      // invalidate & refetch wishlist data
+      queryClient.invalidateQueries({ queryKey: ["wishlists"] });
+    },
+    onError: (error) => {
+      console.error("Failed to add wishlist item ", error);
+    },
+  });
+
   if (isLoading) return <Progress />;
   if (error) return <div>Sorry There was an Error</div>;
 
@@ -371,8 +390,8 @@ export default function ProductList() {
           ) : (
             <div
               className={`grid gap-4 sm:gap-6 ${viewMode === "grid"
-                  ? "xs:grid-cols-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4"
-                  : "grid-cols-1"
+                ? "xs:grid-cols-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4"
+                : "grid-cols-1"
                 }`}>
               {filteredProducts.map((product: any) => (
                 <Card key={product.product_id} className="group transition-shadow hover:shadow-lg">
@@ -417,8 +436,8 @@ export default function ProductList() {
                             <Star
                               key={i}
                               className={`h-3 w-3 ${i < Math.floor(product.rating)
-                                  ? "fill-yellow-400 text-yellow-400"
-                                  : "text-gray-300"
+                                ? "fill-yellow-400 text-yellow-400"
+                                : "text-gray-300"
                                 }`}
                             />
                           ))}
@@ -448,7 +467,12 @@ export default function ProductList() {
                           <span className="xs:hidden">Add</span>
                         </Button> */}
                         <AddToCartButton id={product.id} title={product.title} price={product.price} image={product.image} />
-                        <Button variant="outline" size="sm" className="bg-transparent px-2 sm:px-3">
+                        <Button
+                          onClick={() => addToWishlistMutation.mutate(product.product_id)}
+                          variant="outline"
+                          size="sm"
+                          className="bg-transparent px-2 sm:px-3"
+                        >
                           <Heart className="h-4 w-4" />
                         </Button>
                       </div>

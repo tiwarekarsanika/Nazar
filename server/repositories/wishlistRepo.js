@@ -1,11 +1,12 @@
 import supabase from "../supabase/configure.js";
 
 class WishlistRepo {
-    static fetchWishlist = async(wishlistID) => {
+    static fetchWishlist = async(userID) => {
         const { data, error } = await supabase
-                                .from('wishlist_items')
-                                .select()
-                                .eq('wishlist_id', wishlistID)
+                                .from('wishlists')
+                                .select('wishlist_id')
+                                .eq('user_id', userID)
+                                .single()
         if (error) {
             console.log("Failed to fetch the wishlist ", error)
         }
@@ -13,24 +14,39 @@ class WishlistRepo {
         return data
     }
 
-    static addWishlist = async(wishList, wishItems) => {
-        const { data1, error1 } = await supabase
-                        .from('wishlists')
-                        .insert(wishList)
-                        .select()
-        if (error1) {
-            console.log("Failed to add the wishlist ", error1)
+    static fetchWishlistItems = async(wishlistID) => {
+        const { data, error } = await supabase.from('wishlist_items').select().eq('wishlist_id', wishlistID)
+        if (error){
+            console.log("Failed to fetch the wishlist items ", error)
         }
 
-        const { data2, error2 } = await supabase
+        return data
+    }
+
+    static addWishlistItem = async(wishlistID, productID) => {
+        const { data, error } = await supabase
                         .from('wishlist_items')
-                        .insert(wishItems)
-                        .select()
-        if (error2) {
-            console.log("Failed to add the wishlist ", error2)
+                        .insert({ wishlist_id: wishlistID, product_id: productID })
+                        .select('wishlist_item_id')
+                        .single()
+        if (error) {
+            console.log("Failed to add the wishlist ", error)
         }
 
-        return { data1, data2 }
+        return data
+    }
+
+    static addWishlist = async(userID) => {
+        const { data, error } = await supabase
+                        .from('wishlists')
+                        .insert({ user_id: userID })
+                        .select('wishlist_id')
+                        .single()
+        if (error) {
+            console.log("Failed to add the wishlist ", error)
+        }
+
+        return data
     }
 
     static removeItemFromWishlist = async(itemID) => {
