@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const basURL = "http://localhost:5500"
+const baseURL = "http://localhost:5500"
 
 export async function getUser() {
   try {
-    const response = await axios.get('/addToWishlist');
+    const response = await axios.get(`{$baseURL}/addToWishlist`);
     console.log(response);
   } catch (error) {
     console.error(error);

@@ -6,6 +6,7 @@ import "./globals.css";
 import { Navbar } from '@/components/navbar'
 import { LayoutWrapper } from "@/components/layout-wrapper";
 import { UserProvider } from "@/context/userContext";
+import ReactQueryProvider from "@/utils/providers/queryProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,9 +35,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LayoutWrapper>
-          <UserProvider>
-            {children}
-          </UserProvider>
+          <ReactQueryProvider>
+            <UserProvider>
+              {children}
+            </UserProvider>
+          </ReactQueryProvider>
         </LayoutWrapper>
       </body>
     </html>

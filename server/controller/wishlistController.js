@@ -1,4 +1,4 @@
-import WishlistService from "../service/wishlistService";
+import WishlistService from "../service/wishlistService.js";
 
 class WishlistController {
     static async fetchWishlist(req, res){

@@ -16,6 +16,9 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useProductStore } from "./store";
 import { useRouter } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { getAllProducts } from "@/utils/apis/productsAPI";
+import { Progress } from "@/components/ui/progress"
 
 type ProductButtonProps = {
   id: number;
@@ -25,7 +28,7 @@ type ProductButtonProps = {
 };
 
 export function AddToCartButton({ id, title, price, image }: ProductButtonProps) {
-  
+
   const router = useRouter();
   const [added, setAdded] = useState(false);
 
@@ -87,12 +90,12 @@ function FilterSection() {
     priceRange,
     selectedBrands,
     selectedColors,
-    deliveryDate,
+    // deliveryDate,
     selectedCategory, // Added selectedCategory
     setPriceRange,
     toggleBrand,
     toggleColor,
-    setDeliveryDate,
+    // setDeliveryDate,
     setSelectedCategory // Added setSelectedCategory
   } = useProductStore();
 
@@ -162,7 +165,7 @@ function FilterSection() {
       <Separator />
 
       {/* Delivery Date */}
-      <div>
+      {/* <div>
         <h3 className="mb-3 font-semibold">Delivery date</h3>
         <RadioGroup value={deliveryDate} onValueChange={setDeliveryDate}>
           <div className="flex items-center space-x-2">
@@ -192,7 +195,7 @@ function FilterSection() {
         </RadioGroup>
       </div>
 
-      <Separator />
+      <Separator /> */}
 
       {/* Price Range */}
       <div>
@@ -254,11 +257,27 @@ export default function ProductList() {
   } = useProductStore();
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const { data: productsData, isLoading, error } = useQuery({
+    queryKey: ["products"],
+    queryFn: async () => await getAllProducts()
+  });
+
+  const setProducts = useProductStore((state) => state.setProducts);
+
+  useEffect(() => {
+    if (productsData) {
+      console.log(productsData)
+      setProducts(productsData.data); // populate Zustand store
+    }
+  }, [productsData]);
 
   // Apply initial filters on mount
   useEffect(() => {
     applyFilters();
   }, [applyFilters]);
+
+  if (isLoading) return <Progress />;
+  if (error) return <div>Sorry There was an Error</div>;
 
   return (
     <div>
@@ -351,13 +370,12 @@ export default function ProductList() {
             </div>
           ) : (
             <div
-              className={`grid gap-4 sm:gap-6 ${
-                viewMode === "grid"
+              className={`grid gap-4 sm:gap-6 ${viewMode === "grid"
                   ? "xs:grid-cols-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4"
                   : "grid-cols-1"
-              }`}>
+                }`}>
               {filteredProducts.map((product: any) => (
-                <Card key={product.id} className="group transition-shadow hover:shadow-lg">
+                <Card key={product.product_id} className="group transition-shadow hover:shadow-lg">
                   <CardContent className="p-3 sm:p-4">
                     <div className="relative mb-3 sm:mb-4">
                       <img
@@ -398,11 +416,10 @@ export default function ProductList() {
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              className={`h-3 w-3 ${
-                                i < Math.floor(product.rating)
+                              className={`h-3 w-3 ${i < Math.floor(product.rating)
                                   ? "fill-yellow-400 text-yellow-400"
                                   : "text-gray-300"
-                              }`}
+                                }`}
                             />
                           ))}
                         </div>

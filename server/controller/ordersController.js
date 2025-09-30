@@ -1,4 +1,4 @@
-import OrdersService from "../service/ordersService";
+import OrdersService from "../service/orderService.js";
 
 class OrdersController {
     static async fetchOrder(req, res){

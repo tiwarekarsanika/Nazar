@@ -19,7 +19,7 @@ class ProductRepo {
         if (error) {
             console.log("Failed to fetch all the products ", error)
         }
-
+        // console.log("Fetched data is: ", data)
         return data
     }
 

@@ -16,7 +16,7 @@ const port = process.env.EXPRESS_PORT || 5000;
         
         // await kafkaProducer.connect()
         
-        const { data, error } = await supabase.from('products').select('*');
+        const { data, error } = await supabase.from('products').select();
         if(error){
             console.log("Failed to connect to supabase.")
         }

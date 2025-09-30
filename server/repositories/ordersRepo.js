@@ -1,4 +1,4 @@
-import supabase from "../supabase/configure";
+import supabase from "../supabase/configure.js";
 
 class OrdersRepo {
     static fetchOrder = async(orderID) => {

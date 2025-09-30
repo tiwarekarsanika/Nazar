@@ -1,4 +1,4 @@
-import OrdersRepo from "../repositories/ordersRepo";
+import OrdersRepo from "../repositories/ordersRepo.js";
 
 class OrdersService {
     static async fetchOrder(orderID){

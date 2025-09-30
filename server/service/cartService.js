@@ -1,4 +1,4 @@
-import CartRepo from "../repositories/cartRepo";
+import CartRepo from "../repositories/cartRepo.js";
 
 class CartService {
     static async fetchCart(cartID){

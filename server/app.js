@@ -11,10 +11,12 @@ import ordersRoutes from './routes/ordersRoutes.js'
 import cartRoutes from './routes/cartRoutes.js'
 // import client from 'prom-client'
 import { verifySupabaseJWT } from './middleware/authMiddleware.js'
+import cors from 'cors'
 
 const app = express()
 dotenv.config()
 
+app.use(cors())
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
