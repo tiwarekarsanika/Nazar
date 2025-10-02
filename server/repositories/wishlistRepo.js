@@ -63,25 +63,28 @@ class WishlistRepo {
     }
 
     static clearWishlist = async(wishlistID) => {
-        const { wishlist, error1 } = await supabase
+        const { data, error } = await supabase
                                 .from('wishlists')
                                 .delete() 
                                 .eq('wishlist_id', wishlistID)
-                                .select()
-        if (error1) {
-            console.log("Failed to remove the element ", error1)
+                                .select()           
+        if (error) {
+            console.log("Failed to remove the wishlist ", error)
         }
 
-        const { items, error2 } = await supabase
+        return data 
+    }
+
+    static clearWishlistItems = async(wishlistID) => {
+        const { data, error } = await supabase
                                 .from('wishlist_items')
                                 .delete() 
                                 .eq('wishlist_id', wishlistID)
                                 .select()
-        if (error2) {
-            console.log("Failed to remove the element ", error2)
+        if (error) {
+            console.log("Failed to remove the element ", error)
         }
-
-        return { wishlist, items}
+        return data
     }
 }
 

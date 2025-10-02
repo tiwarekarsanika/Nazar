@@ -3,7 +3,9 @@ import WishlistService from "../service/wishlistService.js";
 class WishlistController {
     static async fetchWishlist(req, res){
         try {
-            const response = await WishlistService.fetchWishlist(req.body.user_id)
+            const userID = req.params.user_id
+            const response = await WishlistService.fetchWishlist(userID)
+            // console.log("Response from service is ", response)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });
@@ -22,7 +24,8 @@ class WishlistController {
 
     static async removeItemFromWishlist(req, res){
         try {
-            const response = await WishlistService.removeItemFromWishlist(req.body)
+            const itemID = req.params.wishlist_item_id
+            const response = await WishlistService.removeItemFromWishlist(itemID)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });
@@ -31,7 +34,8 @@ class WishlistController {
 
     static async clearWishlist(req, res){
         try {
-            const response = await WishlistService.clearWishlist(req.body)
+            const userID = req.params.wishlist_id
+            const response = await WishlistService.clearWishlist(userID)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });

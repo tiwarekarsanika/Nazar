@@ -5,13 +5,8 @@ import { Search, Grid3X3, List, Heart, Star, ShoppingCart, Filter } from "lucide
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Slider } from "@/components/ui/slider";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useProductStore } from "./store";
@@ -21,6 +16,8 @@ import { getAllProducts } from "@/utils/apis/productsAPI";
 import { Progress } from "@/components/ui/progress"
 import { addWishlist } from "@/utils/apis/wishlistAPI";
 import { useUser } from "@/context/userContext";
+import FilterSection from './product-filter';
+import { addCart } from "@/utils/apis/cartAPI";
 
 type ProductButtonProps = {
   id: number;
@@ -29,230 +26,11 @@ type ProductButtonProps = {
   image: string;
 };
 
-export function AddToCartButton({ id, title, price, image }: ProductButtonProps) {
-
-  const router = useRouter();
-  const [added, setAdded] = useState(false);
-
-  const handleClick = () => {
-    setAdded(true);
-
-    setTimeout(() => {
-      router.push("/checkout-cart"); // navigate after short delay
-    }, 800);
-  };
-
-  return (
-    <Button className="flex-1" size="sm" onClick={handleClick}>
-      <ShoppingCart className="mr-1 h-4 w-4 sm:mr-2" />
-      <span>{added ? "Added !" : "Add to cart"}</span>
-    </Button>
-  );
-}
-
-const categories = [
-  { id: "all", label: "All", icon: "🏪" },
-  { id: "phones", label: "Phones", icon: "📱" },
-  { id: "headsets", label: "Headsets", icon: "🎧" },
-  { id: "laptops", label: "Laptops", icon: "💻" },
-  { id: "tv", label: "TV sets", icon: "📺" },
-  { id: "sound", label: "Sound", icon: "🔊" },
-  { id: "watches", label: "Watches", icon: "⌚" },
-  { id: "others", label: "Others", icon: "💡" },
-  { id: "internet", label: "Internet", icon: "🌐" }
-];
-
-const brands = [
-  { id: "apple", label: "Apple" },
-  { id: "samsung", label: "Samsung" },
-  { id: "huawei", label: "Huawei" },
-  { id: "microsoft", label: "Microsoft" },
-  { id: "sony", label: "Sony" },
-  { id: "bose", label: "Bose" },
-  { id: "dell", label: "Dell" },
-  { id: "lg", label: "LG" },
-  { id: "jbl", label: "JBL" },
-  { id: "philips", label: "Philips" },
-  { id: "tp-link", label: "TP-Link" }
-];
-
-const colors = [
-  { id: "red", label: "Red", color: "bg-red-500" },
-  { id: "orange", label: "Orange", color: "bg-orange-500" },
-  { id: "blue", label: "Blue", color: "bg-blue-500" },
-  { id: "black", label: "Black", color: "bg-black" },
-  { id: "white", label: "White", color: "bg-white border" },
-  { id: "purple", label: "Purple", color: "bg-purple-500" },
-  { id: "gray", label: "Gray", color: "bg-gray-600" }
-];
-
-// Filter component for reuse in both desktop and mobile
-function FilterSection() {
-  const {
-    priceRange,
-    selectedBrands,
-    selectedColors,
-    // deliveryDate,
-    selectedCategory, // Added selectedCategory
-    setPriceRange,
-    toggleBrand,
-    toggleColor,
-    // setDeliveryDate,
-    setSelectedCategory // Added setSelectedCategory
-  } = useProductStore();
-
-  return (
-    <div className="space-y-6">
-      <div>
-        <h3 className="mb-3 font-semibold">Related categories</h3>
-        <RadioGroup value={selectedCategory} onValueChange={setSelectedCategory}>
-          <div className="space-y-2 text-sm">
-            {categories.map((category) => (
-              <div key={category.id} className="flex items-center space-x-2">
-                <RadioGroupItem value={category.id} id={`category-${category.id}`} />
-                <Label
-                  htmlFor={`category-${category.id}`}
-                  className="cursor-pointer text-sm font-normal">
-                  {category.label}
-                </Label>
-              </div>
-            ))}
-          </div>
-        </RadioGroup>
-      </div>
-
-      <Separator />
-
-      {/* Brands */}
-      <div>
-        <h3 className="mb-3 font-semibold">Brands</h3>
-        <div className="max-h-48 space-y-3 overflow-y-auto">
-          {brands.map((brand) => (
-            <div key={brand.id} className="flex items-center space-x-2">
-              <Checkbox
-                id={`brand-${brand.id}`}
-                checked={selectedBrands.includes(brand.id)}
-                onCheckedChange={() => toggleBrand(brand.id)}
-              />
-              <Label htmlFor={`brand-${brand.id}`} className="cursor-pointer text-sm font-normal">
-                {brand.label}
-              </Label>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <Separator />
-
-      {/* Colors */}
-      <div>
-        <h3 className="mb-3 font-semibold">Colors</h3>
-        <div className="grid grid-cols-1 gap-2">
-          {colors.map((color) => (
-            <div key={color.id} className="flex items-center space-x-2">
-              <Checkbox
-                id={`color-${color.id}`}
-                checked={selectedColors.includes(color.id)}
-                onCheckedChange={() => toggleColor(color.id)}
-              />
-              <div className={`h-4 w-4 rounded ${color.color}`} />
-              <Label htmlFor={`color-${color.id}`} className="cursor-pointer text-sm font-normal">
-                {color.label}
-              </Label>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <Separator />
-
-      {/* Delivery Date */}
-      {/* <div>
-        <h3 className="mb-3 font-semibold">Delivery date</h3>
-        <RadioGroup value={deliveryDate} onValueChange={setDeliveryDate}>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="any" id="delivery-any" />
-            <Label htmlFor="delivery-any" className="text-sm font-normal">
-              Any day
-            </Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="today" id="delivery-today" />
-            <Label htmlFor="delivery-today" className="text-sm font-normal">
-              Today
-            </Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="tomorrow" id="delivery-tomorrow" />
-            <Label htmlFor="delivery-tomorrow" className="text-sm font-normal">
-              Tomorrow
-            </Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="week" id="delivery-week" />
-            <Label htmlFor="delivery-week" className="text-sm font-normal">
-              Within 7 days
-            </Label>
-          </div>
-        </RadioGroup>
-      </div>
-
-      <Separator /> */}
-
-      {/* Price Range */}
-      <div>
-        <h3 className="mb-3 font-semibold">Price</h3>
-        <div className="space-y-4">
-          <Slider
-            value={priceRange}
-            onValueChange={setPriceRange}
-            max={3000}
-            step={10}
-            className="w-full"
-          />
-          <div className="flex items-center space-x-2">
-            <div className="flex-1">
-              <Label htmlFor="price-from" className="text-muted-foreground text-xs">
-                From
-              </Label>
-              <Input
-                id="price-from"
-                type="number"
-                value={priceRange[0]}
-                onChange={(e) =>
-                  setPriceRange([Number.parseInt(e.target.value) || 0, priceRange[1]])
-                }
-                className="h-8"
-              />
-            </div>
-            <div className="flex-1">
-              <Label htmlFor="price-to" className="text-muted-foreground text-xs">
-                To
-              </Label>
-              <Input
-                id="price-to"
-                type="number"
-                value={priceRange[1]}
-                onChange={(e) =>
-                  setPriceRange([priceRange[0], Number.parseInt(e.target.value) || 3000])
-                }
-                className="h-8"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function ProductList() {
   const {
     filteredProducts,
-    selectedCategory,
     searchQuery,
     viewMode,
-    setSelectedCategory,
     setSearchQuery,
     setViewMode,
     applyFilters
@@ -263,6 +41,7 @@ export default function ProductList() {
     queryKey: ["products"],
     queryFn: async () => await getAllProducts()
   });
+  const router = useRouter();
 
   const setProducts = useProductStore((state) => state.setProducts);
 
@@ -287,11 +66,29 @@ export default function ProductList() {
     mutationFn: (productId: number) => addWishlist(user?.user.id, productId),
     onSuccess: () => {
       console.log("Item added to wishlist ");
+      setTimeout(() => {
+        router.push("/wishlist"); // navigate after short delay
+      }, 800);
       // invalidate & refetch wishlist data
       queryClient.invalidateQueries({ queryKey: ["wishlists"] });
     },
     onError: (error) => {
       console.error("Failed to add wishlist item ", error);
+    },
+  });
+
+  const addToCartMutation = useMutation({
+    mutationFn: ({ productId, price }: { productId: number; price: number }) => addCart(user?.user.id, productId, 1, price),
+    onSuccess: () => {
+      // console.log(productId, price)
+      console.log("Item added to cart ");
+      setTimeout(() => {
+        router.push("/checkout-cart");
+      }, 800);
+      queryClient.invalidateQueries({ queryKey: ["carts"] });
+    },
+    onError: (error) => {
+      console.error("Failed to add cart item ", error);
     },
   });
 
@@ -461,12 +258,10 @@ export default function ProductList() {
                       </div>
 
                       <div className="flex gap-2 pt-2">
-                        {/* <Button className="flex-1" size="sm">
+                        <Button className="flex-1" size="sm" onClick={() => addToCartMutation.mutate({productId: product.product_id, price: product.price})}>
                           <ShoppingCart className="mr-1 h-4 w-4 sm:mr-2" />
-                          <span className="xs:inline hidden">Add to cart</span>
-                          <span className="xs:hidden">Add</span>
-                        </Button> */}
-                        <AddToCartButton id={product.id} title={product.title} price={product.price} image={product.image} />
+                          <span>Add to cart</span>
+                        </Button>
                         <Button
                           onClick={() => addToWishlistMutation.mutate(product.product_id)}
                           variant="outline"
