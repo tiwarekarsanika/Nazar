@@ -16,9 +16,9 @@ import {
 import { cn } from '@/lib/utils';
 import { ShoppingCart, Heart, LogOut } from 'lucide-react';
 import Link from 'next/link';
-import { CurrentUserAvatar } from './current-user-avatar';
+import { CurrentUserAvatar } from './ui/current-user-avatar';
 import { useUser } from "@/context/userContext";
-import { LogoutButton } from './logout-button';
+import { LogoutButton } from './ui/logout-button';
 
 // Simple logo component for the navbar
 const Logo = (props: React.SVGAttributes<SVGElement>) => {

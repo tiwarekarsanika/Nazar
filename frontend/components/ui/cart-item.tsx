@@ -2,39 +2,44 @@ import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash2 } from "lucide-react";
 
 interface CartItemProps {
-  id: string;
-  name: string;
-  color: string;
-  price: number;
-  quantity: number;
+  cart_id: number;
+  cart_item_id: number;
+  product_id: number;
+  title: string;
   image: string;
-  onUpdateQuantity: (id: string, quantity: number) => void;
-  onRemove: (id: string) => void;
+  quantity: number;
+  cost: number;
+  onUpdateQuantity: (id: number, quantity: number) => number | void;
+  onRemove: (id: number) => void;
 }
 
 export const CartItem = ({
-  id,
-  name,
-  color,
-  price,
+  cart_item_id,
+  cart_id,
+  product_id,
+  title,
+  cost,
   quantity,
   image,
   onUpdateQuantity,
   onRemove
 }: CartItemProps) => {
+
+
+
   return (
     <div className="bg-cart-item border-cart-border flex items-center gap-4 rounded-lg border p-4">
       {/* Product Image */}
       <div className="bg-muted flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg">
-        <img src={image} alt={name} className="h-full w-full rounded-lg object-cover" />
+        <img src={image} alt={title} className="h-full w-full rounded-lg object-cover" />
       </div>
 
       {/* Product Details */}
       <div className="min-w-0 flex-1">
-        <h3 className="text-foreground line-clamp-2 text-sm font-medium lg:text-base">{name}</h3>
-        <p className="text-cart-color mt-1 text-sm">
+        <h3 className="text-foreground line-clamp-2 text-sm font-medium lg:text-base">{title}</h3>
+        {/* <p className="text-cart-color mt-1 text-sm">
           Color: <span>{color}</span>
-        </p>
+        </p> */}
       </div>
 
       {/* Quantity Controls */}
@@ -43,7 +48,7 @@ export const CartItem = ({
           variant="ghost"
           size="icon"
           className="hover:bg-muted h-8 w-8"
-          onClick={() => onUpdateQuantity(id, Math.max(1, quantity - 1))}>
+          onClick={() => onUpdateQuantity(cart_item_id, Math.max(1, quantity - 1))}>
           <Minus className="h-4 w-4" />
         </Button>
         <span className="min-w-[2rem] text-center text-sm font-medium">{quantity}</span>
@@ -51,14 +56,14 @@ export const CartItem = ({
           variant="ghost"
           size="icon"
           className="hover:bg-muted h-8 w-8"
-          onClick={() => onUpdateQuantity(id, quantity + 1)}>
+          onClick={() => onUpdateQuantity(cart_item_id, quantity + 1)}>
           <Plus className="h-4 w-4" />
         </Button>
       </div>
 
       {/* Price */}
       <div className="text-cart-price min-w-[80px] text-right text-sm font-semibold lg:text-base">
-        ${(price * quantity).toFixed(2)}
+        ${(cost * quantity).toFixed(2)}
       </div>
 
       {/* Remove Button */}
@@ -66,7 +71,7 @@ export const CartItem = ({
         variant="ghost"
         size="icon"
         className="text-muted-foreground hover:text-destructive hover:bg-destructive/10 h-8 w-8"
-        onClick={() => onRemove(id)}>
+        onClick={() => onRemove(cart_item_id)}>
         <Trash2 className="h-4 w-4" />
       </Button>
     </div>

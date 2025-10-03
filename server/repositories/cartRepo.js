@@ -2,6 +2,7 @@ import supabase from "../supabase/configure.js";
 
 class CartRepo {
     static fetchCart = async (userID) => {
+        // console.log("Fetching cart for userID: ", userID)
         const { data, error } = await supabase
             .from('carts')
             .select('cart_id')
@@ -61,39 +62,40 @@ class CartRepo {
         return data
     }
 
-    static removeItemFromCart = async (cartID) => {
+    static removeItemFromCart = async (itemID) => {
         const { data, error } = await supabase
             .from('cart_items')
             .delete()
-            .eq('cart_item_id', cartID)
+            .eq('cart_item_id', itemID)
             .select()
         if (error) {
             console.log("Failed to remove the element ", error)
         }
-
         return data
     }
 
     static clearCart = async (cartID) => {
-        const { cart, error1 } = await supabase
+        const { data, error } = await supabase
             .from('carts')
             .delete()
             .eq('cart_id', cartID)
             .select()
-        if (error1) {
-            console.log("Failed to remove the cart ", error1)
+        if (error) {
+            console.log("Failed to remove the cart ", error)
         }
+        return data
+    }
 
-        const { items, error2 } = await supabase
+    static async clearCartItems(cartID) {
+        const { data, error } = await supabase
             .from('cart_items')
             .delete()
             .eq('cart_id', cartID)
             .select()
-        if (error2) {
-            console.log("Failed to remove the element ", error2)
+        if (error) {
+            console.log("Failed to remove the element ", error)
         }
-
-        return { cart, items }
+        return data
     }
 }
 

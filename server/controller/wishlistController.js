@@ -34,8 +34,8 @@ class WishlistController {
 
     static async clearWishlist(req, res){
         try {
-            const userID = req.params.wishlist_id
-            const response = await WishlistService.clearWishlist(userID)
+            const wishlistID = req.params.wishlist_id
+            const response = await WishlistService.clearWishlist(wishlistID)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });

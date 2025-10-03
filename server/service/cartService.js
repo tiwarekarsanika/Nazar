@@ -1,11 +1,30 @@
 import CartRepo from "../repositories/cartRepo.js";
+import ProductRepo from "../repositories/productRepo.js";
 
 class CartService {
     static async fetchCart(userID){
         let cartID = await CartRepo.fetchCart(userID)
         cartID = cartID?.cart_id
+        // console.log("Fetched cartID: ", cartID)
         if(cartID){
             let cartItems = await CartRepo.fetchCartItems(cartID)
+            // console.log("Cart items before fetching product details: ", cartItems)
+            cartItems = await Promise.all(
+                cartItems.map(async (item) => {
+                    const productDetails = await ProductRepo.fetchProduct(item.product_id);
+                    // console.log("Product details are ", productDetails)
+                    const { product_id, title, image } = productDetails[0];
+                    // console.log("Image is ", image)
+                    return {
+                        cart_id: cartID,
+                        cart_item_id: item.cart_item_id,
+                        quantity: item.quantity, cost: item.cost,
+                        product_id, title, image
+                    };
+                })
+            );
+
+            // console.log("Fetched cart items are ", cartItems);
             return cartItems
         }
         else{
@@ -45,14 +64,20 @@ class CartService {
         return item
     }
 
-    static async removeItemFromCart(cartID){
-        const item = await CartRepo.removeItemFromCart(cartID)
+    static async removeItemFromCart(itemID){
+        const item = await CartRepo.removeItemFromCart(itemID)
         return item
     }
 
     static async clearCart(cartID){
-        const { cart, items } = await CartRepo.clearCart(cartID)
-        return { cart, items }
+        if (cartID) {
+            const cart = await CartRepo.clearCart(cartID)
+            const items = await CartRepo.clearCartItems(cartID)
+            return cart
+        }
+        else {
+            console.log("Could not find cart to clear :(")
+        }
     }
 }
 
