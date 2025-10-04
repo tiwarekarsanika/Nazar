@@ -14,11 +14,12 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
-import { ShoppingCart, Heart, LogOut } from 'lucide-react';
+import { ShoppingCart, Heart, LogOut, Router } from 'lucide-react';
 import Link from 'next/link';
 import { CurrentUserAvatar } from './ui/current-user-avatar';
 import { useUser } from "@/context/userContext";
 import { LogoutButton } from './ui/logout-button';
+import { useRouter } from 'next/navigation';
 
 // Simple logo component for the navbar
 const Logo = (props: React.SVGAttributes<SVGElement>) => {
@@ -154,6 +155,7 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
     }, [ref]);
 
     const user = useUser();
+    const router = useRouter();
 
     return (
       <header
@@ -205,10 +207,10 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
             {/* Main nav */}
             <div className="flex items-center gap-6">
               <button
-                onClick={(e) => e.preventDefault()}
+                onClick={() => router.push('/home')}
                 className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
               >
-                <div className="text-2xl">
+                <div className="text-2xl" >
                   {logo}
                 </div>
                 <span className="hidden font-bold text-xl sm:inline-block">shadcn.io</span>
