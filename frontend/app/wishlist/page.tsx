@@ -6,6 +6,7 @@ import { getWishlist, removeItemFromWishlist, clearWishlist } from "@/utils/apis
 import { useUser } from "@/context/userContext"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { Progress } from "@/components/ui/progress"
+import { useRouter } from "next/navigation"
 
 interface WishlistItem {
   wishlist_id: number;
@@ -21,6 +22,7 @@ interface WishlistItem {
 export default function WishlistPage() {
   const user = useUser();
   const queryClient = useQueryClient();
+  const router = useRouter();
 
   const { data: wishlistData, isLoading, error } = useQuery({
     queryKey: ["wishlist", user?.user.id],
@@ -68,6 +70,7 @@ export default function WishlistPage() {
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {wishlist.map((item: WishlistItem) => (
           <Card key={item.wishlist_item_id}>
+            <div className="cursor-pointer" onClick={() => router.push(`/product-details/${item.product_id}`)}>
             <CardHeader>
               <img
                 src={item.image}
@@ -83,6 +86,7 @@ export default function WishlistPage() {
                 <p className="text-xl font-bold">${item.price.toFixed(2)}</p>
               </div>
             </CardContent>
+            </div>
             <CardFooter>
               <Button
                 variant="outline"

@@ -191,86 +191,88 @@ export default function ProductList() {
                 : "grid-cols-1"
                 }`}>
               {filteredProducts.map((product: any) => (
-                <Card key={product.product_id} className="group transition-shadow hover:shadow-lg" onClick={() => router.push(`/product-details/${product.product_id}`)}>
+                <Card key={product.product_id} className="group transition-shadow hover:shadow-lg">
                   <CardContent className="p-3 sm:p-4">
-                    <div className="relative mb-3 sm:mb-4">
-                      <img
-                        src={product.image || "/placeholder.svg"}
-                        alt={product.title}
-                        className="h-40 w-full rounded-md object-cover sm:h-48"
-                      />
-                      {product.isNew && (
-                        <Badge className="absolute top-2 left-2 bg-red-500 text-xs hover:bg-red-600">
-                          New
-                        </Badge>
-                      )}
-                    </div>
-
-                    <div className="space-y-2">
-                      <h3 className="line-clamp-2 text-sm leading-tight font-medium">
-                        {product.title}
-                      </h3>
-
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-base font-bold text-blue-600 sm:text-lg">
-                          ${product.price.toFixed(2)}
-                        </span>
-                        {product.originalPrice && (
-                          <>
-                            <span className="text-muted-foreground text-xs line-through sm:text-sm">
-                              ${product.originalPrice.toFixed(2)}
-                            </span>
-                            <Badge variant="destructive" className="text-xs">
-                              -{product.discount}%
-                            </Badge>
-                          </>
+                    <div onClick={() => router.push(`/product-details/${product.product_id}`)}>
+                      <div className="relative mb-3 sm:mb-4">
+                        <img
+                          src={product.image || "/placeholder.svg"}
+                          alt={product.title}
+                          className="h-40 w-full rounded-md object-cover sm:h-48"
+                        />
+                        {product.isNew && (
+                          <Badge className="absolute top-2 left-2 bg-red-500 text-xs hover:bg-red-600">
+                            New
+                          </Badge>
                         )}
                       </div>
 
-                      <div className="flex items-center gap-1">
-                        <div className="flex items-center">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`h-3 w-3 ${i < Math.floor(product.rating)
-                                ? "fill-yellow-400 text-yellow-400"
-                                : "text-gray-300"
-                                }`}
-                            />
-                          ))}
+                      <div className="space-y-2">
+                        <h3 className="line-clamp-2 text-sm leading-tight font-medium">
+                          {product.title}
+                        </h3>
+
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-base font-bold text-blue-600 sm:text-lg">
+                            ${product.price.toFixed(2)}
+                          </span>
+                          {product.originalPrice && (
+                            <>
+                              <span className="text-muted-foreground text-xs line-through sm:text-sm">
+                                ${product.originalPrice.toFixed(2)}
+                              </span>
+                              <Badge variant="destructive" className="text-xs">
+                                -{product.discount}%
+                              </Badge>
+                            </>
+                          )}
                         </div>
-                        <span className="text-muted-foreground text-xs">{product.rating}</span>
+
+                        <div className="flex items-center gap-1">
+                          <div className="flex items-center">
+                            {[...Array(5)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className={`h-3 w-3 ${i < Math.floor(product.rating)
+                                  ? "fill-yellow-400 text-yellow-400"
+                                  : "text-gray-300"
+                                  }`}
+                              />
+                            ))}
+                          </div>
+                          <span className="text-muted-foreground text-xs">{product.rating}</span>
+                        </div>
+
+                        <p className="text-muted-foreground text-xs">
+                          {product.orders} orders this week
+                        </p>
+
+                        <p className="text-muted-foreground text-xs">Seller: {product.seller}</p>
+
+                        <div className="text-muted-foreground text-xs">
+                          Delivery:{" "}
+                          {product.deliveryDays === 0
+                            ? "Today"
+                            : product.deliveryDays === 1
+                              ? "Tomorrow"
+                              : `${product.deliveryDays} days`}
+                        </div>
                       </div>
+                    </div>
 
-                      <p className="text-muted-foreground text-xs">
-                        {product.orders} orders this week
-                      </p>
-
-                      <p className="text-muted-foreground text-xs">Seller: {product.seller}</p>
-
-                      <div className="text-muted-foreground text-xs">
-                        Delivery:{" "}
-                        {product.deliveryDays === 0
-                          ? "Today"
-                          : product.deliveryDays === 1
-                            ? "Tomorrow"
-                            : `${product.deliveryDays} days`}
-                      </div>
-
-                      <div className="flex gap-2 pt-2">
-                        <Button className="flex-1" size="sm" onClick={() => addToCartMutation.mutate({productId: product.product_id, price: product.price})}>
-                          <ShoppingCart className="mr-1 h-4 w-4 sm:mr-2" />
-                          <span>Add to cart</span>
-                        </Button>
-                        <Button
-                          onClick={() => addToWishlistMutation.mutate(product.product_id)}
-                          variant="outline"
-                          size="sm"
-                          className="bg-transparent px-2 sm:px-3"
-                        >
-                          <Heart className="h-4 w-4" />
-                        </Button>
-                      </div>
+                    <div className="flex gap-2 pt-2 mt-2">
+                      <Button className="flex-1" size="sm" onClick={() => addToCartMutation.mutate({ productId: product.product_id, price: product.price })}>
+                        <ShoppingCart className="mr-1 h-4 w-4 sm:mr-2" />
+                        <span>Add to cart</span>
+                      </Button>
+                      <Button
+                        onClick={() => addToWishlistMutation.mutate(product.product_id)}
+                        variant="outline"
+                        size="sm"
+                        className="bg-transparent px-2 sm:px-3"
+                      >
+                        <Heart className="h-4 w-4" />
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>

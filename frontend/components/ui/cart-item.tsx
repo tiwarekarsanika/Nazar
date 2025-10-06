@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface CartItemProps {
   cart_id: number;
@@ -24,11 +25,10 @@ export const CartItem = ({
   onUpdateQuantity,
   onRemove
 }: CartItemProps) => {
-
-
+  const router = useRouter();
 
   return (
-    <div className="bg-cart-item border-cart-border flex items-center gap-4 rounded-lg border p-4">
+    <div className="bg-cart-item border-cart-border flex items-center gap-4 rounded-lg border p-4 cursor-pointer" onClick={() => router.push(`/product-details/${product_id}`)}>
       {/* Product Image */}
       <div className="bg-muted flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg">
         <img src={image} alt={title} className="h-full w-full rounded-lg object-cover" />

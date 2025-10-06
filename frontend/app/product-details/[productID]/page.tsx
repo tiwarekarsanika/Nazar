@@ -13,11 +13,12 @@ import { useRouter } from "next/navigation";
 import { addWishlist } from "@/utils/apis/wishlistAPI";
 import { useUser } from "@/context/userContext";
 import { addCart } from "@/utils/apis/cartAPI";
-import { useQueryClient, useMutation } from "@tanstack/react-query";
+import { useQueryClient, useMutation, useQuery } from "@tanstack/react-query";
 import React from "react";
+import { fetchProductById } from "@/utils/apis/productsAPI";
 
 interface ProductDetailPageProps {
-  params: Promise<{ productID: string }>; 
+  params: Promise<{ productID: string }>;
 }
 
 export default function ProductDetailPage({ params }: ProductDetailPageProps) {
@@ -26,11 +27,22 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   const router = useRouter();
   const user = useUser();
 
-  const productsData = queryClient.getQueryData<any>(['products']);
-  console.log("Products data in product details page ", productsData.data);
-  console.log("productId param:", productID, typeof productID);
-  const product = productsData?.data.filter((p: any) => p.product_id === productID)[0];
-  console.log("Product found: ", product);
+  const { data: product } = useQuery({
+    queryKey: ["product", productID],
+    queryFn: () => fetchProductById(productID), // API call that also increments views
+    initialData: () => {
+      // optional: return cached product if available for instant render
+      const productsData = queryClient.getQueryData<any>(["products"]);
+      console.log("Products data in product details page ", productsData?.data);
+      return productsData?.data.find((p: any) => p.product_id === productID);
+      // console.log("Product found: ", product);
+      // console.log("Product category ", product?.category);
+      // return product;
+    },
+  });
+
+  console.log("Product in product details page ", product?.[0]);
+
 
   const addToWishlistMutation = useMutation({
     mutationFn: (productId: number) => addWishlist(user?.user.id, productId),
@@ -61,7 +73,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
       console.error("Failed to add cart item ", error);
     },
   });
-  
+
   if (!product) {
     return <div>Product not found</div>;
   }
@@ -82,7 +94,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
         {/* Product Details Section */}
         <div className="grid gap-6">
           <div className="grid gap-2">
-            <div className="text-sm text-gray-500">{product.category.toUpperCase()}</div>
+            <div className="text-sm text-gray-500">{product.category}</div>
             <h1 className="text-3xl font-bold">{product.title}</h1>
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-0.5">
@@ -99,11 +111,11 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             <span className="text-3xl font-bold">${product.price}</span>
             {product.discount && (
               <div className="flex items-center gap-2">
-              <span className="rounded-md bg-green-100 px-2 py-1 text-sm font-medium text-green-800">
-                {product.discount}% OFF
-              </span>
-              <span className="text-lg text-gray-500 line-through">${product.original_price}</span>
-            </div>
+                <span className="rounded-md bg-green-100 px-2 py-1 text-sm font-medium text-green-800">
+                  {product.discount}% OFF
+                </span>
+                <span className="text-lg text-gray-500 line-through">${product.original_price}</span>
+              </div>
             )}
           </div>
           <div className="text-sm text-gray-500">{product.orders} products sold out</div>

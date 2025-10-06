@@ -9,6 +9,8 @@ import { fetchCart, removeItemFromCart, clearCart, updateCartItem } from "@/util
 import { useUser } from "@/context/userContext"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { Progress } from "@/components/ui/progress"
+import { addOrder } from "@/utils/apis/ordersAPI";
+import { useRouter } from "next/navigation";
 
 interface CartItemType {
   cart_id: number;
@@ -25,6 +27,7 @@ interface CartItemType {
 export default function Cart() {
   const user = useUser();
   console.log("User in cart is ", user)
+  const router = useRouter();
 
   
   const { data: cartData , isLoading, error } = useQuery({
@@ -65,14 +68,29 @@ export default function Cart() {
     }
   });
 
-  if (isLoading) return <Progress />;
-  if (error) return <div>Sorry, there was an error fetching the cart</div>;
+  const addOrderMutation = useMutation({
+    mutationFn: (data: { cart_id: number }) => {
+      console.log("AddOrder MutationFn called with: ", data);
+      return addOrder(user?.user.id, data.cart_id, subtotal, tax, total);
+    },
+    onSuccess: () => {
+      router.push("/order-confirmation");
+      console.log("Order item added");
+      queryClient.invalidateQueries({ queryKey: ["cart", user?.user.id] });
+    }
+  });
 
   const subtotal = cartData?.data?.reduce((sum: number, item: CartItemType) => sum + item.cost * item.quantity, 0) ?? 0;
-  const discount = 0;
   const delivery = 29.99;
-
   const tax = (subtotal * 18) / 100;
+  let discount = 0
+  // for (const item of cartData?.data){
+  //   discount = discount + (item.original_price - item.price)
+  // }
+  const total = subtotal + tax + delivery - discount
+
+  if (isLoading) return <Progress />;
+  if (error) return <div>Sorry, there was an error fetching the cart</div>;
 
   return (
     <div className="bg-background">
@@ -96,11 +114,14 @@ export default function Cart() {
           <div className="space-y-6">
             <OrderSummary subtotal={subtotal} discount={discount} delivery={delivery} tax={tax} /> 
             <div className="flex flex-col space-y-4">
-              <Link href="/order-confirmation">
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 w-full">
-                  Purchase
-                </Button>
-              </Link>
+              <Button
+                onClick={() => {
+                  addOrderMutation.mutate({cart_id: cartData?.data[0]?.cart_id});
+                }}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 w-full"
+              >
+                Purchase
+              </Button>
               <Button
                 onClick={() => clearCartMutation.mutate(cartData?.data[0]?.cart_id)}
                 variant="destructive"
