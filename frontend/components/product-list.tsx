@@ -92,7 +92,7 @@ export default function ProductList() {
     },
   });
 
-  if (isLoading) return <Progress />;
+  // if (isLoading) return <Progress />;
   if (error) return <div>Sorry There was an Error</div>;
 
   return (

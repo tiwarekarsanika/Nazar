@@ -28,18 +28,20 @@ export const CartItem = ({
   const router = useRouter();
 
   return (
-    <div className="bg-cart-item border-cart-border flex items-center gap-4 rounded-lg border p-4 cursor-pointer" onClick={() => router.push(`/product-details/${product_id}`)}>
+    <div className="bg-cart-item border-cart-border flex items-center gap-4 rounded-lg border p-4 cursor-pointer" >
       {/* Product Image */}
-      <div className="bg-muted flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg">
-        <img src={image} alt={title} className="h-full w-full rounded-lg object-cover" />
-      </div>
+      <div className="flex items-center gap-4 cursor-pointer" onClick={() => router.push(`/product-details/${product_id}`)}>
+        <div className="bg-muted flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg">
+          <img src={image} alt={title} className="h-full w-full rounded-lg object-cover" />
+        </div>
 
-      {/* Product Details */}
-      <div className="min-w-0 flex-1">
-        <h3 className="text-foreground line-clamp-2 text-sm font-medium lg:text-base">{title}</h3>
-        {/* <p className="text-cart-color mt-1 text-sm">
+        {/* Product Details */}
+        <div className="min-w-0 flex-1">
+          <h3 className="text-foreground line-clamp-2 text-sm font-medium lg:text-base">{title}</h3>
+          {/* <p className="text-cart-color mt-1 text-sm">
           Color: <span>{color}</span>
         </p> */}
+        </div>
       </div>
 
       {/* Quantity Controls */}

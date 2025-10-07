@@ -2,8 +2,6 @@
 
 import {
   Star,
-  Minus,
-  Plus,
   ShoppingBagIcon
 } from "lucide-react";
 
@@ -31,17 +29,13 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
     queryKey: ["product", productID],
     queryFn: () => fetchProductById(productID), // API call that also increments views
     initialData: () => {
-      // optional: return cached product if available for instant render
       const productsData = queryClient.getQueryData<any>(["products"]);
-      console.log("Products data in product details page ", productsData?.data);
+      // console.log("Products data in product details page ", productsData?.data);
       return productsData?.data.find((p: any) => p.product_id === productID);
-      // console.log("Product found: ", product);
-      // console.log("Product category ", product?.category);
-      // return product;
     },
   });
 
-  console.log("Product in product details page ", product?.[0]);
+  // console.log("Product in product details page ", product?.[0]);
 
 
   const addToWishlistMutation = useMutation({

@@ -7,6 +7,9 @@ import { Navbar } from '@/components/navbar'
 import { LayoutWrapper } from "@/components/layout-wrapper";
 import { UserProvider } from "@/context/userContext";
 import ReactQueryProvider from "@/utils/providers/queryProvider";
+import { Suspense } from "react";
+import Loading from "./loading";
+import { GlobalLoader } from "@/components/ui/global-loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,17 +34,18 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <LayoutWrapper>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <LayoutWrapper>
+        <Suspense fallback={<Loading />}>
           <ReactQueryProvider>
             <UserProvider>
+              <GlobalLoader />
               {children}
             </UserProvider>
           </ReactQueryProvider>
-        </LayoutWrapper>
-      </body>
+        </Suspense>
+      </LayoutWrapper>
+    </body>
     </html>
   );
 }

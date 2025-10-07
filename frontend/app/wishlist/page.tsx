@@ -50,7 +50,7 @@ export default function WishlistPage() {
     },
   });
 
-  if (isLoading) return <Progress />;
+  // if (isLoading) return <Progress />;
   if (error) return <div>Sorry, there was an error fetching this wishlist</div>;
 
   const wishlist = wishlistData?.data || [];

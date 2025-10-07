@@ -29,8 +29,8 @@ export default function Cart() {
   console.log("User in cart is ", user)
   const router = useRouter();
 
-  
-  const { data: cartData , isLoading, error } = useQuery({
+
+  const { data: cartData, isLoading, error } = useQuery({
     queryKey: ["cart", user?.user.id],
     queryFn: () => fetchCart(user?.user.id),
     enabled: !!user?.user.id, // only run when user is available
@@ -89,7 +89,7 @@ export default function Cart() {
   // }
   const total = subtotal + tax + delivery - discount
 
-  if (isLoading) return <Progress />;
+  // if (isLoading) return <Progress />;
   if (error) return <div>Sorry, there was an error fetching the cart</div>;
 
   return (
@@ -100,6 +100,18 @@ export default function Cart() {
             <div className="bg-card border-cart-border rounded-lg border p-6">
               <h1 className="mb-6 text-2xl font-semibold">Shopping Cart</h1>
               <div className="space-y-4">
+                {
+                  cartData?.data.length === 0 && (
+                    <div className="flex flex-col items-center justify-center py-20 space-y-6">
+                      <h2 className="text-lg font-medium">Your cart is empty</h2>
+                      <Link href="/home">
+                        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer">
+                          Continue Shopping
+                        </Button>
+                      </Link>
+                    </div>
+                  )
+                }
                 {cartData?.data.map((item: CartItemType) => (
                   <CartItem
                     key={item.cart_item_id}
@@ -111,26 +123,33 @@ export default function Cart() {
               </div>
             </div>
           </div>
-          <div className="space-y-6">
-            <OrderSummary subtotal={subtotal} discount={discount} delivery={delivery} tax={tax} /> 
-            <div className="flex flex-col space-y-4">
-              <Button
-                onClick={() => {
-                  addOrderMutation.mutate({cart_id: cartData?.data[0]?.cart_id});
-                }}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 w-full"
-              >
-                Purchase
-              </Button>
-              <Button
-                onClick={() => clearCartMutation.mutate(cartData?.data[0]?.cart_id)}
-                variant="destructive"
-                className="bg-destructive hover:bg-destructive/90 text-primary-foreground h-12 w-full"
-              >
-                Clear Cart
-              </Button> 
-            </div>
-          </div>
+          
+              <div className="space-y-6">
+                {
+                  cartData?.data.length == 0 ?
+                  <OrderSummary subtotal={subtotal} discount={discount} delivery={0} tax={tax} /> :
+                  <OrderSummary subtotal={subtotal} discount={discount} delivery={delivery} tax={tax} />
+                }
+                <div className="flex flex-col space-y-4">
+                  <Button
+                    onClick={() => {
+                      addOrderMutation.mutate({ cart_id: cartData?.data[0]?.cart_id });
+                    }}
+                    disabled={cartData?.data.length === 0}
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 w-full"
+                  >
+                    Purchase
+                  </Button>
+                  <Button
+                    onClick={() => clearCartMutation.mutate(cartData?.data[0]?.cart_id)}
+                    variant="destructive"
+                    disabled={cartData?.data.length === 0}
+                    className="bg-destructive hover:bg-destructive/90 text-primary-foreground h-12 w-full"
+                  >
+                    Clear Cart
+                  </Button>
+                </div>
+              </div>
         </div>
       </div>
     </div>

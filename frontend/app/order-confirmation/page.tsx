@@ -33,7 +33,7 @@ export default function OrderConfirmation() {
     }
   });
 
-  if (itemsLoading || detailsLoading) return <Progress />;
+  // if (itemsLoading || detailsLoading) return <Progress />;
   if (itemsError || detailsError) return <div>Sorry, there was an error fetching the order</div>;
 
   return (
