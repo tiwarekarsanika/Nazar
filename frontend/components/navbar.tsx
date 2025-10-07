@@ -20,32 +20,24 @@ import { CurrentUserAvatar } from './ui/current-user-avatar';
 import { useUser } from "@/context/userContext";
 import { LogoutButton } from './ui/logout-button';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import logo from '@/public/logo.png';
+import { ModeToggle } from './ui/theme-toggle';
 
 // Simple logo component for the navbar
-const Logo = (props: React.SVGAttributes<SVGElement>) => {
+const Logo = () => {
   return (
-    <svg width='1em' height='1em' viewBox='0 0 324 323' fill='currentColor' xmlns='http://www.w3.org/2000/svg' {...props}>
-      <rect
-        x='88.1023'
-        y='144.792'
-        width='151.802'
-        height='36.5788'
-        rx='18.2894'
-        transform='rotate(-38.5799 88.1023 144.792)'
-        fill='currentColor'
-      />
-      <rect
-        x='85.3459'
-        y='244.537'
-        width='151.802'
-        height='36.5788'
-        rx='18.2894'
-        transform='rotate(-38.5799 85.3459 244.537)'
-        fill='currentColor'
-      />
-    </svg>
+    <Image
+      src={logo}
+      alt="App Logo"
+      width={36}
+      height={36}
+      priority
+      className="cursor-pointer"
+    />
   );
 };
+
 
 // Hamburger icon component
 const HamburgerIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>) => (
@@ -210,10 +202,8 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
                 onClick={() => router.push('/home')}
                 className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
               >
-                <div className="text-2xl" >
-                  {logo}
-                </div>
-                <span className="hidden font-bold text-xl sm:inline-block">shadcn.io</span>
+                <Logo />
+                <span className="hidden font-semibold text-xl sm:inline-block">ShopEZ</span>
               </button>
               {/* Navigation menu */}
               {!isMobile && (
@@ -241,6 +231,7 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
           </div>
           {/* Right side */}
           <div className="flex items-center gap-5">
+            <ModeToggle />
             <Link href="/wishlist">
               <Heart className="cursor-pointer" />
             </Link>

@@ -191,9 +191,9 @@ export default function ProductList() {
                 : "grid-cols-1"
                 }`}>
               {filteredProducts.map((product: any) => (
-                <Card key={product.product_id} className="group transition-shadow hover:shadow-lg">
-                  <CardContent className="p-3 sm:p-4">
-                    <div onClick={() => router.push(`/product-details/${product.product_id}`)}>
+                <Card key={product.product_id} className="group transition-shadow hover:shadow-lg h-full flex flex-col">
+                  <CardContent className="p-2 sm:p-4 flex flex-col flex-1">
+                    <div onClick={() => router.push(`/product-details/${product.product_id}`)} className="mb-4">
                       <div className="relative mb-3 sm:mb-4">
                         <img
                           src={product.image || "/placeholder.svg"}
@@ -248,21 +248,12 @@ export default function ProductList() {
                         </p>
 
                         <p className="text-muted-foreground text-xs">Seller: {product.seller}</p>
-
-                        <div className="text-muted-foreground text-xs">
-                          Delivery:{" "}
-                          {product.deliveryDays === 0
-                            ? "Today"
-                            : product.deliveryDays === 1
-                              ? "Tomorrow"
-                              : `${product.deliveryDays} days`}
-                        </div>
                       </div>
                     </div>
 
-                    <div className="flex gap-2 pt-2 mt-2">
+                    <div className="mt-auto flex gap-2 pt-2">
                       <Button className="flex-1" size="sm" onClick={() => addToCartMutation.mutate({ productId: product.product_id, price: product.price })}>
-                        <ShoppingCart className="mr-1 h-4 w-4 sm:mr-2" />
+                        <ShoppingCart className="h-4 w-4" />
                         <span>Add to cart</span>
                       </Button>
                       <Button
