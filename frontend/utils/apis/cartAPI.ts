@@ -1,11 +1,11 @@
-import axios from 'axios';
-
-const baseURL = "http://localhost:5500"
+import { fetchWithAuth } from './fetchWithAuth';
 
 export async function fetchCart(user_id: number) {
     try {
         // console.log("Fetching cart for user_id: ", user_id)
-        const response = await axios.get(`${baseURL}/cart/getCart/${user_id}`);
+        const response = await fetchWithAuth(`/cart/getCart/${user_id}`, {
+            method: 'GET'
+        });
         console.log("Fetched cart items ", response)
         return response
     } catch (error) {
@@ -15,8 +15,10 @@ export async function fetchCart(user_id: number) {
 
 export async function addCart(user_id: number, product_id: number, quantity: number, price: number) {
     try {
-        const response = await axios.post(`${baseURL}/cart/addCart`,
-            { userID: user_id, productID: product_id, quantity: quantity, cost: price });
+        const response = await fetchWithAuth(`/cart/addCart`, {
+            method: 'POST',
+            data: { userID: user_id, productID: product_id, quantity: quantity, cost: price }
+        });
         console.log("Added cart item ", response)
         return response
     } catch (error) {
@@ -26,7 +28,9 @@ export async function addCart(user_id: number, product_id: number, quantity: num
 
 export async function removeItemFromCart(cart_item_id: number) {
     try {
-        const response = await axios.delete(`${baseURL}/cart/removeCartItem/${cart_item_id}`);
+        const response = await fetchWithAuth(`/cart/removeCartItem/${cart_item_id}`, {
+            method: 'DELETE'
+        });
         console.log("Removed cart item ", response)
         return response
     } catch (error) {
@@ -36,7 +40,9 @@ export async function removeItemFromCart(cart_item_id: number) {
 
 export async function clearCart(cart_id: number) {
     try {
-        const response = await axios.delete(`${baseURL}/cart/clearCart/${cart_id}`);
+        const response = await fetchWithAuth(`/cart/clearCart/${cart_id}`, {
+            method: 'DELETE'
+        });
         console.log("Cleared cart ", response)
         return response
     } catch (error) {
@@ -46,9 +52,11 @@ export async function clearCart(cart_id: number) {
 
 export async function updateCartItem(cart_item_id: number, quantity: number) {
     try {
-        console.log("Updating cart item ", cart_item_id, quantity)
-        const response = await axios.put(`${baseURL}/cart/updateCartItem`, 
-            { itemID: cart_item_id, quantity: quantity });
+        // console.log("Updating cart item ", cart_item_id, quantity)
+        const response = await fetchWithAuth(`/cart/updateCartItem`, {
+            method: 'PUT',
+            data: { itemID: cart_item_id, quantity: quantity }
+        });
         console.log("Updated cart item ", response)
         return response
     } catch (error) {

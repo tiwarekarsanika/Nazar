@@ -15,7 +15,7 @@ class ProductsController {
     static async fetchAllProducts(req, res){
         try{
             const response = await ProductsService.fetchAllProducts()
-            console.log("This is the response ", response)
+            // console.log("This is the response ", response)
             res.status(200).json(response)
         } catch (error) {
             res.status(400).json({ error: error.message });

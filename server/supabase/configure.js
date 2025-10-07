@@ -1,6 +1,23 @@
+// import { createClient } from '@supabase/supabase-js'
+
+// // Create a single supabase client for interacting with your database
+// const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
+
+// export default supabase;
+
+// src/supabase/serviceClient.js
 import { createClient } from '@supabase/supabase-js'
 
-// Create a single supabase client for interacting with your database
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
-export default supabase;
+if (!supabaseUrl || !supabaseServiceRoleKey) {
+  throw new Error('Missing Supabase server ENV keys')
+}
+
+const supabase = createClient(supabaseUrl, supabaseServiceRoleKey, {
+  // optional: avoid storing any session state in this instance
+  auth: { persistSession: false },
+})
+
+export default supabase

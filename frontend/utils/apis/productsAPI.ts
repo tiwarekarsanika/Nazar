@@ -1,12 +1,11 @@
-import axios from 'axios';
-
-const baseURL = 'http://localhost:5500'
+import { fetchWithAuth } from './fetchWithAuth';
 
 export async function getAllProducts() {
   try {
-    const response = await axios.get(`${baseURL}/product/allProducts`);
-    
-    return response
+    const response = await fetchWithAuth(`/product/allProducts`,
+      { method: 'GET' }
+    );
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -14,7 +13,8 @@ export async function getAllProducts() {
 
 export async function fetchProductById(product_id: string) {
   try {
-    const response = await axios.get(`${baseURL}/product/getProduct/${product_id}`);
+    const response = await fetchWithAuth(`/product/getProduct/${product_id}`,
+      { method: 'GET' });
     console.log("Fetched product by id ", response.data[0])
     return response.data[0];
   } catch (error) {

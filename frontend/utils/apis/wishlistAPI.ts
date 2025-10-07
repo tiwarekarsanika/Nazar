@@ -1,11 +1,11 @@
-import axios from 'axios';
-
-const baseURL = "http://localhost:5500"
+import { fetchWithAuth } from './fetchWithAuth';
 
 export async function addWishlist(user_id: number, product_id: number) {
   try {
-    const response = await axios.post(`${baseURL}/wishlist/addWishlist`, 
-      { userID: user_id, productID: product_id});
+    const response = await fetchWithAuth(`/wishlist/addWishlist`, {
+      method: 'POST',
+      data: { userID: user_id, productID: product_id }
+    });
     console.log("Added wishlist item ", response)
     return response
   } catch (error) {
@@ -15,7 +15,9 @@ export async function addWishlist(user_id: number, product_id: number) {
 
 export async function getWishlist(user_id: number) {
   try {
-    const response = await axios.get(`${baseURL}/wishlist/getWishlist/${user_id}`);
+    const response = await fetchWithAuth(`/wishlist/getWishlist/${user_id}`,
+      { method: 'GET' }
+    );
     // console.log("Fetched wishlist ", response)
     return response
   } catch (error) {
@@ -26,7 +28,9 @@ export async function getWishlist(user_id: number) {
 export async function removeItemFromWishlist(wishlist_item_id: number) {
   try { 
     // console.log("Removing wishlist item id ", wishlist_item_id)
-    const response = await axios.delete(`${baseURL}/wishlist/removeItemsFromWishlist/${wishlist_item_id}`);
+    const response = await fetchWithAuth(`/wishlist/removeItemsFromWishlist/${wishlist_item_id}`, {
+      method: 'DELETE'
+    });
     // console.log("Removed wishlist item ", response)
     return response
   } catch (error) {
@@ -36,7 +40,9 @@ export async function removeItemFromWishlist(wishlist_item_id: number) {
 
 export async function clearWishlist(wishlist_id: number) {
   try {
-    const response = await axios.delete(`${baseURL}/wishlist/clearWishlist/${wishlist_id}`);
+    const response = await fetchWithAuth(`/wishlist/clearWishlist/${wishlist_id}`, {
+      method: 'DELETE'
+    });
     // console.log("Cleared wishlist ", response)
     return response
   } catch (error) {

@@ -13,18 +13,10 @@ import { useProductStore } from "./store";
 import { useRouter } from "next/navigation";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getAllProducts } from "@/utils/apis/productsAPI";
-import { Progress } from "@/components/ui/progress"
 import { addWishlist } from "@/utils/apis/wishlistAPI";
 import { useUser } from "@/context/userContext";
 import FilterSection from './product-filter';
 import { addCart } from "@/utils/apis/cartAPI";
-
-type ProductButtonProps = {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-};
 
 export default function ProductList() {
   const {
@@ -37,20 +29,24 @@ export default function ProductList() {
   } = useProductStore();
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
   const { data: productsData, isLoading, error } = useQuery({
     queryKey: ["products"],
     queryFn: async () => await getAllProducts()
   });
+
   const router = useRouter();
 
   const setProducts = useProductStore((state) => state.setProducts);
 
   useEffect(() => {
     if (productsData) {
-      console.log(productsData)
-      setProducts(productsData.data); // populate Zustand store
+      console.log("Fetched products list ", productsData)
+      setProducts(productsData); // populate Zustand store
     }
   }, [productsData]);
+
+  // console.log("Filtered products ", filteredProducts)
 
   // Apply initial filters on mount
   useEffect(() => {
@@ -133,18 +129,6 @@ export default function ProductList() {
                 <div className="text-muted-foreground flex items-center gap-2 text-sm">
                   {filteredProducts.length} products
                 </div>
-              </div>
-
-              {/* View Toggle - Desktop only */}
-              <div className="hidden sm:block">
-                <ToggleGroup type="single" value={viewMode} onValueChange={setViewMode}>
-                  <ToggleGroupItem value="grid" aria-label="Grid view">
-                    <Grid3X3 className="h-4 w-4" />
-                  </ToggleGroupItem>
-                  <ToggleGroupItem value="list" aria-label="List view">
-                    <List className="h-4 w-4" />
-                  </ToggleGroupItem>
-                </ToggleGroup>
               </div>
             </div>
 

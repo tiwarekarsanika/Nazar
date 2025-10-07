@@ -145,19 +145,6 @@ export const useProductStore = create<ProductStore>((set, get) => ({
       );
     }
 
-    // Delivery date filter
-    // if (deliveryDate !== "any") {
-    //   const maxDays =
-    //     deliveryDate === "today"
-    //       ? 0
-    //       : deliveryDate === "tomorrow"
-    //         ? 1
-    //         : deliveryDate === "week"
-    //           ? 7
-    //           : 999;
-    //   filtered = filtered.filter((product) => product.deliveryDays <= maxDays);
-    // }
-
     set({ filteredProducts: filtered });
   }
 }));

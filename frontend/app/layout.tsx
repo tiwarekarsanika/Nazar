@@ -40,12 +40,12 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
-          <Suspense fallback={<GlobalLoader />}>
+          <Suspense fallback={<Loading />}>
             <ReactQueryProvider>
               <UserProvider>
                 <LayoutWrapper>
+                  <GlobalLoader />
                   {children}
                 </LayoutWrapper>
               </UserProvider>

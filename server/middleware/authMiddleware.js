@@ -9,7 +9,6 @@ export function verifySupabaseJWT(req, res, next) {
   }
 
   try {
-    // Verify using the secret from Supabase settings (Project Settings → API)
     const decoded = jwt.verify(token, process.env.SUPABASE_JWT_TOKEN)
     req.user = decoded  // decoded contains sub (user id), role, exp, etc.
     next()

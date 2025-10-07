@@ -15,18 +15,18 @@ import cors from 'cors'
 
 const app = express()
 dotenv.config()
-
+app.use(express.json())
 app.use(cors())
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use('/redis', verifySupabaseJWT, redisRoutes);
 app.use('/kafka', verifySupabaseJWT, kProducerRoutes);
-app.use('/product', productRoutes);
-app.use('/user', userRoutes);
-app.use('/wishlist', wishlistRoutes);
-app.use('/orders', ordersRoutes);
-app.use('/cart', cartRoutes)
+app.use('/product', verifySupabaseJWT, productRoutes);
+app.use('/user', verifySupabaseJWT, userRoutes);
+app.use('/wishlist', verifySupabaseJWT, wishlistRoutes);
+app.use('/orders', verifySupabaseJWT, ordersRoutes);
+app.use('/cart', verifySupabaseJWT, cartRoutes);
 
 // const register = new client.Registry();
 

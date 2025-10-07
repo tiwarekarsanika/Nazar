@@ -2,12 +2,12 @@ import supabase from "../supabase/configure.js";
 
 class CartRepo {
     static fetchCart = async (userID) => {
-        // console.log("Fetching cart for userID: ", userID)
+        console.log("Fetching cart for userID: ", userID)
         const { data, error } = await supabase
             .from('carts')
             .select('cart_id')
             .eq('user_id', userID)
-            .single()
+            .maybeSingle()
         if (error) {
             console.log("Failed to fetch the cart ", error)
         }

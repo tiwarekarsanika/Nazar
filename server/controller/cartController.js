@@ -14,7 +14,7 @@ class CartController {
 
     static async addNewCart(req, res){
         try {
-            // console.log("Request Body: ", req.body);
+            console.log("Request Body: ", req.body);
             const response = await CartService.addNewCart(req.body)
             res.status(200).json(response);
         } catch (error) {

@@ -5,14 +5,14 @@ class CartService {
     static async fetchCart(userID){
         let cartID = await CartRepo.fetchCart(userID)
         cartID = cartID?.cart_id
-        // console.log("Fetched cartID: ", cartID)
+        console.log("Fetched cartID: ", cartID)
         if(cartID){
             let cartItems = await CartRepo.fetchCartItems(cartID)
-            // console.log("Cart items before fetching product details: ", cartItems)
+            console.log("Cart items before fetching product details: ", cartItems)
             cartItems = await Promise.all(
                 cartItems.map(async (item) => {
                     const productDetails = await ProductRepo.fetchProduct(item.product_id);
-                    // console.log("Product details are ", productDetails)
+                    console.log("Product details are ", productDetails)
                     const { product_id, title, image } = productDetails[0];
                     // console.log("Image is ", image)
                     return {
@@ -24,7 +24,7 @@ class CartService {
                 })
             );
 
-            // console.log("Fetched cart items are ", cartItems);
+            console.log("Fetched cart items are ", cartItems);
             return cartItems
         }
         else{
@@ -35,14 +35,14 @@ class CartService {
 
     static async addNewCart(data){
         const { userID, productID, quantity, cost } = data
-        // console.log("Adding to cart for userID: ", userID, " productID: ", productID, " quantity: ", quantity)
+        console.log("Adding to cart for userID: ", userID, " productID: ", productID, " quantity: ", quantity)
         let cartID = await CartRepo.fetchCart(userID)
         cartID = cartID?.cart_id
-        // console.log("Fetched cartID: ", cartID)
+        console.log("Fetched cartID: ", cartID)
         let cartItem = null
         if(cartID){
             console.log("Cart already exists for user ", userID, " with cartID ", cartID)
-            // console.log("Adding new item in ", cartID, " with productID ", productID, " quantity ", quantity, " cost ", cost)
+            console.log("Adding new item in ", cartID, " with productID ", productID, " quantity ", quantity, " cost ", cost)
             cartItem = await CartRepo.addItemToCart(cartID, productID, quantity, cost)
             console.log("Inserted item ", cartItem, " in already existing cart ", cartID)
         }
@@ -50,7 +50,7 @@ class CartService {
             console.log("Cart does not exist for user ", userID, ". Creating a new cart.")
             const newCart = await CartRepo.addNewCart(userID)
             cartID = newCart?.cart_id
-            // console.log("Adding new item in ", cartID, " with productID ", productID, " quantity ", quantity, " cost ", cost)
+            console.log("Adding new item in ", cartID, " with productID ", productID, " quantity ", quantity, " cost ", cost)
             cartItem = await CartRepo.addItemToCart(cartID, productID, quantity, cost)
             console.log("Inserted item ", cartItem, " in newly created cart ", cartID)
         }
