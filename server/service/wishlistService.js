@@ -1,5 +1,6 @@
 import WishlistRepo from '../repositories/wishlistRepo.js'
 import ProductRepo from '../repositories/productRepo.js'
+import kProducers from '../kafka/kproducerAPI.js'
 
 class WishlistService {
     static async fetchWishlist(userID) {
@@ -46,6 +47,9 @@ class WishlistService {
             wishlistItem = await WishlistRepo.addWishlistItem(wishlistID, productID)
             console.log("Inserted item ", wishlistItem, " in newly created wishlist ", wishlistID)
         }
+
+        await kProducers.addUserWishlist(data)
+        
         return wishlistItem
     }
 

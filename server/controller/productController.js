@@ -3,9 +3,10 @@ import ProductsService from '../service/productService.js'
 class ProductsController {
     static async fetchProduct(req, res){
         try {
-            const id = req.params.id
-            // console.log("The product id is ", id);
-            const response = await ProductsService.fetchProduct(id)
+            const productID = req.params.id
+            const userId = req.user.id; 
+            // console.log("The product id is ", productID);
+            const response = await ProductsService.fetchProduct(productID, userId)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });

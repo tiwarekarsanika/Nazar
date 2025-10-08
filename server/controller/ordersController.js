@@ -23,7 +23,8 @@ class OrdersController {
 
     static async addNewOrder(req, res){
         try {
-            const response = await OrdersService.addNewOrder(req.body)
+            const userID = req.body.user_id
+            const response = await OrdersService.addNewOrder(req.body, userID)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });

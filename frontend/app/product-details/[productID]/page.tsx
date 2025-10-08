@@ -31,7 +31,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
     initialData: () => {
       const productsData = queryClient.getQueryData<any>(["products"]);
       // console.log("Products data in product details page ", productsData?.data);
-      return productsData?.data.find((p: any) => p.product_id === productID);
+      return productsData?.data.filter((p: any) => p.product_id === productID);
     },
   });
 
