@@ -14,6 +14,7 @@ class kProducers {
                                 eventType: "wishlist",
                                 userID: msg.userID,
                                 productID: msg.productID,
+                                title: msg.title,
                                 timestamp: new Date().toISOString()
                             }
                         ),
@@ -27,7 +28,10 @@ class kProducers {
     }
 
     static addUserClicks = async (data) => {
+        // console.log("Request payload:", data.body);
         const msg = data
+        // console.log("Producing user click event to kafka:", msg.userID, msg.productID, msg.title);
+
         try {
             await producer.send({
                 topic: 'nazar-user-events',
@@ -39,6 +43,7 @@ class kProducers {
                                 eventType: "views",
                                 userID: msg.userID,
                                 productID: msg.productID,
+                                title: msg.title,
                                 timestamp: new Date().toISOString()
                             }
                         ),
@@ -65,6 +70,7 @@ class kProducers {
                             orderID: msg.orderID,
                             productID: p.productID,
                             quantity: p.quantity,
+                            title: p.title,
                             timestamp: new Date().toISOString()
                         }
                     ),

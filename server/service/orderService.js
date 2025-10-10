@@ -2,6 +2,7 @@ import OrdersRepo from "../repositories/ordersRepo.js";
 import CartsRepo from "../repositories/cartRepo.js";
 import ProductRepo from "../repositories/productRepo.js";
 import kProducers from "../kafka/kproducerAPI.js";
+import { title } from "process";
 
 class OrdersService {
     static async fetchOrder(userID) {
@@ -53,12 +54,19 @@ class OrdersService {
             orderItems.push(res);
         }
 
+        const updatedItems = await Promise.all(
+            cartItems.map(async item => {
+                const { title } = (await ProductRepo.fetchProduct(item.product_id))[0];
+                return { ...item, title };
+            })
+        );
+
         await kProducers.addUserPurchase({
             userID,
             orderID,
-            purchases: cartItems.map(ci => ({ productID: ci.product_id, quantity: ci.quantity }))
+            purchases: updatedItems.map(ci => ({ productID: ci.product_id, quantity: ci.quantity, title: ci.title }))
         })
-        
+
         return orderItems
     }
 }

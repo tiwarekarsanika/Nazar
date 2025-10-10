@@ -4,7 +4,7 @@ import kProducers from "../kafka/kproducerAPI.js";
 class ProductsService {
     static async fetchProduct(productID, userID){
         const products = await ProductRepo.fetchProduct(productID)
-        const data = {userID: userID, productID: productID};
+        const data = {userID: userID, productID: productID, title: products[0]?.title};
         await kProducers.addUserClicks(data);
 
         return products

@@ -33,6 +33,8 @@ class WishlistService {
 
     static async addWishlist(data) {
         const { userID, productID } = data
+        const productDetails = await ProductRepo.fetchProduct(productID);
+
         let wishlistID = await WishlistRepo.fetchWishlist(userID)
         wishlistID = wishlistID?.wishlist_id
         let wishlistItem = null
@@ -47,7 +49,7 @@ class WishlistService {
             wishlistItem = await WishlistRepo.addWishlistItem(wishlistID, productID)
             console.log("Inserted item ", wishlistItem, " in newly created wishlist ", wishlistID)
         }
-
+        data = {...data, title: productDetails[0]?.title}
         await kProducers.addUserWishlist(data)
         
         return wishlistItem
