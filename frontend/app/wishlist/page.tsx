@@ -5,8 +5,8 @@ import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { getWishlist, removeItemFromWishlist, clearWishlist } from "@/utils/apis/wishlistAPI"
 import { useUser } from "@/context/userContext"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { Progress } from "@/components/ui/progress"
 import { useRouter } from "next/navigation"
+import { useWishlist } from "@/context/wishlistContext";
 
 interface WishlistItem {
   wishlist_id: number;
@@ -29,6 +29,20 @@ export default function WishlistPage() {
     queryFn: () => getWishlist(user?.user.id),
     enabled: !!user?.user.id, // only run when user is available
   });
+
+  const removeFromWishlist = useWishlist((state) => state.removeWishlist);
+  const clearStoreWishlist = useWishlist((state) => state.clearStoreWishlist);
+
+  const handleRemoveFromWishlist = async (wishlist_item_id: number, product_id: number) => {
+    await removeFromWishlistMutation.mutateAsync(wishlist_item_id);
+    removeFromWishlist(product_id);
+  }
+
+  const handleClearWishlist = async (wishlist_id: number) => {
+    await clearWishlistMutation.mutateAsync(wishlist_id);
+    clearStoreWishlist();
+  }
+
 
   const removeFromWishlistMutation = useMutation({
     mutationFn: (wishlist_item_id: number) =>
@@ -61,7 +75,7 @@ export default function WishlistPage() {
         <h1 className="text-2xl font-bold">My Wishlist</h1>
         <Button
           variant="outline"
-          onClick={() => clearWishlistMutation.mutate(wishlist[0]?.wishlist_id)}
+          onClick={() => handleClearWishlist(wishlist[0]?.wishlist_id)}
           disabled={clearWishlistMutation.isPending}
         >
           Clear Wishlist
@@ -92,7 +106,7 @@ export default function WishlistPage() {
                 variant="outline"
                 size="sm"
                 onClick={() =>
-                  removeFromWishlistMutation.mutate(item.wishlist_item_id)
+                  handleRemoveFromWishlist(item.wishlist_item_id, item.product_id)
                 }
                 disabled={removeFromWishlistMutation.isPending}
               >

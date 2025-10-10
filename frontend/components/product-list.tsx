@@ -17,6 +17,9 @@ import { addWishlist } from "@/utils/apis/wishlistAPI";
 import { useUser } from "@/context/userContext";
 import FilterSection from './product-filter';
 import { addCart } from "@/utils/apis/cartAPI";
+import { useCart } from "@/context/cartContext";
+import { useWishlist } from "@/context/wishlistContext";
+import { FaHeart } from "react-icons/fa";
 
 export default function ProductList() {
   const {
@@ -57,6 +60,14 @@ export default function ProductList() {
   console.log("User is ", user)
   const queryClient = useQueryClient();
 
+  const addToWishlist = useWishlist((state) => state.addWishlist);
+  const wishlist = useWishlist((state) => state.wishlist);
+
+  const handleAddToWishlist = async (productId: number) => {
+    await addToWishlistMutation.mutateAsync(productId);
+    addToWishlist({ id: productId });
+  }
+
   // Mutation hook
   const addToWishlistMutation = useMutation({
     mutationFn: (productId: number) => addWishlist(user?.user.id, productId),
@@ -72,6 +83,21 @@ export default function ProductList() {
       console.error("Failed to add wishlist item ", error);
     },
   });
+
+  const addZustandCart = useCart((state) => state.addCart);
+  const cart = useCart((state) => state.cart);
+
+  // Resetting user store
+  // useEffect(() => {
+  //   useCart.persist.clearStorage();
+  //   useWishlist.persist.clearStorage();
+  // }, []);
+
+
+  const handleAddToCart = async ({ productId, price }: { productId: number; price: number }) => {
+    await addToCartMutation.mutateAsync({ productId, price });
+    addZustandCart({ id: productId, quantity: 1 });
+  };
 
   const addToCartMutation = useMutation({
     mutationFn: ({ productId, price }: { productId: number; price: number }) => addCart(user?.user.id, productId, 1, price),
@@ -177,7 +203,7 @@ export default function ProductList() {
               {filteredProducts.map((product: any) => (
                 <Card key={product.product_id} className="group transition-shadow hover:shadow-lg h-full flex flex-col">
                   <CardContent className="p-2 sm:p-4 flex flex-col flex-1">
-                    <div onClick={() => router.push(`/product-details/${product.product_id}`)} className="mb-4">
+                    <div className="mb-4 cursor-pointer" onClick={() => router.push(`/product-details/${product.product_id}`)}>
                       <div className="relative mb-3 sm:mb-4">
                         <img
                           src={product.image || "/placeholder.svg"}
@@ -236,17 +262,27 @@ export default function ProductList() {
                     </div>
 
                     <div className="mt-auto flex gap-2 pt-2">
-                      <Button className="flex-1" size="sm" onClick={() => addToCartMutation.mutate({ productId: product.product_id, price: product.price })}>
+                      <Button className="flex-1" size="sm"
+                        disabled={cart.some((item) => item.id === product.product_id)}
+                        onClick={() => handleAddToCart({ productId: product.product_id, price: product.price })}
+                      >
                         <ShoppingCart className="h-4 w-4" />
-                        <span>Add to cart</span>
+                        <span>
+                          {cart.some((item) => item.id === product.product_id)
+                            ? "Added !"
+                            : "Add to cart"}
+                        </span>
                       </Button>
                       <Button
-                        onClick={() => addToWishlistMutation.mutate(product.product_id)}
+                        disabled={wishlist.some((item) => item.id === product.product_id)}
+                        onClick={() => handleAddToWishlist(product.product_id)}
                         variant="outline"
                         size="sm"
                         className="bg-transparent px-2 sm:px-3"
                       >
-                        <Heart className="h-4 w-4" />
+                        {wishlist.some((item) => item.id === product.product_id)
+                          ? <FaHeart className="h-4 w-4" />
+                          : <Heart className="h-4 w-4" />}
                       </Button>
                     </div>
                   </CardContent>
