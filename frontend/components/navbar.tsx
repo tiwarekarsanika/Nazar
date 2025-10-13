@@ -14,7 +14,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
-import { ShoppingCart, Heart, LogOut, Router } from 'lucide-react';
+import { ShoppingCart, Heart } from 'lucide-react';
 import Link from 'next/link';
 import { CurrentUserAvatar } from './ui/current-user-avatar';
 import { useUser } from "@/context/userContext";

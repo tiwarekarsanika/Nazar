@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 type CartItem = {
-  id: number;
+  id: string;
   quantity: number;
 };
 
@@ -10,7 +10,7 @@ type CartState = {
   count: number;
   cart: CartItem[];
   addCart: (item: CartItem) => void;
-  removeCart: (id: number) => void;
+  removeCart: (id: string) => void;
     clearStoreCart: () => void;
 };
 

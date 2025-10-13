@@ -2,12 +2,13 @@
 
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { createClient } from "@/lib/client";
+import { User } from "@supabase/supabase-js";
 
-const UserContext = createContext<{ user: any | null }>({ user: null });
+const UserContext = createContext<{ user: User | null }>({ user: null });
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const supabase = createClient();
-  const [user, setUser] = useState<any | null>(null);
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     // Fetch initial user

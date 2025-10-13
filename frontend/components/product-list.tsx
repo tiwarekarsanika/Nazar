@@ -20,6 +20,8 @@ import { addCart } from "@/utils/apis/cartAPI";
 import { useCart } from "@/context/cartContext";
 import { useWishlist } from "@/context/wishlistContext";
 import { FaHeart } from "react-icons/fa";
+import Image from "next/image";
+import { Product } from './store'
 
 export default function ProductList() {
   const {
@@ -33,7 +35,7 @@ export default function ProductList() {
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
-  const { data: productsData, isLoading, error } = useQuery({
+  const { data: productsData, error } = useQuery({
     queryKey: ["products"],
     queryFn: async () => await getAllProducts()
   });
@@ -44,7 +46,7 @@ export default function ProductList() {
 
   useEffect(() => {
     if (productsData) {
-      console.log("Fetched products list ", productsData)
+      // console.log("Fetched products list ", productsData)
       setProducts(productsData); // populate Zustand store
     }
   }, [productsData]);
@@ -57,22 +59,25 @@ export default function ProductList() {
   }, [applyFilters]);
 
   const user = useUser();
-  console.log("User is ", user)
+  // console.log("User is ", user)
   const queryClient = useQueryClient();
 
   const addToWishlist = useWishlist((state) => state.addWishlist);
   const wishlist = useWishlist((state) => state.wishlist);
 
-  const handleAddToWishlist = async (productId: number) => {
+  const handleAddToWishlist = async (productId: string) => {
     await addToWishlistMutation.mutateAsync(productId);
     addToWishlist({ id: productId });
   }
 
   // Mutation hook
   const addToWishlistMutation = useMutation({
-    mutationFn: (productId: number) => addWishlist(user?.user.id, productId),
+    mutationFn: (productId: string) => {
+      if (!user?.user?.id) throw new Error("User ID is required to add to wishlist");
+      return addWishlist(user.user.id, productId);
+    },
     onSuccess: () => {
-      console.log("Item added to wishlist ");
+      // console.log("Item added to wishlist ");
       setTimeout(() => {
         router.push("/wishlist"); // navigate after short delay
       }, 800);
@@ -94,16 +99,19 @@ export default function ProductList() {
   // }, []);
 
 
-  const handleAddToCart = async ({ productId, price }: { productId: number; price: number }) => {
+  const handleAddToCart = async ({ productId, price }: { productId: string; price: number }) => {
     await addToCartMutation.mutateAsync({ productId, price });
     addZustandCart({ id: productId, quantity: 1 });
   };
 
   const addToCartMutation = useMutation({
-    mutationFn: ({ productId, price }: { productId: number; price: number }) => addCart(user?.user.id, productId, 1, price),
+    mutationFn: ({ productId, price }: { productId: string; price: number }) => {
+      if (!user?.user?.id) throw new Error("User ID is required to add to cart");
+      return addCart(user.user.id, productId, 1, price);
+    },
     onSuccess: () => {
       // console.log(productId, price)
-      console.log("Item added to cart ");
+      // console.log("Item added to cart ");
       setTimeout(() => {
         router.push("/checkout-cart");
       }, 800);
@@ -200,12 +208,12 @@ export default function ProductList() {
                 ? "xs:grid-cols-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4"
                 : "grid-cols-1"
                 }`}>
-              {filteredProducts.map((product: any) => (
+              {filteredProducts.map((product: Product) => (
                 <Card key={product.product_id} className="group transition-shadow hover:shadow-lg h-full flex flex-col">
                   <CardContent className="p-2 sm:p-4 flex flex-col flex-1">
                     <div className="mb-4 cursor-pointer" onClick={() => router.push(`/product-details/${product.product_id}`)}>
                       <div className="relative mb-3 sm:mb-4">
-                        <img
+                        <Image
                           src={product.image || "/placeholder.svg"}
                           alt={product.title}
                           className="h-40 w-full rounded-md object-cover sm:h-48"
@@ -269,7 +277,7 @@ export default function ProductList() {
                         <ShoppingCart className="h-4 w-4" />
                         <span>
                           {cart.some((item) => item.id === product.product_id)
-                            ? "Added !"
+                          ? "Added !"
                             : "Add to cart"}
                         </span>
                       </Button>

@@ -7,29 +7,44 @@ import { fetchOrderItems, fetchOrder } from "@/utils/apis/ordersAPI"
 import { useUser } from "@/context/userContext"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { clearCart } from "@/utils/apis/cartAPI"
-import { Progress } from "@/components/ui/progress"
+import Image from "next/image"
+
+interface OrderItem {
+  order_item_id: string,
+  product_id: string,
+  image: string,
+  title: string,
+  quantity: number,
+  cost: number
+}
 
 export default function OrderConfirmation() {
   const user = useUser();
 
-  const { data: orderItems, isLoading: itemsLoading, error: itemsError } = useQuery({
-    queryKey: ["orderItems", user?.user.id],
-    queryFn: () => fetchOrderItems(user?.user.id),
-    enabled: !!user?.user.id,
+  const { data: orderItems, error: itemsError } = useQuery({
+    queryKey: ["orderItems", user?.user?.id],
+    queryFn: () => {
+      if (!user?.user?.id) return Promise.resolve(undefined);
+      return fetchOrderItems(user.user.id);
+    },
+    enabled: !!user?.user?.id,
   });
 
-  const { data: orderDetails, isLoading: detailsLoading, error: detailsError } = useQuery({
-    queryKey: ["orderDetails", user?.user.id],
-    queryFn: () => fetchOrder(user?.user.id),
-    enabled: !!user?.user.id,
+  const { data: orderDetails, error: detailsError } = useQuery({
+    queryKey: ["orderDetails", user?.user?.id],
+    queryFn: () => {
+      if (!user?.user?.id) return Promise.resolve(undefined);
+      return fetchOrder(user.user.id);
+    },
+    enabled: !!user?.user?.id,
   });
 
   const queryClient = useQueryClient();
   const clearCartMutation = useMutation({
-    mutationFn: (cart_id: number) => clearCart(cart_id),
+    mutationFn: (cart_id: string) => clearCart(cart_id),
     onSuccess: () => {
       // console.log("Cart cleared");
-      queryClient.invalidateQueries({ queryKey: ["cart", user?.user.id] });
+      queryClient.invalidateQueries({ queryKey: ["cart", user?.user?.id] });
     }
   });
 
@@ -69,12 +84,12 @@ export default function OrderConfirmation() {
               <div className="font-medium">Items Purchased</div>
               <div className="grid gap-3">
                 {
-                  orderItems?.data.map((item: any) => {
+                  orderItems?.data.map((item: OrderItem) => {
                     return (
                       <div key={item.order_item_id || item.product_id} 
                       className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                          <img
+                          <Image
                             src={item.image}
                             alt={item.title}
                             width={48}
@@ -133,7 +148,7 @@ export default function OrderConfirmation() {
   )
 }
 
-function CircleCheckIcon(props: any) {
+function CircleCheckIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

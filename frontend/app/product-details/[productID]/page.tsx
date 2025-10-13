@@ -4,7 +4,6 @@ import {
   Star,
   ShoppingBagIcon
 } from "lucide-react";
-
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
@@ -14,6 +13,25 @@ import { addCart } from "@/utils/apis/cartAPI";
 import { useQueryClient, useMutation, useQuery } from "@tanstack/react-query";
 import React from "react";
 import { fetchProductById } from "@/utils/apis/productsAPI";
+import Image from "next/image";
+
+interface ProductType {
+  product_id: string;
+  title: string;
+  price: number;
+  originalPrice?: number;
+  discount?: number;
+  rating: number;
+  orders: number;
+  image: string;
+  category: string;
+  productDetails: string;
+}
+
+interface ProductsResponse {
+  data: ProductType[];
+  status: number;
+}
 
 interface ProductDetailPageProps {
   params: Promise<{ productID: string }>;
@@ -29,9 +47,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
     queryKey: ["product", productID],
     queryFn: () => fetchProductById(productID), // API call that also increments views
     initialData: () => {
-      const productsData = queryClient.getQueryData<any>(["products"]);
+      const productsData = queryClient.getQueryData<ProductsResponse>(["products"]);
       // console.log("Products data in product details page ", productsData?.data);
-      return productsData?.data.filter((p: any) => p.product_id === productID);
+      return productsData?.data?.find((p: ProductType) => p.product_id === productID);
     },
   });
 
@@ -39,9 +57,12 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
 
   const addToWishlistMutation = useMutation({
-    mutationFn: (productId: number) => addWishlist(user?.user.id, productId),
+    mutationFn: (productId: string) => {
+      if (!user?.user?.id) throw new Error("User ID is required to add to wishlist");
+      return addWishlist(user.user.id, productId);
+    },
     onSuccess: () => {
-      console.log("Item added to wishlist ");
+      // console.log("Item added to wishlist ");
       setTimeout(() => {
         router.push("/wishlist"); // navigate after short delay
       }, 800);
@@ -54,10 +75,13 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   });
 
   const addToCartMutation = useMutation({
-    mutationFn: ({ productId, price }: { productId: number; price: number }) => addCart(user?.user.id, productId, 1, price),
+    mutationFn: ({ productId, price }: { productId: string; price: number }) => {
+      if (!user?.user?.id) throw new Error("User ID is required to add to cart");
+      return addCart(user.user.id, productId, 1, price);
+    },
     onSuccess: () => {
       // console.log(productId, price)
-      console.log("Item added to cart ");
+      // console.log("Item added to cart ");
       setTimeout(() => {
         router.push("/checkout-cart");
       }, 800);
@@ -78,7 +102,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
         {/* Main Product Image */}
         <div className="relative">
-          <img
+          <Image
             src={product.image}
             alt={product.title}
             className="aspect-4/3 h-[410px] w-full rounded-lg border object-cover"

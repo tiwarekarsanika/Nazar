@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 export interface Product {
-  product_id: number;
+  product_id: string;
   title: string;
   price: number;
   originalPrice?: number;
@@ -35,7 +35,6 @@ interface ProductStore {
   toggleBrand: (brand: string) => void;
   toggleColor: (color: string) => void;
   setProducts: (products: Product[]) => void;
-  // setDeliveryDate: (date: string) => void;
   setViewMode: (mode: string) => void;
   applyFilters: () => void;
 }
@@ -49,7 +48,6 @@ export const useProductStore = create<ProductStore>((set, get) => ({
   priceRange: [0, 3000],
   selectedBrands: [],
   selectedColors: [],
-  // deliveryDate: "any",
   viewMode: "grid",
 
   setProducts: (products: Product[]) => {
@@ -89,11 +87,6 @@ export const useProductStore = create<ProductStore>((set, get) => ({
     set({ selectedColors: newColors });
     get().applyFilters();
   },
-
-  // setDeliveryDate: (date) => {
-  //   set({ deliveryDate: date });
-  //   get().applyFilters();
-  // },
 
   setViewMode: (mode) => {
     set({ viewMode: mode });

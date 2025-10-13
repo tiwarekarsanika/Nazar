@@ -7,11 +7,12 @@ import { useUser } from "@/context/userContext"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import { useWishlist } from "@/context/wishlistContext";
+import Image from "next/image"
 
 interface WishlistItem {
-  wishlist_id: number;
-  product_id: number;
-  wishlist_item_id: number;
+  wishlist_id: string;
+  product_id: string;
+  wishlist_item_id: string;
   title: string;
   price: number;
   originalPrice?: number;
@@ -24,32 +25,32 @@ export default function WishlistPage() {
   const queryClient = useQueryClient();
   const router = useRouter();
 
-  const { data: wishlistData, isLoading, error } = useQuery({
-    queryKey: ["wishlist", user?.user.id],
-    queryFn: () => getWishlist(user?.user.id),
-    enabled: !!user?.user.id, // only run when user is available
+  const { data: wishlistData, error } = useQuery({
+    queryKey: ["wishlist", user?.user?.id],
+    queryFn: () => getWishlist(user!.user!.id),
+    enabled: !!user?.user?.id, // only run when user is available
   });
 
   const removeFromWishlist = useWishlist((state) => state.removeWishlist);
   const clearStoreWishlist = useWishlist((state) => state.clearStoreWishlist);
 
-  const handleRemoveFromWishlist = async (wishlist_item_id: number, product_id: number) => {
+  const handleRemoveFromWishlist = async (wishlist_item_id: string, product_id: string) => {
     await removeFromWishlistMutation.mutateAsync(wishlist_item_id);
     removeFromWishlist(product_id);
   }
 
-  const handleClearWishlist = async (wishlist_id: number) => {
+  const handleClearWishlist = async (wishlist_id: string) => {
     await clearWishlistMutation.mutateAsync(wishlist_id);
     clearStoreWishlist();
   }
 
 
   const removeFromWishlistMutation = useMutation({
-    mutationFn: (wishlist_item_id: number) =>
+    mutationFn: (wishlist_item_id: string) =>
       removeItemFromWishlist(wishlist_item_id),
     onSuccess: () => {
       // console.log("Item removed from wishlist");
-      queryClient.invalidateQueries({ queryKey: ["wishlist", user?.user.id] });
+      queryClient.invalidateQueries({ queryKey: ["wishlist", user?.user?.id] });
     },
     onError: (error) => {
       console.error("Failed to remove wishlist item", error);
@@ -57,10 +58,10 @@ export default function WishlistPage() {
   });
 
   const clearWishlistMutation = useMutation({
-    mutationFn: (wishlist_id: number) => clearWishlist(wishlist_id),
+    mutationFn: (wishlist_id: string) => clearWishlist(wishlist_id),
     onSuccess: () => {
       // console.log("Wishlist cleared");
-      queryClient.invalidateQueries({ queryKey: ["wishlist", user?.user.id] });
+      queryClient.invalidateQueries({ queryKey: ["wishlist", user?.user?.id] });
     },
   });
 
@@ -86,7 +87,7 @@ export default function WishlistPage() {
           <Card key={item.wishlist_item_id}>
             <div className="cursor-pointer" onClick={() => router.push(`/product-details/${item.product_id}`)}>
             <CardHeader>
-              <img
+              <Image
                 src={item.image}
                 alt={item.title}
                 width={300}

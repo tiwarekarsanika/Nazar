@@ -1,6 +1,6 @@
 import { fetchWithAuth } from './fetchWithAuth';
 
-export async function fetchOrder(user_id: number){
+export async function fetchOrder(user_id: string){
     try{
         const response = await fetchWithAuth(`/orders/getOrder/${user_id}`, {
             method: 'GET'
@@ -12,7 +12,7 @@ export async function fetchOrder(user_id: number){
     }
 }
 
-export async function fetchOrderItems(user_id: number) {
+export async function fetchOrderItems(user_id: string) {
     try {
         // console.log("Fetching order for user_id: ", user_id)
         const response = await fetchWithAuth(`/orders/getOrderItems/${user_id}`, {
@@ -25,7 +25,7 @@ export async function fetchOrderItems(user_id: number) {
     }
 }
 
-export async function addOrder(user_id: number, cart_id: number, subtotal: number, tax: number, total: number) {
+export async function addOrder(user_id: string, cart_id: string, subtotal: number, tax: number, total: number) {
     try {
         const response = await fetchWithAuth(`/orders/addOrder`, {
             method: 'POST',

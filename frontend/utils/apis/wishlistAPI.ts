@@ -1,6 +1,6 @@
 import { fetchWithAuth } from './fetchWithAuth';
 
-export async function addWishlist(user_id: number, product_id: number) {
+export async function addWishlist(user_id: string, product_id: string) {
   try {
     const response = await fetchWithAuth(`/wishlist/addWishlist`, {
       method: 'POST',
@@ -13,7 +13,7 @@ export async function addWishlist(user_id: number, product_id: number) {
   }
 }
 
-export async function getWishlist(user_id: number) {
+export async function getWishlist(user_id: string) {
   try {
     const response = await fetchWithAuth(`/wishlist/getWishlist/${user_id}`,
       { method: 'GET' }
@@ -25,7 +25,7 @@ export async function getWishlist(user_id: number) {
   }
 }
 
-export async function removeItemFromWishlist(wishlist_item_id: number) {
+export async function removeItemFromWishlist(wishlist_item_id: string) {
   try { 
     // console.log("Removing wishlist item id ", wishlist_item_id)
     const response = await fetchWithAuth(`/wishlist/removeItemsFromWishlist/${wishlist_item_id}`, {
@@ -38,7 +38,7 @@ export async function removeItemFromWishlist(wishlist_item_id: number) {
   } 
 }
 
-export async function clearWishlist(wishlist_id: number) {
+export async function clearWishlist(wishlist_id: string) {
   try {
     const response = await fetchWithAuth(`/wishlist/clearWishlist/${wishlist_id}`, {
       method: 'DELETE'

@@ -1,22 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash2 } from "lucide-react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 interface CartItemProps {
-  cart_id: number;
-  cart_item_id: number;
-  product_id: number;
+  cart_id: string;
+  cart_item_id: string;
+  product_id: string;
   title: string;
   image: string;
   quantity: number;
   cost: number;
-  onUpdateQuantity: (id: number, quantity: number) => number | void | Promise<number | void>;
-  onRemove: (id: number) => void;
+  onUpdateQuantity: (id: string, quantity: number) => string | void | Promise<string | void>;
+  onRemove: (id: string) => void;
 }
 
 export const CartItem = ({
   cart_item_id,
-  cart_id,
   product_id,
   title,
   cost,
@@ -33,7 +33,7 @@ export const CartItem = ({
       < div className="flex items-center gap-4 min-w-0 cursor-pointer" onClick={() => router.push(`/product-details/${product_id}`)}>
         {/* Product Image */}
         < div className="bg-muted flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg" >
-          <img src={image} alt={title} className="h-full w-full rounded-lg object-cover" />
+          <Image src={image} alt={title} className="h-full w-full rounded-lg object-cover" />
         </div >
 
         {/* Product Details */}

@@ -1,12 +1,12 @@
 'use client'
 import { createClient } from '@/lib/client'
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from "axios";
 
 const supabase = createClient()
 const baseURL = 'http://localhost:5500'
 
 // This helper automatically injects the latest access token
-export async function fetchWithAuth(url: string, options: any = {}) {
+export async function fetchWithAuth(url: string, options: AxiosRequestConfig = {}) {
   // Get session at the time of request, inside async fn
   const { data: { session } } = await supabase.auth.getSession()
 

@@ -16,7 +16,6 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
 }
 
 const supabase = createClient(supabaseUrl, supabaseServiceRoleKey, {
-  // optional: avoid storing any session state in this instance
   auth: { persistSession: false },
 })
 

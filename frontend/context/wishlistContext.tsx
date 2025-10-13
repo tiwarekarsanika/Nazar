@@ -2,14 +2,14 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 type WishlistItem = {
-  id: number;
+  id: string;
 };
 
 type WishlistState = {
   count: number;
   wishlist: WishlistItem[];
   addWishlist: (item: WishlistItem) => void;
-  removeWishlist: (id: number) => void;
+  removeWishlist: (id: string) => void;
   clearStoreWishlist: () => void;
 };
 

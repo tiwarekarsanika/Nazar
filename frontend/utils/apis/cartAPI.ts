@@ -1,6 +1,6 @@
 import { fetchWithAuth } from './fetchWithAuth';
 
-export async function fetchCart(user_id: number) {
+export async function fetchCart(user_id: string) {
     try {
         // console.log("Fetching cart for user_id: ", user_id)
         const response = await fetchWithAuth(`/cart/getCart/${user_id}`, {
@@ -13,7 +13,7 @@ export async function fetchCart(user_id: number) {
     }
 }
 
-export async function addCart(user_id: number, product_id: number, quantity: number, price: number) {
+export async function addCart(user_id: string, product_id: string, quantity: number, price: number) {
     try {
         const response = await fetchWithAuth(`/cart/addCart`, {
             method: 'POST',
@@ -26,7 +26,7 @@ export async function addCart(user_id: number, product_id: number, quantity: num
     }
 }
 
-export async function removeItemFromCart(cart_item_id: number) {
+export async function removeItemFromCart(cart_item_id: string) {
     try {
         const response = await fetchWithAuth(`/cart/removeCartItem/${cart_item_id}`, {
             method: 'DELETE'
@@ -38,7 +38,7 @@ export async function removeItemFromCart(cart_item_id: number) {
     }   
 }
 
-export async function clearCart(cart_id: number) {
+export async function clearCart(cart_id: string) {
     try {
         const response = await fetchWithAuth(`/cart/clearCart/${cart_id}`, {
             method: 'DELETE'
@@ -50,7 +50,7 @@ export async function clearCart(cart_id: number) {
     }
 }
 
-export async function updateCartItem(cart_item_id: number, quantity: number) {
+export async function updateCartItem(cart_item_id: string, quantity: number) {
     try {
         // console.log("Updating cart item ", cart_item_id, quantity)
         const response = await fetchWithAuth(`/cart/updateCartItem`, {
