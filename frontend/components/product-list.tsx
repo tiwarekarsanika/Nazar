@@ -49,7 +49,7 @@ export default function ProductList() {
       // console.log("Fetched products list ", productsData)
       setProducts(productsData); // populate Zustand store
     }
-  }, [productsData]);
+  }, [productsData, setProducts]);
 
   // console.log("Filtered products ", filteredProducts)
 

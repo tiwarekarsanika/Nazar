@@ -24,7 +24,8 @@ class OrdersController {
     static async addNewOrder(req, res){
         try {
             const userID = req.body.user_id
-            const response = await OrdersService.addNewOrder(req.body, userID)
+            const email = req.user.email
+            const response = await OrdersService.addNewOrder(req.body, userID, email)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });

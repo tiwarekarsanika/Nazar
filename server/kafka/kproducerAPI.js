@@ -15,6 +15,7 @@ class kProducers {
                                 userID: msg.userID,
                                 productID: msg.productID,
                                 title: msg.title,
+                                email: msg.email,
                                 timestamp: new Date().toISOString()
                             }
                         ),
@@ -44,6 +45,7 @@ class kProducers {
                                 userID: msg.userID,
                                 productID: msg.productID,
                                 title: msg.title,
+                                email: msg.email,
                                 timestamp: new Date().toISOString()
                             }
                         ),
@@ -67,6 +69,7 @@ class kProducers {
                         {
                             eventType: "purchase",
                             userID: msg.userID,
+                            email: msg.email,
                             orderID: msg.orderID,
                             productID: p.productID,
                             quantity: p.quantity,

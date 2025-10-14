@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { useEffect, useState, useRef } from 'react';
 import {
   NavigationMenu,
-  NavigationMenuItem,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
 import {
@@ -79,36 +78,14 @@ export interface Navbar01NavLink {
 export interface Navbar01Props extends React.HTMLAttributes<HTMLElement> {
   logo?: React.ReactNode;
   logoHref?: string;
-  navigationLinks?: Navbar01NavLink[];
-  signInText?: string;
-  signInHref?: string;
-  ctaText?: string;
-  ctaHref?: string;
-  onSignInClick?: () => void;
-  onCtaClick?: () => void;
 }
-
-// Default navigation links
-const defaultNavigationLinks: Navbar01NavLink[] = [
-  // { href: '#', label: 'Home', active: true },
-  // { href: '#features', label: 'Features' },
-  // { href: '#pricing', label: 'Pricing' },
-  // { href: '#about', label: 'About' },
-];
 
 export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
   (
     {
       className,
       logo = <Logo />,
-      logoHref = '#',
-      navigationLinks = defaultNavigationLinks,
-      signInText = 'Sign In',
-      signInHref = '#signin',
-      ctaText = 'Get Started',
-      ctaHref = '#get-started',
-      onSignInClick,
-      onCtaClick,
+      logoHref = '/home',
       ...props
     },
     ref
@@ -176,7 +153,7 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
                 <PopoverContent align="start" className="w-48 p-2">
                   <NavigationMenu className="max-w-none">
                     <NavigationMenuList className="flex-col items-start gap-1">
-                      {navigationLinks.map((link, index) => (
+                      {/* {navigationLinks.map((link, index) => (
                         <NavigationMenuItem key={index} className="w-full">
                           <button
                             onClick={(e) => e.preventDefault()}
@@ -190,7 +167,7 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
                             {link.label}
                           </button>
                         </NavigationMenuItem>
-                      ))}
+                      ))} */}
                     </NavigationMenuList>
                   </NavigationMenu>
                 </PopoverContent>
@@ -199,17 +176,17 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
             {/* Main nav */}
             <div className="flex items-center gap-6">
               <button
-                onClick={() => router.push('/home')}
+                onClick={() => router.push(logoHref)}
                 className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
               >
-                <Logo />
+                {logo}
                 <span className="hidden font-semibold text-xl sm:inline-block">ShopEZ</span>
               </button>
               {/* Navigation menu */}
               {!isMobile && (
                 <NavigationMenu className="flex">
                   <NavigationMenuList className="gap-1">
-                    {navigationLinks.map((link, index) => (
+                    {/* {navigationLinks.map((link, index) => (
                       <NavigationMenuItem key={index}>
                         <button
                           onClick={(e) => e.preventDefault()}
@@ -223,7 +200,7 @@ export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
                           {link.label}
                         </button>
                       </NavigationMenuItem>
-                    ))}
+                    ))} */}
                   </NavigationMenuList>
                 </NavigationMenu>
               )}

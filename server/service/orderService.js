@@ -42,7 +42,7 @@ class OrdersService {
         }
     }
 
-    static async addNewOrder(data, userID) {
+    static async addNewOrder(data, userID, email) {
         const newOrder = await OrdersRepo.addNewOrder(data)
         const orderID = newOrder?.order_id
         const cartItems = await CartsRepo.fetchCartItems(data.cart_id)
@@ -64,6 +64,7 @@ class OrdersService {
         await kProducers.addUserPurchase({
             userID,
             orderID,
+            email,
             purchases: updatedItems.map(ci => ({ productID: ci.product_id, quantity: ci.quantity, title: ci.title }))
         })
 

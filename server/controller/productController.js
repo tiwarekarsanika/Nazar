@@ -5,8 +5,9 @@ class ProductsController {
         try {
             const productID = req.params.id
             const userId = req.user.id; 
+            const email = req.user.email;
             // console.log("The product id is ", productID);
-            const response = await ProductsService.fetchProduct(productID, userId)
+            const response = await ProductsService.fetchProduct(productID, userId, email)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });

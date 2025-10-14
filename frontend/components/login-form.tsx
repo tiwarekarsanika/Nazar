@@ -16,6 +16,10 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
+  const REDIRECT_URL = process.env.NEXT_PUBLIC_SITE_URL
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}/auth/oauth?next=/home`
+    : 'http://localhost:3000/auth/oauth?next=/home'
+
   const handleSocialLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     const supabase = createClient()
@@ -26,7 +30,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${window.location.origin}/auth/oauth?next=/home`,
+          redirectTo: REDIRECT_URL,
         },
       })
 

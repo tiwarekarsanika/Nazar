@@ -15,7 +15,8 @@ class WishlistController {
     static async addWishlist(req, res){
         try {
             console.log("Request received as ", req.body)
-            const response = await WishlistService.addWishlist(req.body)
+            const email = req.user.email
+            const response = await WishlistService.addWishlist( req.body, email)
             res.status(200).json(response);
         } catch (error) {
             res.status(400).json({ error: error.message });
