@@ -14,6 +14,8 @@ import { useQueryClient, useMutation, useQuery } from "@tanstack/react-query";
 import React from "react";
 import { fetchProductById } from "@/utils/apis/productsAPI";
 import Image from "next/image";
+import { useCart } from "@/context/cartContext";
+import { useWishlist } from "@/context/wishlistContext";
 
 interface ProductType {
   product_id: string;
@@ -55,7 +57,15 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
   // console.log("Product in product details page ", product?.[0]);
 
+  const addToWishlist = useWishlist((state) => state.addWishlist);
+  const wishlist = useWishlist((state) => state.wishlist);
 
+  const handleAddToWishlist = async (productId: string) => {
+    await addToWishlistMutation.mutateAsync(productId);
+    addToWishlist({ id: productId });
+  }
+
+  // Mutation hook
   const addToWishlistMutation = useMutation({
     mutationFn: (productId: string) => {
       if (!user?.user?.id) throw new Error("User ID is required to add to wishlist");
@@ -73,6 +83,21 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
       console.error("Failed to add wishlist item ", error);
     },
   });
+
+  const addZustandCart = useCart((state) => state.addCart);
+  const cart = useCart((state) => state.cart);
+
+  // Resetting user store
+  // useEffect(() => {
+  //   useCart.persist.clearStorage();
+  //   useWishlist.persist.clearStorage();
+  // }, []);
+
+
+  const handleAddToCart = async ({ productId, price }: { productId: string; price: number }) => {
+    await addToCartMutation.mutateAsync({ productId, price });
+    addZustandCart({ id: productId, quantity: 1 });
+  };
 
   const addToCartMutation = useMutation({
     mutationFn: ({ productId, price }: { productId: string; price: number }) => {
@@ -150,11 +175,11 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             </div>
 
             <div className="flex flex-col gap-2 min-[400px]:flex-row py-8">
-              <Button className="h-12 flex-1 text-lg" onClick={() => addToCartMutation.mutate({ productId: product.product_id, price: product.price })}>
+              <Button className="h-12 flex-1 text-lg" onClick={() => handleAddToCart({ productId: product.product_id, price: product.price })}>
                 <ShoppingBagIcon />
                 Add to Cart
               </Button>
-              <Button className="h-12 flex-1 bg-[#D9FF66] text-lg text-gray-900 hover:bg-[#c6eb5e]" onClick={() => addToWishlistMutation.mutate(product.product_id)}>
+              <Button className="h-12 flex-1 bg-[#D9FF66] text-lg text-gray-900 hover:bg-[#c6eb5e]" onClick={() => handleAddToWishlist(product.product_id)}>
                 Add to Wishlist
               </Button>
             </div>

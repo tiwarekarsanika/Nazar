@@ -93,10 +93,10 @@ export default function ProductList() {
   const cart = useCart((state) => state.cart);
 
   // Resetting user store
-  // useEffect(() => {
-  //   useCart.persist.clearStorage();
-  //   useWishlist.persist.clearStorage();
-  // }, []);
+  useEffect(() => {
+    useCart.persist.clearStorage();
+    useWishlist.persist.clearStorage();
+  }, []);
 
 
   const handleAddToCart = async ({ productId, price }: { productId: string; price: number }) => {

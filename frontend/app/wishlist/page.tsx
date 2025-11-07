@@ -8,6 +8,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import { useWishlist } from "@/context/wishlistContext";
 import Image from "next/image"
+import Link from "next/link"
 
 interface WishlistItem {
   wishlist_id: string;
@@ -83,24 +84,36 @@ export default function WishlistPage() {
         </Button>
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {
+          wishlist.length === 0 && (
+            <div className="flex flex-col items-center justify-center py-20 space-y-6">
+              <h2 className="text-lg font-medium">Your wishlist is empty</h2>
+              <Link href="/home">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer">
+                  Continue Shopping
+                </Button>
+              </Link>
+            </div>
+          )
+        }
         {wishlist.map((item: WishlistItem) => (
           <Card key={item.wishlist_item_id}>
             <div className="cursor-pointer" onClick={() => router.push(`/product-details/${item.product_id}`)}>
-            <CardHeader>
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={300}
-                height={300}
-                className="rounded-t-lg object-cover w-full aspect-square"
-              />
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-2">
-                <h3 className="font-semibold">{item.title}</h3>
-                <p className="text-xl font-bold">${item.price.toFixed(2)}</p>
-              </div>
-            </CardContent>
+              <CardHeader>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={300}
+                  height={300}
+                  className="rounded-t-lg object-cover w-full aspect-square"
+                />
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-2">
+                  <h3 className="font-semibold">{item.title}</h3>
+                  <p className="text-xl font-bold">${item.price.toFixed(2)}</p>
+                </div>
+              </CardContent>
             </div>
             <CardFooter>
               <Button

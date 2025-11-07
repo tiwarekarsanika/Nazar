@@ -19,10 +19,6 @@ scrape_configs:
     static_configs:
       - targets: ['redis-exporter:9121']
 
-  # - job_name: 'prom-client'
-  #   static_configs:
-  #     - targets: ['nazar-server:5500']
-
   - job_name: 'prom-client'
     static_configs:
       - targets: ['host.docker.internal:5500']

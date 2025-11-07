@@ -1,7 +1,7 @@
 import { Kafka } from 'kafkajs'
 
 const kafka = new Kafka({
-  clientId: 'nazar-app',
+  clientId: 'nazar-server',
   brokers: ['kafka:9092'],
 })
 
