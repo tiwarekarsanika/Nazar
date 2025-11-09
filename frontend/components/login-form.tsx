@@ -18,7 +18,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
 
   const REDIRECT_URL = process.env.NEXT_PUBLIC_SITE_URL
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/auth/oauth?next=/home`
-    : 'http://localhost:3000/auth/oauth?next=/home'
+    : `${process.env.DIGITAL_OCEAN_DOMAIN}:3000/auth/oauth?next=/home`
 
   const handleSocialLogin = async (e: React.FormEvent) => {
     e.preventDefault()
