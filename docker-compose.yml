@@ -31,10 +31,12 @@ services:
       args:
         NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL}
         NEXT_PUBLIC_SUPABASE_PUBLISHABLE_OR_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_PUBLISHABLE_OR_ANON_KEY}
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
     container_name: nazar-ui
     ports:
       - "3000:3000"
     environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
       NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL}
       NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL}
       NEXT_PUBLIC_SUPABASE_PUBLISHABLE_OR_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_PUBLISHABLE_OR_ANON_KEY}
@@ -61,7 +63,11 @@ services:
     ports:
       - "4000:3000"
     environment:
-      - GF_SECURITY_ADMIN_PASSWORD=GF_SECURITY_ADMIN_PASSWORD
+      - GF_SECURITY_ADMIN_USER=${GF_SECURITY_ADMIN_USERNAME}
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
+    # Added in Digital Ocean App Platform deployment
+      # - GF_SERVER_ROOT_URL=http://nazar-monitoring.sanikat.tech
+      # - GF_SERVER_SERVE_FROM_SUB_PATH=true
     volumes:
       - grafana-storage:/var/lib/grafana
     networks:

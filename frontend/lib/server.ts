@@ -28,6 +28,11 @@ export async function createClient() {
           }
         },
       },
+      cookieOptions: {
+        domain: '.sanikat.tech',   // 🔥 ensures all subdomains share session
+        secure: true,               // HTTPS only
+        sameSite: 'lax',
+      },
     }
   )
 }

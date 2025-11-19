@@ -232,12 +232,12 @@ export default function ProductList() {
 
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="text-base font-bold text-blue-600 sm:text-lg">
-                            ${product.price.toFixed(2)}
+                            ₹{product.price.toFixed(2)}
                           </span>
                           {product.originalPrice && (
                             <>
                               <span className="text-muted-foreground text-xs line-through sm:text-sm">
-                                ${product.originalPrice.toFixed(2)}
+                                ₹{product.originalPrice.toFixed(2)}
                               </span>
                               <Badge variant="destructive" className="text-xs">
                                 -{product.discount}%

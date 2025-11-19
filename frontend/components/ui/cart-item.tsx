@@ -68,7 +68,7 @@ export const CartItem = ({
 
         {/* Price */}
         < div className="text-cart-price min-w-[80px] text-right text-sm font-semibold lg:text-base" >
-          ${(cost * quantity).toFixed(2)}
+          ₹{(cost * quantity).toFixed(2)}
         </div >
 
         {/* Remove Button */}

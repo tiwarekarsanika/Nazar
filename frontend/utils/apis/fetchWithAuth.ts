@@ -3,7 +3,7 @@ import { createClient } from '@/lib/client'
 import axios, { AxiosRequestConfig } from "axios";
 
 const supabase = createClient()
-const baseURL = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`
+const baseURL = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5500'}`
 
 // This helper automatically injects the latest access token
 export async function fetchWithAuth(url: string, options: AxiosRequestConfig = {}) {

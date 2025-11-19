@@ -16,31 +16,25 @@ const categories = [
   { id: "tv", label: "TV sets", icon: "📺" },
   { id: "sound", label: "Sound", icon: "🔊" },
   { id: "watches", label: "Watches", icon: "⌚" },
-  { id: "others", label: "Others", icon: "💡" },
-  { id: "internet", label: "Internet", icon: "🌐" }
 ];
 
 const brands = [
   { id: "apple", label: "Apple" },
   { id: "samsung", label: "Samsung" },
-  { id: "huawei", label: "Huawei" },
+  { id: "oneplus", label: "One Plus" },
   { id: "microsoft", label: "Microsoft" },
   { id: "sony", label: "Sony" },
   { id: "bose", label: "Bose" },
   { id: "dell", label: "Dell" },
   { id: "lg", label: "LG" },
   { id: "jbl", label: "JBL" },
-  { id: "philips", label: "Philips" },
-  { id: "tp-link", label: "TP-Link" }
 ];
 
 const colors = [
   { id: "red", label: "Red", color: "bg-red-500" },
-  { id: "orange", label: "Orange", color: "bg-orange-500" },
   { id: "blue", label: "Blue", color: "bg-blue-500" },
   { id: "black", label: "Black", color: "bg-black" },
   { id: "white", label: "White", color: "bg-white border" },
-  { id: "purple", label: "Purple", color: "bg-purple-500" },
   { id: "gray", label: "Gray", color: "bg-gray-600" }
 ];
 

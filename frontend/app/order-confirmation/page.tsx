@@ -102,7 +102,7 @@ export default function OrderConfirmation() {
                             <div className="text-sm text-muted-foreground">Quantity: {item.quantity}</div>
                           </div>
                         </div>
-                        <div className="font-medium">${item.cost}</div>
+                        <div className="font-medium">₹ {item.cost}</div>
                       </div>
                     )
                   })
@@ -119,7 +119,7 @@ export default function OrderConfirmation() {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">Delivery</span>
-                  <span>$29.00</span>
+                  <span>₹ 100.00</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">Tax</span>

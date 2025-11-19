@@ -26,6 +26,8 @@ class kProducers {
         } catch (error) {
             console.error("Error sending user wishlist event :(", error)
         }
+
+        console.log("Produced wishlist event to kafka:", msg.userID, msg.productID, msg.title);
     }
 
     static addUserClicks = async (data) => {
@@ -56,6 +58,8 @@ class kProducers {
         } catch (error) {
             console.error("Error sending user click event :(", error)
         }
+
+        console.log("Produced click event to kafka:", msg.userID, msg.productID, msg.title);
     }
 
     static addUserPurchase = async (data) => {
@@ -84,6 +88,8 @@ class kProducers {
         } catch (error) {
             console.error("Error sending user purchase event :(", error)
         }
+
+        console.log("Produced purchase event to kafka:", msg.userID, msg.orderID, msg.purchases.length);
     }
 }
 

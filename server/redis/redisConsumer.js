@@ -45,9 +45,10 @@ const redisConsumerAPI = async (redisClient) => {
             } catch (err) {
                 console.log("Failed to process Kafka message:", err);
             }
+
+            console.log("Processed Kafka message:", event);
         }
     })
 }
 
 export default redisConsumerAPI;
-// redisConsumerAPI(redisClient)
