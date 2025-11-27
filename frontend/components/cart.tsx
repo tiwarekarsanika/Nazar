@@ -168,7 +168,6 @@ export default function Cart() {
               <Button
                 onClick={() => {
                   addOrderMutation.mutate({ cart_id: cartData?.data[0]?.cart_id });
-                  handleClearCart(cartData?.data[0]?.cart_id);
                 }}
                 disabled={cartData?.data.length === 0}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 w-full"

@@ -31,7 +31,7 @@ export async function createClient() {
       cookieOptions: {
         domain: 'nazar.sanikat.tech',   // 🔥 ensures all subdomains share session
         secure: true,               // HTTPS only
-        sameSite: 'none',
+        sameSite: 'lax',
       },
     }
   )
