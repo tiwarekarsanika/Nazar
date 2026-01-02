@@ -8,6 +8,16 @@ Nazar is a fully containerized, production-ready e-commerce platform designed wi
 
 The system streams every user interaction through Kafka, processes analytic workloads through Redis, stores structured data in Supabase, and exposes full-stack metrics through Prometheus and Grafana — all orchestrated via Docker Compose.
 
+<p align="center">
+  <img src="./App%20Analytics.png" width="45%" />
+  <img src="./Business%20Insights.png" width="45%" />
+</p>
+
+<p align="center">
+  <img src="./Infra%20Monitoring.png" width="45%" />
+  <img src="./ui1.png" width="45%" />
+</p>
+
 ## Key Capabilities
 
 - End-to-end containerized architecture (frontend, backend, infrastructure)
