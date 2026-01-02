@@ -1,6 +1,6 @@
 # Project Nazar (नज़र) — E-commerce + Real-Time Observability
 
-![Architecture Diagram](./NAZAR%20Architecture%20Diagram.png)
+![Architecture Diagram](./Nazar%20Architecture%20Diagram.png)
 
 ## Overview
 
@@ -9,14 +9,33 @@ Nazar is a fully containerized, production-ready e-commerce platform designed wi
 The system streams every user interaction through Kafka, processes analytic workloads through Redis, stores structured data in Supabase, and exposes full-stack metrics through Prometheus and Grafana — all orchestrated via Docker Compose.
 
 <p align="center">
-  <img src="./App%20Analytics.png" width="45%" />
-  <img src="./Business%20Insights.png" width="45%" />
+  <img src="./App%20Analytics.jpg" width="45%" />
+  <img src="./Business%20Insights.jpg" width="45%" />
 </p>
 
 <p align="center">
-  <img src="./Infra%20Monitoring.png" width="45%" />
-  <img src="./ui1.png" width="45%" />
+  <img src="./Infra%20Monitoring.jpg" width="45%" />
+  <img src="./ui1.jpg" width="45%" />
 </p>
+
+---
+
+## Detailed Walkthrough
+
+A full write-up of the architecture, design choices, and implementation details is available here:
+
+https://lnkd.in/dEyAKVVZ
+
+---
+
+## Deployment
+
+The full system is deployed on DigitalOcean containers.
+
+- **UI:** https://nazar.sanikat.tech  
+- **Monitoring Dashboard:** https://lnkd.in/dwJr-h49
+
+---
 
 ## Key Capabilities
 
@@ -125,23 +144,6 @@ This starts:
 - Redis
 - Prometheus
 - Grafana
-
----
-
-## Deployment
-
-The full system is deployed on DigitalOcean containers.
-
-- **UI:** https://nazar.sanikat.tech  
-- **Monitoring Dashboard:** https://lnkd.in/dwJr-h49
-
----
-
-## Detailed Walkthrough
-
-A full write-up of the architecture, design choices, and implementation details is available here:
-
-https://lnkd.in/dEyAKVVZ
 
 ---
 
